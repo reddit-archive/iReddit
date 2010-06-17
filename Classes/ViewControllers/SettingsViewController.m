@@ -11,7 +11,6 @@
 #import "LoginController.h"
 #import "Constants.h"
 #import "Three20Extensions.h"
-#import "MMTrackingMgr.h"
 
 static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 	AudioServicesRemoveSystemSoundCompletion(mySSID);
@@ -197,8 +196,6 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 #ifdef PREMIUM
 	[[iRedditAppDelegate sharedAppDelegate] reloadSound];
 #endif
-	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Changed settings"];
 }
 
 - (void)didSelectObject:(TTTableLinkedItem*)object atIndexPath:(NSIndexPath*)indexPath

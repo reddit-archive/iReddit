@@ -12,6 +12,24 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		3821EF4811CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */; };
+		3821EF4911CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3811CAC98F002CCCE2 /* CDataScanner_Extensions.m */; };
+		3821EF4A11CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3A11CAC98F002CCCE2 /* NSDictionary_JSONExtensions.m */; };
+		3821EF4B11CAC990002CCCE2 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3D11CAC98F002CCCE2 /* CJSONScanner.m */; };
+		3821EF4C11CAC990002CCCE2 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3F11CAC98F002CCCE2 /* CJSONSerializer.m */; };
+		3821EF4D11CAC990002CCCE2 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4111CAC98F002CCCE2 /* CJSONDeserializer.m */; };
+		3821EF4E11CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */; };
+		3821EF4F11CAC990002CCCE2 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */; };
+		3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4711CAC990002CCCE2 /* CDataScanner.m */; };
+		3821EF5111CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */; };
+		3821EF5211CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3811CAC98F002CCCE2 /* CDataScanner_Extensions.m */; };
+		3821EF5311CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3A11CAC98F002CCCE2 /* NSDictionary_JSONExtensions.m */; };
+		3821EF5411CAC990002CCCE2 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3D11CAC98F002CCCE2 /* CJSONScanner.m */; };
+		3821EF5511CAC990002CCCE2 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3F11CAC98F002CCCE2 /* CJSONSerializer.m */; };
+		3821EF5611CAC990002CCCE2 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4111CAC98F002CCCE2 /* CJSONDeserializer.m */; };
+		3821EF5711CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */; };
+		3821EF5811CAC990002CCCE2 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */; };
+		3821EF5911CAC990002CCCE2 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4711CAC990002CCCE2 /* CDataScanner.m */; };
 		ADB29E7A0FEAD09E00405C52 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		ADB29E7B0FEAD09E00405C52 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
 		ADB29E7E0FEAD09E00405C52 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53940FEAC4010067CEC1 /* back.png */; };
@@ -34,8 +52,6 @@
 		ADB29E980FEAD09E00405C52 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */; };
 		ADB29E990FEAD09E00405C52 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB556B0FEACC5C0067CEC1 /* Default.png */; };
 		ADB29E9B0FEAD09E00405C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		ADB29E9C0FEAD09E00405C52 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53380FEAC3EA0067CEC1 /* AdCell.m */; };
-		ADB29E9D0FEAD09E00405C52 /* AdField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB533A0FEAC3EA0067CEC1 /* AdField.m */; };
 		ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
 		ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
 		ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */; };
@@ -70,30 +86,16 @@
 		ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54940FEAC6700067CEC1 /* libxml2.dylib */; };
 		ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */; };
 		ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB29F880FEB046200405C52 /* Entitlements.plist */; };
-		ADB2A06F0FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */; };
-		ADB2A0700FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */; };
-		ADB2A0710FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */; };
-		ADB2A0720FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */; };
-		ADB2A0B10FEC203500405C52 /* Heartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB2A0B00FEC203500405C52 /* Heartbeat.m */; };
-		ADB2A0B20FEC203500405C52 /* Heartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB2A0B00FEC203500405C52 /* Heartbeat.m */; };
-		ADB2A0B40FEC205600405C52 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0B30FEC205600405C52 /* CrashReporter.framework */; };
-		ADB2A0B50FEC205600405C52 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0B30FEC205600405C52 /* CrashReporter.framework */; };
 		ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
 		ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
 		ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
 		ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
-		ADD82FD610094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */; };
-		ADD82FD710094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */; };
-		ADD82FD810094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */; };
-		ADD82FD910094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */; };
 		ADD830641009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
 		ADD830651009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
 		ADEACD8E0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
 		ADEACD8F0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
 		ADF243ED1014171400C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
 		ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
-		ADFB53780FEAC3EA0067CEC1 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53380FEAC3EA0067CEC1 /* AdCell.m */; };
-		ADFB53790FEAC3EA0067CEC1 /* AdField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB533A0FEAC3EA0067CEC1 /* AdField.m */; };
 		ADFB537C0FEAC3EA0067CEC1 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
 		ADFB537D0FEAC3EA0067CEC1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
 		ADFB537E0FEAC3EA0067CEC1 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
@@ -187,31 +189,34 @@
 		28A0AAE50D9B0CCF005BE974 /* iReddit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iReddit_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../../MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3821EF3511CAC98F002CCCE2 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCharacterSet_Extensions.h; path = ../TouchJSON/Source/Extensions/NSCharacterSet_Extensions.h; sourceTree = SOURCE_ROOT; };
+		3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSCharacterSet_Extensions.m; path = ../TouchJSON/Source/Extensions/NSCharacterSet_Extensions.m; sourceTree = SOURCE_ROOT; };
+		3821EF3711CAC98F002CCCE2 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner_Extensions.h; path = ../TouchJSON/Source/Extensions/CDataScanner_Extensions.h; sourceTree = SOURCE_ROOT; };
+		3821EF3811CAC98F002CCCE2 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner_Extensions.m; path = ../TouchJSON/Source/Extensions/CDataScanner_Extensions.m; sourceTree = SOURCE_ROOT; };
+		3821EF3911CAC98F002CCCE2 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDictionary_JSONExtensions.h; path = ../TouchJSON/Source/Extensions/NSDictionary_JSONExtensions.h; sourceTree = SOURCE_ROOT; };
+		3821EF3A11CAC98F002CCCE2 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionary_JSONExtensions.m; path = ../TouchJSON/Source/Extensions/NSDictionary_JSONExtensions.m; sourceTree = SOURCE_ROOT; };
+		3821EF3C11CAC98F002CCCE2 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONScanner.h; path = ../TouchJSON/Source/JSON/CJSONScanner.h; sourceTree = SOURCE_ROOT; };
+		3821EF3D11CAC98F002CCCE2 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONScanner.m; path = ../TouchJSON/Source/JSON/CJSONScanner.m; sourceTree = SOURCE_ROOT; };
+		3821EF3E11CAC98F002CCCE2 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONSerializer.h; path = ../TouchJSON/Source/JSON/CJSONSerializer.h; sourceTree = SOURCE_ROOT; };
+		3821EF3F11CAC98F002CCCE2 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONSerializer.m; path = ../TouchJSON/Source/JSON/CJSONSerializer.m; sourceTree = SOURCE_ROOT; };
+		3821EF4011CAC98F002CCCE2 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONDeserializer.h; path = ../TouchJSON/Source/JSON/CJSONDeserializer.h; sourceTree = SOURCE_ROOT; };
+		3821EF4111CAC98F002CCCE2 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONDeserializer.m; path = ../TouchJSON/Source/JSON/CJSONDeserializer.m; sourceTree = SOURCE_ROOT; };
+		3821EF4211CAC98F002CCCE2 /* CJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONDataSerializer.h; path = ../TouchJSON/Source/JSON/CJSONDataSerializer.h; sourceTree = SOURCE_ROOT; };
+		3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONDataSerializer.m; path = ../TouchJSON/Source/JSON/CJSONDataSerializer.m; sourceTree = SOURCE_ROOT; };
+		3821EF4411CAC98F002CCCE2 /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSerializedJSONData.h; path = ../TouchJSON/Source/JSON/CSerializedJSONData.h; sourceTree = SOURCE_ROOT; };
+		3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSerializedJSONData.m; path = ../TouchJSON/Source/JSON/CSerializedJSONData.m; sourceTree = SOURCE_ROOT; };
+		3821EF4611CAC98F002CCCE2 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner.h; path = ../TouchJSON/Source/CDataScanner.h; sourceTree = SOURCE_ROOT; };
+		3821EF4711CAC990002CCCE2 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner.m; path = ../TouchJSON/Source/CDataScanner.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* iReddit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iReddit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		ADB29EC80FEAD09E00405C52 /* iReddit Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iReddit Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Info Free.plist"; sourceTree = "<group>"; };
 		ADB29F880FEB046200405C52 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMTrackingSimulator.a; sourceTree = "<group>"; };
-		ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMTrackingDevice.a; sourceTree = "<group>"; };
-		ADB2A06E0FEC1AF100405C52 /* MMTrackingMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTrackingMgr.h; sourceTree = "<group>"; };
-		ADB2A0AE0FEC203500405C52 /* HeartbeatSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartbeatSettings.h; sourceTree = "<group>"; };
-		ADB2A0AF0FEC203500405C52 /* Heartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heartbeat.h; sourceTree = "<group>"; };
-		ADB2A0B00FEC203500405C52 /* Heartbeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartbeat.m; sourceTree = "<group>"; };
-		ADB2A0B30FEC205600405C52 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		ADBC92030FFDA1DE0033E60A /* AddRedditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRedditViewController.h; sourceTree = "<group>"; };
 		ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRedditViewController.m; sourceTree = "<group>"; };
-		ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobDevice3_0.a; sourceTree = "<group>"; };
-		ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobSimulator3_0.a; sourceTree = "<group>"; };
-		ADD82FDA10094FFE00138F44 /* AdMobView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobView.h; sourceTree = "<group>"; };
-		ADD82FDB10094FFE00138F44 /* AdMobDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobDelegateProtocol.h; sourceTree = "<group>"; };
 		ADD830631009632D00138F44 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedditPremiumIcon.png; sourceTree = "<group>"; };
 		ADF243EC1014171400C392BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		ADFB53370FEAC3EA0067CEC1 /* AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCell.h; sourceTree = "<group>"; };
-		ADFB53380FEAC3EA0067CEC1 /* AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCell.m; sourceTree = "<group>"; };
-		ADFB53390FEAC3EA0067CEC1 /* AdField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdField.h; sourceTree = "<group>"; };
-		ADFB533A0FEAC3EA0067CEC1 /* AdField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdField.m; sourceTree = "<group>"; };
 		ADFB533F0FEAC3EA0067CEC1 /* comments.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comments.html; sourceTree = "<group>"; };
 		ADFB53400FEAC3EA0067CEC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		ADFB53410FEAC3EA0067CEC1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -319,12 +324,7 @@
 				ADFB54210FEAC63E0067CEC1 /* libz.dylib in Frameworks */,
 				ADFB54950FEAC6700067CEC1 /* libxml2.dylib in Frameworks */,
 				ADFB549B0FEAC6FB0067CEC1 /* AddressBook.framework in Frameworks */,
-				ADB2A06F0FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */,
-				ADB2A0700FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */,
-				ADB2A0B40FEC205600405C52 /* CrashReporter.framework in Frameworks */,
 				ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */,
-				ADD82FD610094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */,
-				ADD82FD710094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */,
 				ADF243ED1014171400C392BF /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,12 +345,7 @@
 				ADB29EC00FEAD09E00405C52 /* libz.dylib in Frameworks */,
 				ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */,
 				ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */,
-				ADB2A0710FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */,
-				ADB2A0720FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */,
-				ADB2A0B50FEC205600405C52 /* CrashReporter.framework in Frameworks */,
 				ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */,
-				ADD82FD810094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */,
-				ADD82FD910094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */,
 				ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,27 +417,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ADB2A04A0FEC160600405C52 /* Analytics */ = {
+		3821EF3311CAC98F002CCCE2 /* TouchJSON */ = {
 			isa = PBXGroup;
 			children = (
-				ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */,
-				ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */,
-				ADB2A06E0FEC1AF100405C52 /* MMTrackingMgr.h */,
-				ADB2A0B30FEC205600405C52 /* CrashReporter.framework */,
-				ADB2A0AE0FEC203500405C52 /* HeartbeatSettings.h */,
-				ADB2A0AF0FEC203500405C52 /* Heartbeat.h */,
-				ADB2A0B00FEC203500405C52 /* Heartbeat.m */,
+				3821EF3411CAC98F002CCCE2 /* Extensions */,
+				3821EF3B11CAC98F002CCCE2 /* JSON */,
+				3821EF4611CAC98F002CCCE2 /* CDataScanner.h */,
+				3821EF4711CAC990002CCCE2 /* CDataScanner.m */,
 			);
-			path = Analytics;
-			sourceTree = "<group>";
+			name = TouchJSON;
+			path = ../TouchJSON/Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		3821EF3411CAC98F002CCCE2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3821EF3511CAC98F002CCCE2 /* NSCharacterSet_Extensions.h */,
+				3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */,
+				3821EF3711CAC98F002CCCE2 /* CDataScanner_Extensions.h */,
+				3821EF3811CAC98F002CCCE2 /* CDataScanner_Extensions.m */,
+				3821EF3911CAC98F002CCCE2 /* NSDictionary_JSONExtensions.h */,
+				3821EF3A11CAC98F002CCCE2 /* NSDictionary_JSONExtensions.m */,
+			);
+			name = Extensions;
+			path = ../TouchJSON/Source/Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
+		3821EF3B11CAC98F002CCCE2 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3821EF3C11CAC98F002CCCE2 /* CJSONScanner.h */,
+				3821EF3D11CAC98F002CCCE2 /* CJSONScanner.m */,
+				3821EF3E11CAC98F002CCCE2 /* CJSONSerializer.h */,
+				3821EF3F11CAC98F002CCCE2 /* CJSONSerializer.m */,
+				3821EF4011CAC98F002CCCE2 /* CJSONDeserializer.h */,
+				3821EF4111CAC98F002CCCE2 /* CJSONDeserializer.m */,
+				3821EF4211CAC98F002CCCE2 /* CJSONDataSerializer.h */,
+				3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */,
+				3821EF4411CAC98F002CCCE2 /* CSerializedJSONData.h */,
+				3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */,
+			);
+			name = JSON;
+			path = ../TouchJSON/Source/JSON;
+			sourceTree = SOURCE_ROOT;
 		};
 		ADFB53350FEAC3EA0067CEC1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ADB2A04A0FEC160600405C52 /* Analytics */,
+				3821EF3311CAC98F002CCCE2 /* TouchJSON */,
 				ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */,
 				ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */,
-				ADFB53360FEAC3EA0067CEC1 /* Ads */,
 				ADFB533F0FEAC3EA0067CEC1 /* comments.html */,
 				ADFB53400FEAC3EA0067CEC1 /* Constants.h */,
 				ADFB53410FEAC3EA0067CEC1 /* Constants.m */,
@@ -455,21 +479,6 @@
 				ADFB53750FEAC3EA0067CEC1 /* XIBs */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		ADFB53360FEAC3EA0067CEC1 /* Ads */ = {
-			isa = PBXGroup;
-			children = (
-				ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */,
-				ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */,
-				ADD82FDA10094FFE00138F44 /* AdMobView.h */,
-				ADD82FDB10094FFE00138F44 /* AdMobDelegateProtocol.h */,
-				ADFB53370FEAC3EA0067CEC1 /* AdCell.h */,
-				ADFB53380FEAC3EA0067CEC1 /* AdCell.m */,
-				ADFB53390FEAC3EA0067CEC1 /* AdField.h */,
-				ADFB533A0FEAC3EA0067CEC1 /* AdField.m */,
-			);
-			path = Ads;
 			sourceTree = "<group>";
 		};
 		ADFB53420FEAC3EA0067CEC1 /* Data */ = {
@@ -764,8 +773,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				ADFB53780FEAC3EA0067CEC1 /* AdCell.m in Sources */,
-				ADFB53790FEAC3EA0067CEC1 /* AdField.m in Sources */,
 				ADFB537D0FEAC3EA0067CEC1 /* Constants.m in Sources */,
 				ADFB537E0FEAC3EA0067CEC1 /* LoginController.m in Sources */,
 				ADFB537F0FEAC3EA0067CEC1 /* RedditMessage.m in Sources */,
@@ -787,8 +794,16 @@
 				ADFB53900FEAC3EA0067CEC1 /* StoryCell.m in Sources */,
 				ADFB54A80FEAC8A60067CEC1 /* Three20Extensions.m in Sources */,
 				ADFB556E0FEACC7A0067CEC1 /* NSDictionary+JSON.m in Sources */,
-				ADB2A0B10FEC203500405C52 /* Heartbeat.m in Sources */,
 				ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */,
+				3821EF4811CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */,
+				3821EF4911CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */,
+				3821EF4A11CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */,
+				3821EF4B11CAC990002CCCE2 /* CJSONScanner.m in Sources */,
+				3821EF4C11CAC990002CCCE2 /* CJSONSerializer.m in Sources */,
+				3821EF4D11CAC990002CCCE2 /* CJSONDeserializer.m in Sources */,
+				3821EF4E11CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */,
+				3821EF4F11CAC990002CCCE2 /* CSerializedJSONData.m in Sources */,
+				3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,8 +812,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB29E9B0FEAD09E00405C52 /* main.m in Sources */,
-				ADB29E9C0FEAD09E00405C52 /* AdCell.m in Sources */,
-				ADB29E9D0FEAD09E00405C52 /* AdField.m in Sources */,
 				ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */,
 				ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */,
 				ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */,
@@ -820,8 +833,16 @@
 				ADB29EB10FEAD09E00405C52 /* StoryCell.m in Sources */,
 				ADB29EB20FEAD09E00405C52 /* Three20Extensions.m in Sources */,
 				ADB29EB30FEAD09E00405C52 /* NSDictionary+JSON.m in Sources */,
-				ADB2A0B20FEC203500405C52 /* Heartbeat.m in Sources */,
 				ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */,
+				3821EF5111CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */,
+				3821EF5211CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */,
+				3821EF5311CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */,
+				3821EF5411CAC990002CCCE2 /* CJSONScanner.m in Sources */,
+				3821EF5511CAC990002CCCE2 /* CJSONSerializer.m in Sources */,
+				3821EF5611CAC990002CCCE2 /* CJSONDeserializer.m in Sources */,
+				3821EF5711CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */,
+				3821EF5811CAC990002CCCE2 /* CSerializedJSONData.m in Sources */,
+				3821EF5911CAC990002CCCE2 /* CDataScanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,12 +877,6 @@
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
 				INFOPLIST_FILE = "iReddit-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = iReddit;
 			};
 			name = Debug;
@@ -879,12 +894,6 @@
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
 				INFOPLIST_FILE = "iReddit-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = iReddit;
 			};
 			name = Release;
@@ -903,12 +912,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Debug;
@@ -925,12 +928,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Release;
@@ -968,12 +965,6 @@
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
 				INFOPLIST_FILE = "iReddit-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = iReddit;
 			};
 			name = Distribution;
@@ -990,12 +981,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Ads\"",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
-				);
 				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Distribution;

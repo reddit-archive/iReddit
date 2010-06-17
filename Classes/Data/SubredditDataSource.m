@@ -9,9 +9,6 @@
 #import "Story.h"
 #import "StoryCell.h"
 #import "CommentAccessoryView.h"
-#import "AdField.h"
-#import "AdMobView.h"
-#import "AdCell.h"
 #import "Constants.h"
 
 #import "SubredditDataSource.h"
@@ -295,33 +292,6 @@
 {
 	id object = [self tableView:tableView objectForRowAtIndexPath:indexPath];
 	
-	if ([object isKindOfClass:[AdField class]])
-	{
-		AdField *ad = object;
-		
-		if (!ad.adView)
-		{
-			UIView *adView = [AdMobView requestAdWithDelegate:object];
-			ad.adView = adView;
-		}
-		
-		CGRect currentFrame = cell.frame;
-		CGRect adFrame = ad.adView.frame;
-		
-		if (currentFrame.size.width > 320)
-			adFrame.origin.x = currentFrame.size.width / 2.0 - 160.0;
-		else
-			adFrame.origin.x = 0;
-		
-		ad.adView.frame = adFrame;
-		
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		
-		[cell.contentView setBackgroundColor:[ad adBackgroundColor]];
-		[cell.contentView removeSubviews];
-		[cell.contentView addSubview:ad.adView];
-	}
-    
 	if ([cell isKindOfClass:[StoryCell class]])
 	{ 
         StoryCell *storyCell = (StoryCell *)cell;
@@ -358,9 +328,7 @@
 
 - (Class)tableView:(UITableView *)tableView cellClassForObject:(id)object 
 { 
-	if ([object isKindOfClass:[AdField class]])
-		return [AdCell class];
-    else if ([object isKindOfClass:[Story class]]) 
+    if ([object isKindOfClass:[Story class]]) 
         return [StoryCell class]; 
     else 
         return [super tableView:tableView cellClassForObject:object]; 

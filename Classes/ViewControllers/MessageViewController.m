@@ -13,7 +13,6 @@
 #import "LoginController.h"
 #import "NSDictionary+JSON.h"
 #import "RedditWebView.h"
-#import "MMTrackingMgr.h"
 
 @implementation MessageViewController
 
@@ -196,8 +195,6 @@
 	[activeRequest send];
 
 	[controller dismissModalViewControllerAnimated:YES];
-	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Composed message"];
 }
 
 

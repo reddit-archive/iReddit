@@ -12,8 +12,6 @@
 #import "Story.h"
 #import "Constants.h"
 #import "LoginController.h"
-#import "MMTrackingMgr.h"
-#import "Heartbeat.h"
 
 #define kAccelerometerFrequency			25 //Hz
 #define kFilteringFactor				0.15
@@ -100,10 +98,6 @@ iRedditAppDelegate *sharedAppDelegate;
 	[self reloadSound];
 	
 	[self performSelector:@selector(loadDataWithDelay) withObject:nil afterDelay:1.0];
-	
-	[[MMTrackingMgr sharedInstance] startDefaultTrackingWithoutLocation]; 
-	[Heartbeat postHitNotification];
-	[Heartbeat handleCrashReportIfPending];
 }
 
 - (void)loadDataWithDelay
@@ -195,7 +189,6 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	[randomController setStory:story];
 
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Shake for random story"];
 	//[[Beacon shared] startSubBeaconWithName:@"shakeForStory" timeSession:NO];
 }
 

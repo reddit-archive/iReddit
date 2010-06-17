@@ -9,7 +9,6 @@
 #import "LoginController.h"
 #import "Constants.h"
 #import "NSDictionary+JSON.h"
-#import "MMTrackingMgr.h"
 
 LoginController *SharedLoginController = nil;
 
@@ -71,8 +70,6 @@ LoginController *SharedLoginController = nil;
 						dataUsingEncoding:NSASCIIStringEncoding];
 
 	[request send];
-	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Login attempt"];
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,7 +100,6 @@ LoginController *SharedLoginController = nil;
 		self.modhash = (NSString *)[(NSDictionary *)[responseJSON objectForKey:@"data"] objectForKey:@"modhash"];
 		NSLog(@"modhash %@", modhash);
 		self.lastLoginTime = [NSDate date];
-		[[MMTrackingMgr sharedInstance] trackEvent:@"Login successful"];
 	}
 	else
 	{

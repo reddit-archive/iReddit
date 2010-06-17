@@ -10,7 +10,6 @@
 #import "Constants.h"
 #import "LoginController.h"
 #import "LoginViewController.h"
-#import "MMTrackingMgr.h"
 #import "SubredditDataSource.h"
 #import "SubredditViewController.h"
 #import "RedditWebView.h"
@@ -229,7 +228,6 @@
 - (void)loadStory
 {
 	[webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.URL]]];	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Load story"];
 }
 
 - (void)loadStoryComments
@@ -241,8 +239,6 @@
 	   ]
 	  ]
 	 ];
-
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Load comments"];	
 }
 
 - (void)setScore:(int)score
@@ -291,8 +287,6 @@
 	
 	[self setScore:story.score];
 	
-	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Vote up story"];
 	//[[Beacon shared] startSubBeaconWithName:@"votedUp" timeSession:NO];
 }
 
@@ -323,8 +317,6 @@
 	
 	[self setScore:story.score];
 	
-	
-	[[MMTrackingMgr sharedInstance] trackEvent:@"Vote down story"];
 	//[[Beacon shared] startSubBeaconWithName:@"votedDown" timeSession:NO];
 }
 
@@ -409,7 +401,6 @@
 			[self presentModalViewController:controller animated:YES];
 			[controller release];
 
-			[[MMTrackingMgr sharedInstance] trackEvent:@"E-mail story"];
 			//[[Beacon shared] startSubBeaconWithName:@"emailedStory" timeSession:NO];
 		}
 		else
@@ -426,7 +417,6 @@
 	{
 		//open link in safari
 		//[[Beacon shared] startSubBeaconWithName:@"openedInSafari" timeSession:NO];
-		[[MMTrackingMgr sharedInstance] trackEvent:@"Open in Safari"];
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 	}
 	else if (buttonIndex == 2)
@@ -436,7 +426,6 @@
 		else
 		{
 			[self hideCurrentStory:nil];
-			[[MMTrackingMgr sharedInstance] trackEvent:@"Hide story on reddit"];
 		//	[[Beacon shared] startSubBeaconWithName:@"savedOnReddit" timeSession:NO];
 		}
 	}
@@ -447,7 +436,6 @@
 		else
 		{
 			[self saveCurrentStory:nil];
-			[[MMTrackingMgr sharedInstance] trackEvent:@"Save story on reddit"];
 			//	[[Beacon shared] startSubBeaconWithName:@"savedOnReddit" timeSession:NO];
 		}
 	}
@@ -455,7 +443,6 @@
 	{
 		[self saveOnInstapaper:nil];
 		//[[Beacon shared] startSubBeaconWithName:@"instapaper" timeSession:NO];
-		[[MMTrackingMgr sharedInstance] trackEvent:@"Save story on Instapaper"];
 	}
 	else if(buttonIndex == 4)
 		[self actionSheetCancel:actionSheet];
@@ -565,11 +552,8 @@
 	{
 		case 0:
 			[webview goBack];
-			[[MMTrackingMgr sharedInstance] trackEvent:@"Browser back button"];
 			break;
 		case 1:
-			[[MMTrackingMgr sharedInstance] trackEvent:@"Browser reload button"];
-
 			if ([webview isLoading])
 			{
 				[webview stopLoading];
@@ -582,7 +566,6 @@
 			
 			break;
 		case 2:
-			[[MMTrackingMgr sharedInstance] trackEvent:@"Browser forward button"];
 			[webview goForward];
 			break;
 	}
