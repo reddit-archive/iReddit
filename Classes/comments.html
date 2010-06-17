@@ -1,0 +1,838 @@
+<html>
+
+<head>
+
+<title>Comments</title>
+
+<script type="text/javascript">
+
+LINK_REGEX = /(\[(.+?)\])?\(?([A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:;#\+%&\?\/.=]+)\)?/g;
+
+function $(el) { return document.getElementById(el); }
+
+function replaceHTMLCharacters(string)
+{
+	return string.replace(/<\/?[^>]+>/gi, '').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+}
+
+function replaceHTMLCharactersInElement(element)
+{
+	var childNodes = element.childNodes,
+		count = childNodes.length;
+		
+	for (var i=0; i<count; i++)
+		childNodes[i].innerText = replaceHTMLCharacters(childNodes[i].innerText);
+}
+
+function howLongAgoString(aTime)
+{
+	var aTimeInterval = Math.abs(((new Date().getTime())/1000) - aTime);
+		
+	if (aTimeInterval <= 1)
+		return "1 second";
+	
+	if (aTimeInterval < 60)
+		if (aTimeInterval >= 30)
+			return "half a minute";
+		else
+			return Math.floor(aTimeInterval) + " seconds";
+	
+	var time = Math.floor(aTimeInterval / 60);
+	
+	if (time < 60)
+		if (time === 1)
+			return "1 minute";
+		else
+			return time + " minutes";
+	
+	time = Math.floor(aTimeInterval / (60 * 60));
+	
+	if (time < 24)
+		if (time === 1)
+			return "1 hour";
+		else
+			return time + " hours";
+	
+	time = Math.floor(aTimeInterval / (60 * 60 * 24));
+		
+	if (time < 30)
+		if (time == 1)
+			return "1 day";
+		else 
+			return time + " days";
+	
+	time = Math.floor(aTimeInterval / (60.0 * 60.0 * 24.0 * 30.0));
+	
+	if (time < 12)
+		if (time == 1)
+			return "1 month";
+		else 
+			return time + " months";
+
+	time = Math.floor(aTimeInterval / (60.0 * 60.0 * 24.0 * 30.0 * 12.0));
+	
+	if (time == 1)
+		return "1 year";
+	
+	return time + " years";
+}
+
+function replaceLinksInElement(element)
+{
+    var string = element.innerText;
+    
+    element.innerHTML = "";
+    
+    var span = document.createElement("span"),
+        currentIndex = 0,
+        result;
+    
+    while(result = LINK_REGEX.exec(string))
+    {
+        var match = result[0],
+            matchIndex = string.indexOf(match);
+        
+        span.innerText = string.substring(currentIndex, matchIndex);
+        element.appendChild(span);
+        
+        var link = document.createElement("a");
+        
+        link.href = result[3];
+        
+        link.onclick = function(anEvent)
+        {
+            window.location.href = this.href;
+            anEvent.stopPropagation();
+        }
+        
+        if (result[2])
+            link.innerText = result[2];
+        else
+            link.innerText = result[3];
+            
+        element.appendChild(link);
+        
+        currentIndex = matchIndex+match.length;
+        
+        span = document.createElement("span");
+    }
+
+    span.innerText = string.substring(currentIndex);
+    element.appendChild(span);
+}
+</script>
+
+<style type="text/css">
+
+body
+{
+    background-color: rgb(250, 250, 250);
+    font-family: "Lucida Grande", Helvetica;
+    font-size: 14px;
+    
+    word-wrap: break-word;
+    padding:0;
+    margin:0;
+}
+
+#storyinfo {
+    background-color: rgb(235, 235, 255);
+    padding: 6px;
+}
+
+#storyid {display:none;}
+
+#storytitlewrapper {
+    padding-bottom: 6px;
+}
+
+#storytitle {
+    color: blue;
+}
+
+#storydomain {
+    color: gray;
+}
+
+#submittedby {
+    color: gray;
+    font-size: 11px;
+}
+
+#comments {
+    padding: 6px 6px 6px 0;
+    background-color: rgb(250, 250, 250);
+}
+
+.comment-header {
+    font-size: 11px;
+    padding-bottom: 3px;
+}
+
+.comment {
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+.comment-author {
+    color: rgb(50, 100, 155);
+    font-weight: bold;
+}
+
+.comment-author:after { content: " "; }
+
+.comment-body {
+    padding-bottom: 6px;
+    -webkit-touch-callout: none;
+}
+
+.comment-reply {
+    display: none;
+	
+	width: 90%;
+	
+	position: absolute;
+	left: 6px;
+	
+	padding: 10px;
+}
+
+.comment-reply-padding {
+	height: 90px;
+	display: none;
+}
+
+.coment-status {
+    display: none;
+}
+
+#REPLY {
+    padding: 6px;
+	display: none;
+}
+
+#reply-textarea {
+    width: 100%;
+    height: 80px;
+}
+
+#REPLY_status {
+    display: none;
+}
+
+#META {
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.quote {
+    border-left: 2px solid gray;
+}
+
+#selfpost {
+	margin: 0;
+	background-color: #F9F9FF;
+	padding: 0.1em 0.5em 0.1em 0.5em;
+}
+
+blockquote {
+	border-left: 2px solid rgb(50, 100, 155);
+	padding-left: 8px;
+	margin-left: 16px;
+}
+
+p {
+	margin: 0.5em;
+}
+
+</style>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+</head>
+
+<body>
+    
+    <!-- THIS IS THE STRUCTURE OF THE HEADER -->
+    <div id="storyinfo">
+        <div id="storyid" style="display:none;"></div>
+        <div id="storytitlewrapper"><span id="storytitle">Loading the current story.</span> (<span id="storydomain">domain</span>)</div>
+        <div id="submittedby">submitted <span id="storydate"></span> by <span id="storyauthor"></span></div>
+    </div>
+    
+	<div id="selfpost">
+	</div>
+	
+    <div id="REPLY">
+        <textarea id="reply-textarea"></textarea>
+        <div id="REPLY_status"></div>
+        <input id="REPLY_submit" type="button" value="comment" />
+    </div>
+    
+	<div id="META"> </div>
+    <div id="COMMENTS"></div>
+    
+    <!-- THIS IS THE STRUCTURE OF A COMMENT
+    <div class="comment" id="t1_someid">
+        <div class="comment-header">
+			<span class="comment-toggle-control" id="t1_someid_toggle">[-]</span>
+            <span class="comment-author" id="t1_someid_author">rboucher</span> 
+            <span class="comment-points" id="t1_someid_points">21 points</span> 
+            <span class="comment-date" id="t1_someid_date">2 hours ago</span>
+        </div>
+        
+        <div class="comment-body" id="t1_someid_comment">
+        </div>
+        
+        <div class="comment-reply" id="t1_someid_reply">
+            <textarea class="comment-reply-textarea" id="t1_someid_textarea">Type a response</textarea>
+            <input type="button" value="cancel" />
+            <input type="button" value="comment" />
+        </div>
+		
+        <div class="comment-children" id="t1_someid_children">
+            //more comments go here
+        </div>
+    </div>
+    -->
+    
+    <script type="text/javascript">
+    
+    if (window.location.search)
+    {
+        var searchParams = window.location.search.substring(1).split("&"),
+            arguments = {};
+            
+        for(var i=0; i<searchParams.length; i++)
+        {
+            var index = searchParams[i].indexOf('=');
+            
+            if(index == -1)
+                arguments[searchParams[i]] = "";
+            else
+                arguments[searchParams[i].substring(0, index)] = decodeURIComponent(searchParams[i].substring(index+1));
+        }
+        
+        window.STORY_ID = arguments["id"];
+    }
+    else
+    {
+        var arguments = {
+            title:      "__TITLE__",
+            domain:     "__DOMAIN__",
+            id:         "__ID__",
+            created:    "__CREATED__",
+            author:     "__AUTHOR__" 
+        };
+    }
+
+	window.title = decodeURIComponent(arguments["title"]);
+
+	if (arguments["title"] && arguments["title"] != "(null)")
+		$("storytitle").innerText   = decodeURIComponent(arguments["title"]);
+
+    $("storydomain").innerText  = arguments["domain"];
+    $("storyid").innerText      = arguments["id"];  
+    $("storydate").innerText    = howLongAgoString(parseInt(arguments["created"], 10))+" ago";
+    $("storyauthor").innerText  = arguments["author"];
+
+	JUMP_TO  = decodeURIComponent(arguments["jump"]);
+	BASE_URL = decodeURIComponent(arguments["base"]);
+
+    var xhr = new XMLHttpRequest();
+    
+    xhr.open("GET", BASE_URL+"/comments/"+STORY_ID+"/.json", true);
+	
+	xhr.setRequestHeader("x-reddit-version", "2.1");
+    
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState == 4)
+        {
+			$("REPLY").style.display = "block";
+            $("COMMENTS").innerHTML = "";
+            $("META").innerHTML = "Tap a comment to vote or reply.";
+            
+            //fill out the header
+            DATASET = eval("("+xhr.responseText+")");
+            var story  = DATASET[0].data.children[0].data;
+                
+            $("storyid").innerText      = story.id;    
+            $("storytitle").innerText   = replaceHTMLCharacters(story.title);
+            $("storydomain").innerText  = story.domain;
+            $("storydate").innerText    = howLongAgoString(story.created_utc)+" ago";
+            $("storyauthor").innerText  = story.author; 
+  
+			if (story.selftext)
+			{
+				$("selfpost").innerHTML = replaceHTMLCharacters(story.selftext_html);
+			}
+			
+            $("REPLY_submit").onclick = function(anEvent)
+            {                    
+                if (!window.MODHASH)
+                    return window.location.href="http://login";
+                    
+                var request = new XMLHttpRequest();
+                
+                request.open("POST", BASE_URL+"/api/comment", true);
+                request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				request.setRequestHeader("x-reddit-version", "1.1");
+
+                request.onreadystatechange = function()
+                {
+                    if (request.readyState == 4)
+                    {
+                        var responseData;
+                        
+                        try {
+                            responseData = eval("("+request.responseText+")").json;
+                        }
+                        catch (e){}
+                        
+                        if (responseData && responseData.data && responseData.data.things && 
+                            responseData.data.things[0] && responseData.data.things[0].data)
+                        {
+                            var resultingPost = responseData.data.things[0].data;
+                            
+                            var theComment = createCommentElement(
+                            {
+                                data: {
+                                    likes: true,
+                                    name: resultingPost.id,
+                                    id: resultingPost.id.substring(3),
+                                    body: $("reply-textarea").value,
+                                    contentHTML: resultingPost.contentHTML,
+                                    created_utc: (new Date()).getTime()/1000,
+                                    author: "me",
+                                    ups: 1,
+                                    downs: 0
+                                }
+                            }, 0);
+                        
+                            $("COMMENTS").insertBefore(theComment, $("COMMENTS").childNodes[0]);
+                            
+                            $("reply-textarea").value = "";
+                            $("REPLY_status").style.display = "none";
+                        }
+                        else
+                        {
+                            $("REPLY_status").innerText = "Post failed. Try again in a few minutes.";
+                        }                        
+
+                        $("REPLY_submit").disabled = false;
+                    }
+                };
+
+                request.send("isroot=1&api_type=json&r="+encodeURIComponent(DATASET[0].data.children[0].data.subreddit)+"&uh="+window.MODHASH+
+                             "&thing_id="+story.name+"&text="+encodeURIComponent($("reply-textarea").value)+"&_=");
+                                
+                $("REPLY_submit").disabled = true;
+                $("REPLY_status").innerText = "Submitting...";
+                $("REPLY_status").style.display = "block";
+                
+                anEvent.stopPropagation();
+            }
+          
+            //a function to layout a comment element 
+            function createCommentElement(comment, recursionLevel)
+            {
+                var element = document.createElement("div"),
+                    data = comment.data;
+            
+                if (!data.body)
+                    return element;
+                    
+                //first keep track of the global scoring/voting data
+                if (data.likes && data.likes === true)
+                    VOTES[data.name] = 1; 
+                else if (data.likes && data.likes === false)
+                    VOTES[data.name] = -1;
+                else
+                    VOTES[data.name] = 0;
+                    
+                SCORES[data.name] = data.ups - data.downs - VOTES[data.name];
+                    
+                element.className = "comment";
+                element.id = data.id;
+                
+                var header = document.createElement("div");
+                header.className="comment-header";
+                
+                element.appendChild(header);
+                
+				var toggleControl = document.createElement("span");
+				
+				toggleControl.innerText = "[-] ";
+				toggleControl.className = "comment-toggle-control";
+				toggleControl.id = data.id+"_comment_control";
+				
+				header.appendChild(toggleControl);
+				
+                var commentAuthor = document.createElement("span");
+                
+                commentAuthor.className = "comment-author";
+                commentAuthor.id = data.id+"_author";
+                commentAuthor.innerText = data.author;
+            
+                header.appendChild(commentAuthor);
+                
+                var commentPoints = document.createElement("span");
+                
+                commentPoints.className = "comment-points";
+                commentPoints.id = data.id+"_points";
+                commentPoints.innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
+                
+                if (VOTES[data.name] == 1)
+                    commentPoints.style.color = "#ff4500";
+                else if (VOTES[data.name] == -1)
+                    commentPoints.style.color = "blue";
+                else
+                    commentPoints.style.color = "black";
+                    
+                header.appendChild(commentPoints);
+                
+                var commentPoints = document.createElement("span");
+                
+                commentPoints.className = "comment-date";
+                commentPoints.id = data.id+"_date";
+                commentPoints.innerText = howLongAgoString(data.created_utc)+" ago";
+                            
+                header.appendChild(commentPoints);
+        
+		
+				header.active = true;
+				header.onclick = function(anEvent)
+				{
+					if (this.active)
+					{
+						$(data.id+'_children').style.display = "none";
+						$(data.id+'_comment').style.display = "none";
+						toggleControl.innerText = "[+] ";
+					}
+					else
+					{
+						$(data.id+'_children').style.display = "block";
+						$(data.id+'_comment').style.display = "block";
+						toggleControl.innerText = "[-] ";
+					}
+
+					this.active = !this.active;
+				}
+				
+		
+                var commentBody = document.createElement("div");
+                
+                commentBody.className = "comment-body";
+                commentBody.id = data.id+"_comment";
+                commentBody.innerHTML = replaceHTMLCharacters(data.body_html || data.contentHTML || data.body || data.textContent || "");
+                
+                //replaceLinksInElement(commentBody);
+				//replaceHTMLCharactersInElement(commentBody);
+                
+                if (data.ups - data.downs < 0)
+                    commentBody.style.color = "gray";
+
+                element.appendChild(commentBody);
+                
+                var commentReply = document.createElement("div");
+                
+                commentReply.className = "comment-reply";
+                commentReply.id = data.id+"_reply";
+                
+                element.appendChild(commentReply);
+				
+				var commentReplyPadding = document.createElement("div");
+				
+				commentReplyPadding.className = "comment-reply-padding";
+				commentReplyPadding.id = data.id+"_reply_padding";
+				
+                element.appendChild(commentReplyPadding);
+				
+                var commentStatus = document.createElement("div");
+                
+                commentStatus.className = "comment-status";
+                commentStatus.id = data.id+"_status";
+                
+                commentReply.appendChild(commentStatus);
+                
+                var commentTextArea = document.createElement("textarea");
+                
+                commentTextArea.className = "comment-reply-textarea";
+                commentTextArea.id = data.id+"_textarea";
+                commentTextArea.style.width = "100%";
+                commentTextArea.style.height = "45px";
+                
+                commentReply.appendChild(commentTextArea);
+                
+                var commentControls = document.createElement("div");
+                commentReply.appendChild(commentControls);
+				
+				commentControls.style.cssFloat = "right";
+				//commentControls.style.width = "120px";
+				
+                var commentCancelButton = document.createElement("input");
+                
+                commentCancelButton.type = "button";
+                commentCancelButton.value = "cancel";
+                //commentCancelButton.style.clear = "left";
+                
+                commentCancelButton.onclick = function(anEvent)
+                {
+                    commentTextArea.value = "";
+                    
+                    if (window.SELECTED)
+                        window.SELECTED.unselect();
+                        
+                    anEvent.stopPropagation();
+                }
+                
+                commentControls.appendChild(commentCancelButton);
+
+                var commentSubmitButton = document.createElement("input");
+                
+                commentSubmitButton.type = "button";
+                commentSubmitButton.value = "reply";
+           
+                commentSubmitButton.onclick = function(anEvent)
+                {                    
+                    if (!window.MODHASH)
+                        return window.location.href="http://login";
+                        
+                    var request = new XMLHttpRequest();
+                    
+                    request.open("POST", BASE_URL+"/api/comment", true);
+                    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					request.setRequestHeader("x-reddit-version", "1.1");
+    
+                    request.onreadystatechange = function()
+                    {
+                        if (request.readyState == 4)
+                        {
+                            var responseData;
+                            
+                            try {
+                                responseData = eval("("+request.responseText+")").json;
+                            }
+                            catch (e){}
+
+                            if (responseData && responseData.data && responseData.data.things && 
+                                responseData.data.things[0] && responseData.data.things[0].data)
+                            {
+                                var resultingPost = responseData.data.things[0].data;
+                                
+                                var theComment = createCommentElement(
+                                {
+                                    data: {
+                                        likes: true,
+                                        name: resultingPost.id,
+                                        id: resultingPost.id.substring(3),
+                                        body: commentTextArea.value,
+                                        contentHTML: resultingPost.contentHTML,
+                                        created_utc: (new Date()).getTime()/1000,
+                                        author: "me",
+                                        ups: 1,
+                                        downs: 0
+                                    }
+                                }, 0);
+
+                                $(element.id+"_children").insertBefore(theComment, $(element.id+"_children").firstChild);
+                                
+                                commentTextArea.value = "";
+                                commentStatus.style.display = "none";
+                                element.unselect();
+                            }
+                            else
+                            {
+                                commentStatus.innerText = "Post failed. Try again in a few minutes.";
+                            }                        
+
+                            commentSubmitButton.disabled = false;
+                        }
+                    };
+    
+                    request.send("api_type=json&r="+encodeURIComponent(DATASET[0].data.children[0].data.subreddit)+"&uh="+window.MODHASH+
+                                 "&parent="+data.name+"&comment="+encodeURIComponent(commentTextArea.value)+"&_=");
+                                    
+                    commentSubmitButton.disabled = true;
+                    commentStatus.innerText = "Submitting...";
+                    commentStatus.style.display = "block";
+                    
+                    anEvent.stopPropagation();
+                }
+     
+                commentControls.appendChild(commentSubmitButton);
+
+                var commentVotingControls = document.createElement("div");
+                commentReply.appendChild(commentVotingControls);
+				
+				commentVotingControls.style.cssFloat = "left";
+				
+				//commentVotingControls = commentControls;
+
+                var commentVoteDownButton = document.createElement("input");
+                
+                commentVoteDownButton.type = "button";
+                commentVoteDownButton.value = "vote down";
+                
+                
+                commentVoteDownButton.onclick = function(anEvent)
+                {
+                    if (!window.MODHASH)
+                        return window.location.href="http://login";
+                    
+                    if (VOTES[data.name] == -1)
+                        VOTES[data.name] = 0;
+                    else
+                        VOTES[data.name] = -1;
+                    
+                    if (VOTES[data.name] == -1)
+                        $(data.id+"_points").style.color = "blue";
+                    else
+                        $(data.id+"_points").style.color = "black";
+
+                    $(data.id+"_points").innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
+                    
+                    var request = new XMLHttpRequest();
+                    
+                    request.open("POST", BASE_URL+"/api/vote", true);
+                    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					request.setRequestHeader("x-reddit-version", "1.1");
+
+                    request.send("r="+encodeURIComponent(DATASET[0].data.children[0].data.subreddit)+"&uh="+window.MODHASH+
+                                 "&id="+data.name+"&dir="+VOTES[data.name]+"&_=");
+                    
+                    anEvent.stopPropagation();
+                }
+
+                commentVotingControls.insertBefore(commentVoteDownButton, commentVotingControls.firstChild);
+
+                                var commentVoteUpButton = document.createElement("input");
+                
+                commentVoteUpButton.type = "button";
+                commentVoteUpButton.value = "vote up";
+                
+                commentVoteUpButton.onclick = function(anEvent)
+                {
+                    if (!window.MODHASH)
+                        return window.location.href="http://login";
+                    
+                    if (VOTES[data.name] == 1)
+                        VOTES[data.name] = 0;
+                    else
+                        VOTES[data.name] = 1;
+                    
+                    if (VOTES[data.name] == 1)
+                        $(data.id+"_points").style.color = "#ff4500";
+                    else
+                        $(data.id+"_points").style.color = "black";
+
+                    $(data.id+"_points").innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
+
+                    var request = new XMLHttpRequest();
+                    
+                    request.open("POST", BASE_URL+"/api/vote", true);
+                    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					request.setRequestHeader("x-reddit-version", "1.1");
+
+                    request.send("r="+encodeURIComponent(DATASET[0].data.children[0].data.subreddit)+"&uh="+window.MODHASH+
+                                 "&id="+data.name+"&dir="+VOTES[data.name]+"&_=");
+                    
+                    anEvent.stopPropagation();
+                }
+                
+                commentVotingControls.insertBefore(commentVoteUpButton, commentVotingControls.firstChild);
+
+                
+                var commentChildren = document.createElement("div");
+                
+                commentChildren.className = "comment-children";
+                commentChildren.id = data.id+"_children";
+                
+                if (data.replies)
+                {
+                    var replies = data.replies.data.children;
+                    
+                    for (var i=0; i<replies.length; i++)
+                        commentChildren.appendChild(createCommentElement(replies[i], recursionLevel+1));
+                        
+                }
+        
+                element.appendChild(commentChildren);
+                
+                commentBody.onclick = function(anEvent)
+                {
+					if (anEvent.target.nodeName !== "A")
+					{
+						element.select();
+						anEvent.stopPropagation();
+
+						return false;
+					}
+                };
+                
+                element.select = function()
+                {
+					if (window.SELECTED && window.SELECTED == this)
+						return;
+						
+                    if (window.SELECTED)
+                        window.SELECTED.unselect();
+                                
+                    window.SELECTED = this;
+        
+                    $(this.id+"_reply").style.display = "block";
+					$(this.id+"_reply_padding").style.display = "block";
+
+                    $(this.id+"_comment").style.backgroundColor = "rgba(255, 255, 155, 0.5)";					
+					
+					//scrollBy(0, -100);
+                };
+                
+                element.unselect = function()
+                {
+                    $(this.id+"_comment").style.backgroundColor = "transparent";
+
+                    $(this.id+"_reply").style.display = "none";
+					$(this.id+"_reply_padding").style.display = "none";
+
+                   window.SELECTED = null;
+					
+					//scrollBy(0, 100);
+                };
+                
+                TOTAL_COMMENTS++;
+                return element;
+            }
+        
+            //write out each comment
+           
+            if (DATASET.length < 2 || !DATASET[1].data || !DATASET[1].data.children)
+                return;
+                
+            var comments = DATASET[1].data.children,
+                commentElement = $("COMMENTS");
+            
+            TOTAL_COMMENTS = 0;
+            SCORES = {};
+            VOTES = {};
+            
+            for (var i=0; i<comments.length; i++)
+                commentElement.appendChild(createCommentElement(comments[i], 0));
+						
+			if (JUMP_TO && $(JUMP_TO)) {
+				window.setTimeout(function(){
+					window.scrollTo(0, $(JUMP_TO).offsetTop);
+					$(JUMP_TO).select();
+				}, 500);
+			}
+         }
+    }
+    
+    xhr.send("");
+
+   </script>
+
+</body>
+
+</html>

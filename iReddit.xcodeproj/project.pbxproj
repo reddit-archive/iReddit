@@ -1,0 +1,1077 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		ADB29E7A0FEAD09E00405C52 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		ADB29E7B0FEAD09E00405C52 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
+		ADB29E7E0FEAD09E00405C52 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53940FEAC4010067CEC1 /* back.png */; };
+		ADB29E7F0FEAD09E00405C52 /* commentBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53950FEAC4010067CEC1 /* commentBubble.png */; };
+		ADB29E800FEAD09E00405C52 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53960FEAC4010067CEC1 /* comments.png */; };
+		ADB29E810FEAD09E00405C52 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53970FEAC4010067CEC1 /* error.png */; };
+		ADB29E820FEAD09E00405C52 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53980FEAC4010067CEC1 /* forward.png */; };
+		ADB29E830FEAD09E00405C52 /* Loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53990FEAC4010067CEC1 /* Loading0.png */; };
+		ADB29E840FEAD09E00405C52 /* Loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539A0FEAC4010067CEC1 /* Loading1.png */; };
+		ADB29E850FEAD09E00405C52 /* Loading2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539B0FEAC4010067CEC1 /* Loading2.png */; };
+		ADB29E860FEAD09E00405C52 /* Loading3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539C0FEAC4010067CEC1 /* Loading3.png */; };
+		ADB29E870FEAD09E00405C52 /* Loading4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539D0FEAC4010067CEC1 /* Loading4.png */; };
+		ADB29E880FEAD09E00405C52 /* mainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539E0FEAC4010067CEC1 /* mainTitle.png */; };
+		ADB29E890FEAD09E00405C52 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539F0FEAC4010067CEC1 /* noimage.png */; };
+		ADB29E8A0FEAD09E00405C52 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A00FEAC4010067CEC1 /* refresh.png */; };
+		ADB29E8F0FEAD09E00405C52 /* lightsaber.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A60FEAC4010067CEC1 /* lightsaber.pcm */; };
+		ADB29E950FEAD09E00405C52 /* voteDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AC0FEAC4010067CEC1 /* voteDown.png */; };
+		ADB29E960FEAD09E00405C52 /* voteUp.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AD0FEAC4010067CEC1 /* voteUp.png */; };
+		ADB29E970FEAD09E00405C52 /* RedditIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */; };
+		ADB29E980FEAD09E00405C52 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */; };
+		ADB29E990FEAD09E00405C52 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB556B0FEACC5C0067CEC1 /* Default.png */; };
+		ADB29E9B0FEAD09E00405C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		ADB29E9C0FEAD09E00405C52 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53380FEAC3EA0067CEC1 /* AdCell.m */; };
+		ADB29E9D0FEAD09E00405C52 /* AdField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB533A0FEAC3EA0067CEC1 /* AdField.m */; };
+		ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
+		ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
+		ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */; };
+		ADB29EA10FEAD09E00405C52 /* MessageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53480FEAC3EA0067CEC1 /* MessageDataSource.m */; };
+		ADB29EA20FEAD09E00405C52 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534A0FEAC3EA0067CEC1 /* Story.m */; };
+		ADB29EA30FEAD09E00405C52 /* SubredditDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */; };
+		ADB29EA40FEAD09E00405C52 /* NSString+HTMLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53580FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m */; };
+		ADB29EA50FEAD09E00405C52 /* iRedditAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */; };
+		ADB29EA60FEAD09E00405C52 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535D0FEAC3EA0067CEC1 /* LoginViewController.m */; };
+		ADB29EA70FEAD09E00405C52 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535F0FEAC3EA0067CEC1 /* MessageViewController.m */; };
+		ADB29EA80FEAD09E00405C52 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53610FEAC3EA0067CEC1 /* RootViewController.m */; };
+		ADB29EA90FEAD09E00405C52 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53630FEAC3EA0067CEC1 /* SettingsViewController.m */; };
+		ADB29EAA0FEAD09E00405C52 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */; };
+		ADB29EAB0FEAD09E00405C52 /* SubredditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */; };
+		ADB29EAC0FEAD09E00405C52 /* AlienProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536A0FEAC3EA0067CEC1 /* AlienProgressView.m */; };
+		ADB29EAD0FEAD09E00405C52 /* CommentAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536C0FEAC3EA0067CEC1 /* CommentAccessoryView.m */; };
+		ADB29EAF0FEAD09E00405C52 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53700FEAC3EA0067CEC1 /* MessageCell.m */; };
+		ADB29EB00FEAD09E00405C52 /* RedditWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53720FEAC3EA0067CEC1 /* RedditWebView.m */; };
+		ADB29EB10FEAD09E00405C52 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53740FEAC3EA0067CEC1 /* StoryCell.m */; };
+		ADB29EB20FEAD09E00405C52 /* Three20Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */; };
+		ADB29EB30FEAD09E00405C52 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */; };
+		ADB29EB50FEAD09E00405C52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		ADB29EB60FEAD09E00405C52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		ADB29EB70FEAD09E00405C52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		ADB29EBA0FEAD09E00405C52 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB53F30FEAC5920067CEC1 /* libThree20.a */; };
+		ADB29EBB0FEAD09E00405C52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */; };
+		ADB29EBC0FEAD09E00405C52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */; };
+		ADB29EBD0FEAD09E00405C52 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54160FEAC61B0067CEC1 /* libsqlite3.dylib */; };
+		ADB29EBE0FEAD09E00405C52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54180FEAC6270067CEC1 /* CoreLocation.framework */; };
+		ADB29EBF0FEAD09E00405C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB541C0FEAC6370067CEC1 /* SystemConfiguration.framework */; };
+		ADB29EC00FEAD09E00405C52 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54200FEAC63E0067CEC1 /* libz.dylib */; };
+		ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54940FEAC6700067CEC1 /* libxml2.dylib */; };
+		ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */; };
+		ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB29F880FEB046200405C52 /* Entitlements.plist */; };
+		ADB2A06F0FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */; };
+		ADB2A0700FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */; };
+		ADB2A0710FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */; };
+		ADB2A0720FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */; };
+		ADB2A0B10FEC203500405C52 /* Heartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB2A0B00FEC203500405C52 /* Heartbeat.m */; };
+		ADB2A0B20FEC203500405C52 /* Heartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB2A0B00FEC203500405C52 /* Heartbeat.m */; };
+		ADB2A0B40FEC205600405C52 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0B30FEC205600405C52 /* CrashReporter.framework */; };
+		ADB2A0B50FEC205600405C52 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0B30FEC205600405C52 /* CrashReporter.framework */; };
+		ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
+		ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
+		ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
+		ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
+		ADD82FD610094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */; };
+		ADD82FD710094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */; };
+		ADD82FD810094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */; };
+		ADD82FD910094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */; };
+		ADD830641009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
+		ADD830651009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
+		ADEACD8E0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
+		ADEACD8F0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
+		ADF243ED1014171400C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
+		ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
+		ADFB53780FEAC3EA0067CEC1 /* AdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53380FEAC3EA0067CEC1 /* AdCell.m */; };
+		ADFB53790FEAC3EA0067CEC1 /* AdField.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB533A0FEAC3EA0067CEC1 /* AdField.m */; };
+		ADFB537C0FEAC3EA0067CEC1 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
+		ADFB537D0FEAC3EA0067CEC1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
+		ADFB537E0FEAC3EA0067CEC1 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
+		ADFB537F0FEAC3EA0067CEC1 /* RedditMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */; };
+		ADFB53800FEAC3EA0067CEC1 /* MessageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53480FEAC3EA0067CEC1 /* MessageDataSource.m */; };
+		ADFB53810FEAC3EA0067CEC1 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534A0FEAC3EA0067CEC1 /* Story.m */; };
+		ADFB53820FEAC3EA0067CEC1 /* SubredditDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */; };
+		ADFB53830FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53580FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m */; };
+		ADFB53840FEAC3EA0067CEC1 /* iRedditAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */; };
+		ADFB53850FEAC3EA0067CEC1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535D0FEAC3EA0067CEC1 /* LoginViewController.m */; };
+		ADFB53860FEAC3EA0067CEC1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535F0FEAC3EA0067CEC1 /* MessageViewController.m */; };
+		ADFB53870FEAC3EA0067CEC1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53610FEAC3EA0067CEC1 /* RootViewController.m */; };
+		ADFB53880FEAC3EA0067CEC1 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53630FEAC3EA0067CEC1 /* SettingsViewController.m */; };
+		ADFB53890FEAC3EA0067CEC1 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */; };
+		ADFB538A0FEAC3EA0067CEC1 /* SubredditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */; };
+		ADFB538B0FEAC3EA0067CEC1 /* AlienProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536A0FEAC3EA0067CEC1 /* AlienProgressView.m */; };
+		ADFB538C0FEAC3EA0067CEC1 /* CommentAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536C0FEAC3EA0067CEC1 /* CommentAccessoryView.m */; };
+		ADFB538E0FEAC3EA0067CEC1 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53700FEAC3EA0067CEC1 /* MessageCell.m */; };
+		ADFB538F0FEAC3EA0067CEC1 /* RedditWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53720FEAC3EA0067CEC1 /* RedditWebView.m */; };
+		ADFB53900FEAC3EA0067CEC1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53740FEAC3EA0067CEC1 /* StoryCell.m */; };
+		ADFB53AE0FEAC4010067CEC1 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53940FEAC4010067CEC1 /* back.png */; };
+		ADFB53AF0FEAC4010067CEC1 /* commentBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53950FEAC4010067CEC1 /* commentBubble.png */; };
+		ADFB53B00FEAC4010067CEC1 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53960FEAC4010067CEC1 /* comments.png */; };
+		ADFB53B10FEAC4010067CEC1 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53970FEAC4010067CEC1 /* error.png */; };
+		ADFB53B20FEAC4010067CEC1 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53980FEAC4010067CEC1 /* forward.png */; };
+		ADFB53B30FEAC4010067CEC1 /* Loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53990FEAC4010067CEC1 /* Loading0.png */; };
+		ADFB53B40FEAC4010067CEC1 /* Loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539A0FEAC4010067CEC1 /* Loading1.png */; };
+		ADFB53B50FEAC4010067CEC1 /* Loading2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539B0FEAC4010067CEC1 /* Loading2.png */; };
+		ADFB53B60FEAC4010067CEC1 /* Loading3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539C0FEAC4010067CEC1 /* Loading3.png */; };
+		ADFB53B70FEAC4010067CEC1 /* Loading4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539D0FEAC4010067CEC1 /* Loading4.png */; };
+		ADFB53B80FEAC4010067CEC1 /* mainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539E0FEAC4010067CEC1 /* mainTitle.png */; };
+		ADFB53B90FEAC4010067CEC1 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539F0FEAC4010067CEC1 /* noimage.png */; };
+		ADFB53BA0FEAC4010067CEC1 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A00FEAC4010067CEC1 /* refresh.png */; };
+		ADFB53BB0FEAC4010067CEC1 /* alien-hunter.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A20FEAC4010067CEC1 /* alien-hunter.pcm */; };
+		ADFB53BC0FEAC4010067CEC1 /* alley-brawler.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A30FEAC4010067CEC1 /* alley-brawler.pcm */; };
+		ADFB53BD0FEAC4010067CEC1 /* beam-me.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A40FEAC4010067CEC1 /* beam-me.pcm */; };
+		ADFB53BE0FEAC4010067CEC1 /* en-garde.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A50FEAC4010067CEC1 /* en-garde.pcm */; };
+		ADFB53BF0FEAC4010067CEC1 /* lightsaber.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A60FEAC4010067CEC1 /* lightsaber.pcm */; };
+		ADFB53C00FEAC4010067CEC1 /* pipe.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A70FEAC4010067CEC1 /* pipe.pcm */; };
+		ADFB53C10FEAC4010067CEC1 /* pure-evil.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A80FEAC4010067CEC1 /* pure-evil.pcm */; };
+		ADFB53C20FEAC4010067CEC1 /* rollout.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A90FEAC4010067CEC1 /* rollout.pcm */; };
+		ADFB53C30FEAC4010067CEC1 /* scream.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AA0FEAC4010067CEC1 /* scream.pcm */; };
+		ADFB53C40FEAC4010067CEC1 /* thedoor.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AB0FEAC4010067CEC1 /* thedoor.pcm */; };
+		ADFB53C50FEAC4010067CEC1 /* voteDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AC0FEAC4010067CEC1 /* voteDown.png */; };
+		ADFB53C60FEAC4010067CEC1 /* voteUp.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AD0FEAC4010067CEC1 /* voteUp.png */; };
+		ADFB53C80FEAC4C30067CEC1 /* RedditIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */; };
+		ADFB53F40FEAC5A50067CEC1 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB53F30FEAC5920067CEC1 /* libThree20.a */; };
+		ADFB53FA0FEAC5E70067CEC1 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */; };
+		ADFB540F0FEAC6010067CEC1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */; };
+		ADFB54130FEAC60E0067CEC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */; };
+		ADFB54170FEAC61B0067CEC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54160FEAC61B0067CEC1 /* libsqlite3.dylib */; };
+		ADFB54190FEAC6270067CEC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54180FEAC6270067CEC1 /* CoreLocation.framework */; };
+		ADFB541D0FEAC6370067CEC1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB541C0FEAC6370067CEC1 /* SystemConfiguration.framework */; };
+		ADFB54210FEAC63E0067CEC1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54200FEAC63E0067CEC1 /* libz.dylib */; };
+		ADFB54950FEAC6700067CEC1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54940FEAC6700067CEC1 /* libxml2.dylib */; };
+		ADFB549B0FEAC6FB0067CEC1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */; };
+		ADFB54A80FEAC8A60067CEC1 /* Three20Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */; };
+		ADFB556C0FEACC5C0067CEC1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB556B0FEACC5C0067CEC1 /* Default.png */; };
+		ADFB556E0FEACC7A0067CEC1 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADB29E780FEAD09E00405C52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		ADFB53F20FEAC5920067CEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		ADFB53F60FEAC5D30067CEC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* iReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* iReddit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iReddit_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../../MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* iReddit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iReddit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		ADB29EC80FEAD09E00405C52 /* iReddit Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iReddit Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Info Free.plist"; sourceTree = "<group>"; };
+		ADB29F880FEB046200405C52 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMTrackingSimulator.a; sourceTree = "<group>"; };
+		ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMTrackingDevice.a; sourceTree = "<group>"; };
+		ADB2A06E0FEC1AF100405C52 /* MMTrackingMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTrackingMgr.h; sourceTree = "<group>"; };
+		ADB2A0AE0FEC203500405C52 /* HeartbeatSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartbeatSettings.h; sourceTree = "<group>"; };
+		ADB2A0AF0FEC203500405C52 /* Heartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heartbeat.h; sourceTree = "<group>"; };
+		ADB2A0B00FEC203500405C52 /* Heartbeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heartbeat.m; sourceTree = "<group>"; };
+		ADB2A0B30FEC205600405C52 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
+		ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ADBC92030FFDA1DE0033E60A /* AddRedditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRedditViewController.h; sourceTree = "<group>"; };
+		ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRedditViewController.m; sourceTree = "<group>"; };
+		ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobDevice3_0.a; sourceTree = "<group>"; };
+		ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdMobSimulator3_0.a; sourceTree = "<group>"; };
+		ADD82FDA10094FFE00138F44 /* AdMobView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobView.h; sourceTree = "<group>"; };
+		ADD82FDB10094FFE00138F44 /* AdMobDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobDelegateProtocol.h; sourceTree = "<group>"; };
+		ADD830631009632D00138F44 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedditPremiumIcon.png; sourceTree = "<group>"; };
+		ADF243EC1014171400C392BF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		ADFB53370FEAC3EA0067CEC1 /* AdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdCell.h; sourceTree = "<group>"; };
+		ADFB53380FEAC3EA0067CEC1 /* AdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdCell.m; sourceTree = "<group>"; };
+		ADFB53390FEAC3EA0067CEC1 /* AdField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdField.h; sourceTree = "<group>"; };
+		ADFB533A0FEAC3EA0067CEC1 /* AdField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdField.m; sourceTree = "<group>"; };
+		ADFB533F0FEAC3EA0067CEC1 /* comments.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comments.html; sourceTree = "<group>"; };
+		ADFB53400FEAC3EA0067CEC1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		ADFB53410FEAC3EA0067CEC1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		ADFB53430FEAC3EA0067CEC1 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		ADFB53440FEAC3EA0067CEC1 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		ADFB53450FEAC3EA0067CEC1 /* RedditMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditMessage.h; sourceTree = "<group>"; };
+		ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditMessage.m; sourceTree = "<group>"; };
+		ADFB53470FEAC3EA0067CEC1 /* MessageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDataSource.h; sourceTree = "<group>"; };
+		ADFB53480FEAC3EA0067CEC1 /* MessageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDataSource.m; sourceTree = "<group>"; };
+		ADFB53490FEAC3EA0067CEC1 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		ADFB534A0FEAC3EA0067CEC1 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		ADFB534B0FEAC3EA0067CEC1 /* SubredditDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditDataSource.h; sourceTree = "<group>"; };
+		ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditDataSource.m; sourceTree = "<group>"; };
+		ADFB534E0FEAC3EA0067CEC1 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		ADFB534F0FEAC3EA0067CEC1 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		ADFB53500FEAC3EA0067CEC1 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		ADFB53510FEAC3EA0067CEC1 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		ADFB53520FEAC3EA0067CEC1 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		ADFB53530FEAC3EA0067CEC1 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
+		ADFB53540FEAC3EA0067CEC1 /* NSDictionary+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JSON.h"; sourceTree = "<group>"; };
+		ADFB53550FEAC3EA0067CEC1 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		ADFB53560FEAC3EA0067CEC1 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
+		ADFB53570FEAC3EA0067CEC1 /* NSString+HTMLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLEncoding.h"; sourceTree = "<group>"; };
+		ADFB53580FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLEncoding.m"; sourceTree = "<group>"; };
+		ADFB53590FEAC3EA0067CEC1 /* iRedditAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRedditAppDelegate.h; sourceTree = "<group>"; };
+		ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRedditAppDelegate.m; sourceTree = "<group>"; };
+		ADFB535C0FEAC3EA0067CEC1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		ADFB535D0FEAC3EA0067CEC1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ADFB535E0FEAC3EA0067CEC1 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		ADFB535F0FEAC3EA0067CEC1 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		ADFB53600FEAC3EA0067CEC1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		ADFB53610FEAC3EA0067CEC1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		ADFB53620FEAC3EA0067CEC1 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		ADFB53630FEAC3EA0067CEC1 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		ADFB53640FEAC3EA0067CEC1 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		ADFB53660FEAC3EA0067CEC1 /* SubredditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditViewController.h; sourceTree = "<group>"; };
+		ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditViewController.m; sourceTree = "<group>"; };
+		ADFB53690FEAC3EA0067CEC1 /* AlienProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlienProgressView.h; sourceTree = "<group>"; };
+		ADFB536A0FEAC3EA0067CEC1 /* AlienProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlienProgressView.m; sourceTree = "<group>"; };
+		ADFB536B0FEAC3EA0067CEC1 /* CommentAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentAccessoryView.h; sourceTree = "<group>"; };
+		ADFB536C0FEAC3EA0067CEC1 /* CommentAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentAccessoryView.m; sourceTree = "<group>"; };
+		ADFB536F0FEAC3EA0067CEC1 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		ADFB53700FEAC3EA0067CEC1 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		ADFB53710FEAC3EA0067CEC1 /* RedditWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditWebView.h; sourceTree = "<group>"; };
+		ADFB53720FEAC3EA0067CEC1 /* RedditWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditWebView.m; sourceTree = "<group>"; };
+		ADFB53730FEAC3EA0067CEC1 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		ADFB53740FEAC3EA0067CEC1 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
+		ADFB53940FEAC4010067CEC1 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		ADFB53950FEAC4010067CEC1 /* commentBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentBubble.png; sourceTree = "<group>"; };
+		ADFB53960FEAC4010067CEC1 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
+		ADFB53970FEAC4010067CEC1 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		ADFB53980FEAC4010067CEC1 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		ADFB53990FEAC4010067CEC1 /* Loading0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading0.png; sourceTree = "<group>"; };
+		ADFB539A0FEAC4010067CEC1 /* Loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading1.png; sourceTree = "<group>"; };
+		ADFB539B0FEAC4010067CEC1 /* Loading2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading2.png; sourceTree = "<group>"; };
+		ADFB539C0FEAC4010067CEC1 /* Loading3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading3.png; sourceTree = "<group>"; };
+		ADFB539D0FEAC4010067CEC1 /* Loading4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading4.png; sourceTree = "<group>"; };
+		ADFB539E0FEAC4010067CEC1 /* mainTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainTitle.png; sourceTree = "<group>"; };
+		ADFB539F0FEAC4010067CEC1 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
+		ADFB53A00FEAC4010067CEC1 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		ADFB53A20FEAC4010067CEC1 /* alien-hunter.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alien-hunter.pcm"; sourceTree = "<group>"; };
+		ADFB53A30FEAC4010067CEC1 /* alley-brawler.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alley-brawler.pcm"; sourceTree = "<group>"; };
+		ADFB53A40FEAC4010067CEC1 /* beam-me.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beam-me.pcm"; sourceTree = "<group>"; };
+		ADFB53A50FEAC4010067CEC1 /* en-garde.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "en-garde.pcm"; sourceTree = "<group>"; };
+		ADFB53A60FEAC4010067CEC1 /* lightsaber.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = lightsaber.pcm; sourceTree = "<group>"; };
+		ADFB53A70FEAC4010067CEC1 /* pipe.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = pipe.pcm; sourceTree = "<group>"; };
+		ADFB53A80FEAC4010067CEC1 /* pure-evil.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pure-evil.pcm"; sourceTree = "<group>"; };
+		ADFB53A90FEAC4010067CEC1 /* rollout.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = rollout.pcm; sourceTree = "<group>"; };
+		ADFB53AA0FEAC4010067CEC1 /* scream.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = scream.pcm; sourceTree = "<group>"; };
+		ADFB53AB0FEAC4010067CEC1 /* thedoor.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = thedoor.pcm; sourceTree = "<group>"; };
+		ADFB53AC0FEAC4010067CEC1 /* voteDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voteDown.png; sourceTree = "<group>"; };
+		ADFB53AD0FEAC4010067CEC1 /* voteUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voteUp.png; sourceTree = "<group>"; };
+		ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedditIcon2.png; sourceTree = "<group>"; };
+		ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
+		ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
+		ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ADFB54160FEAC61B0067CEC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		ADFB54180FEAC6270067CEC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ADFB541C0FEAC6370067CEC1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ADFB54200FEAC63E0067CEC1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		ADFB54940FEAC6700067CEC1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		ADFB54A60FEAC8A60067CEC1 /* Three20Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Three20Extensions.h; sourceTree = "<group>"; };
+		ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three20Extensions.m; sourceTree = "<group>"; };
+		ADFB556B0FEACC5C0067CEC1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "Classes/Extensions/NSDictionary+JSON.m"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				ADFB53F40FEAC5A50067CEC1 /* libThree20.a in Frameworks */,
+				ADFB540F0FEAC6010067CEC1 /* QuartzCore.framework in Frameworks */,
+				ADFB54130FEAC60E0067CEC1 /* AudioToolbox.framework in Frameworks */,
+				ADFB54170FEAC61B0067CEC1 /* libsqlite3.dylib in Frameworks */,
+				ADFB54190FEAC6270067CEC1 /* CoreLocation.framework in Frameworks */,
+				ADFB541D0FEAC6370067CEC1 /* SystemConfiguration.framework in Frameworks */,
+				ADFB54210FEAC63E0067CEC1 /* libz.dylib in Frameworks */,
+				ADFB54950FEAC6700067CEC1 /* libxml2.dylib in Frameworks */,
+				ADFB549B0FEAC6FB0067CEC1 /* AddressBook.framework in Frameworks */,
+				ADB2A06F0FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */,
+				ADB2A0700FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */,
+				ADB2A0B40FEC205600405C52 /* CrashReporter.framework in Frameworks */,
+				ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */,
+				ADD82FD610094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */,
+				ADD82FD710094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */,
+				ADF243ED1014171400C392BF /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB29EB40FEAD09E00405C52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB29EB50FEAD09E00405C52 /* Foundation.framework in Frameworks */,
+				ADB29EB60FEAD09E00405C52 /* UIKit.framework in Frameworks */,
+				ADB29EB70FEAD09E00405C52 /* CoreGraphics.framework in Frameworks */,
+				ADB29EBA0FEAD09E00405C52 /* libThree20.a in Frameworks */,
+				ADB29EBB0FEAD09E00405C52 /* QuartzCore.framework in Frameworks */,
+				ADB29EBC0FEAD09E00405C52 /* AudioToolbox.framework in Frameworks */,
+				ADB29EBD0FEAD09E00405C52 /* libsqlite3.dylib in Frameworks */,
+				ADB29EBE0FEAD09E00405C52 /* CoreLocation.framework in Frameworks */,
+				ADB29EBF0FEAD09E00405C52 /* SystemConfiguration.framework in Frameworks */,
+				ADB29EC00FEAD09E00405C52 /* libz.dylib in Frameworks */,
+				ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */,
+				ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */,
+				ADB2A0710FEC1AF100405C52 /* libMMTrackingSimulator.a in Frameworks */,
+				ADB2A0720FEC1AF100405C52 /* libMMTrackingDevice.a in Frameworks */,
+				ADB2A0B50FEC205600405C52 /* CrashReporter.framework in Frameworks */,
+				ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */,
+				ADD82FD810094FEE00138F44 /* libAdMobDevice3_0.a in Frameworks */,
+				ADD82FD910094FEE00138F44 /* libAdMobSimulator3_0.a in Frameworks */,
+				ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iReddit.app */,
+				ADB29EC80FEAD09E00405C52 /* iReddit Free.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53350FEAC3EA0067CEC1 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* iReddit_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53930FEAC4010067CEC1 /* Resources */,
+				ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */,
+				ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */,
+				ADFB556B0FEACC5C0067CEC1 /* Default.png */,
+				8D1107310486CEB800E47090 /* iReddit-Info.plist */,
+				ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */,
+				ADB29F880FEB046200405C52 /* Entitlements.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */,
+				ADF243EC1014171400C392BF /* MessageUI.framework */,
+				ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */,
+				ADFB54940FEAC6700067CEC1 /* libxml2.dylib */,
+				ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */,
+				ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */,
+				ADFB54160FEAC61B0067CEC1 /* libsqlite3.dylib */,
+				ADFB54180FEAC6270067CEC1 /* CoreLocation.framework */,
+				ADFB541C0FEAC6370067CEC1 /* SystemConfiguration.framework */,
+				ADFB54200FEAC63E0067CEC1 /* libz.dylib */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADB2A04A0FEC160600405C52 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				ADB2A06C0FEC1AF100405C52 /* libMMTrackingSimulator.a */,
+				ADB2A06D0FEC1AF100405C52 /* libMMTrackingDevice.a */,
+				ADB2A06E0FEC1AF100405C52 /* MMTrackingMgr.h */,
+				ADB2A0B30FEC205600405C52 /* CrashReporter.framework */,
+				ADB2A0AE0FEC203500405C52 /* HeartbeatSettings.h */,
+				ADB2A0AF0FEC203500405C52 /* Heartbeat.h */,
+				ADB2A0B00FEC203500405C52 /* Heartbeat.m */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		ADFB53350FEAC3EA0067CEC1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ADB2A04A0FEC160600405C52 /* Analytics */,
+				ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */,
+				ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */,
+				ADFB53360FEAC3EA0067CEC1 /* Ads */,
+				ADFB533F0FEAC3EA0067CEC1 /* comments.html */,
+				ADFB53400FEAC3EA0067CEC1 /* Constants.h */,
+				ADFB53410FEAC3EA0067CEC1 /* Constants.m */,
+				ADFB53420FEAC3EA0067CEC1 /* Data */,
+				ADFB534D0FEAC3EA0067CEC1 /* Extensions */,
+				ADFB53590FEAC3EA0067CEC1 /* iRedditAppDelegate.h */,
+				ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */,
+				ADFB535B0FEAC3EA0067CEC1 /* ViewControllers */,
+				ADFB53680FEAC3EA0067CEC1 /* Views */,
+				ADFB53750FEAC3EA0067CEC1 /* XIBs */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		ADFB53360FEAC3EA0067CEC1 /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				ADD82FD410094FEE00138F44 /* libAdMobDevice3_0.a */,
+				ADD82FD510094FEE00138F44 /* libAdMobSimulator3_0.a */,
+				ADD82FDA10094FFE00138F44 /* AdMobView.h */,
+				ADD82FDB10094FFE00138F44 /* AdMobDelegateProtocol.h */,
+				ADFB53370FEAC3EA0067CEC1 /* AdCell.h */,
+				ADFB53380FEAC3EA0067CEC1 /* AdCell.m */,
+				ADFB53390FEAC3EA0067CEC1 /* AdField.h */,
+				ADFB533A0FEAC3EA0067CEC1 /* AdField.m */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		ADFB53420FEAC3EA0067CEC1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53430FEAC3EA0067CEC1 /* LoginController.h */,
+				ADFB53440FEAC3EA0067CEC1 /* LoginController.m */,
+				ADFB53450FEAC3EA0067CEC1 /* RedditMessage.h */,
+				ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */,
+				ADFB53470FEAC3EA0067CEC1 /* MessageDataSource.h */,
+				ADFB53480FEAC3EA0067CEC1 /* MessageDataSource.m */,
+				ADFB53490FEAC3EA0067CEC1 /* Story.h */,
+				ADFB534A0FEAC3EA0067CEC1 /* Story.m */,
+				ADFB534B0FEAC3EA0067CEC1 /* SubredditDataSource.h */,
+				ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		ADFB534D0FEAC3EA0067CEC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB534E0FEAC3EA0067CEC1 /* CDataScanner.h */,
+				ADFB534F0FEAC3EA0067CEC1 /* CDataScanner_Extensions.h */,
+				ADFB53500FEAC3EA0067CEC1 /* CJSONDeserializer.h */,
+				ADFB53510FEAC3EA0067CEC1 /* CJSONScanner.h */,
+				ADFB53520FEAC3EA0067CEC1 /* CJSONSerializer.h */,
+				ADFB53530FEAC3EA0067CEC1 /* NSCharacterSet_Extensions.h */,
+				ADFB53540FEAC3EA0067CEC1 /* NSDictionary+JSON.h */,
+				ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */,
+				ADFB53550FEAC3EA0067CEC1 /* NSDictionary_JSONExtensions.h */,
+				ADFB53560FEAC3EA0067CEC1 /* NSScanner_Extensions.h */,
+				ADFB53570FEAC3EA0067CEC1 /* NSString+HTMLEncoding.h */,
+				ADFB53580FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m */,
+				ADFB54A60FEAC8A60067CEC1 /* Three20Extensions.h */,
+				ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ADFB535B0FEAC3EA0067CEC1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB535C0FEAC3EA0067CEC1 /* LoginViewController.h */,
+				ADFB535D0FEAC3EA0067CEC1 /* LoginViewController.m */,
+				ADFB535E0FEAC3EA0067CEC1 /* MessageViewController.h */,
+				ADFB535F0FEAC3EA0067CEC1 /* MessageViewController.m */,
+				ADFB53600FEAC3EA0067CEC1 /* RootViewController.h */,
+				ADFB53610FEAC3EA0067CEC1 /* RootViewController.m */,
+				ADFB53620FEAC3EA0067CEC1 /* SettingsViewController.h */,
+				ADFB53630FEAC3EA0067CEC1 /* SettingsViewController.m */,
+				ADFB53640FEAC3EA0067CEC1 /* StoryViewController.h */,
+				ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */,
+				ADFB53660FEAC3EA0067CEC1 /* SubredditViewController.h */,
+				ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */,
+				ADBC92030FFDA1DE0033E60A /* AddRedditViewController.h */,
+				ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ADFB53680FEAC3EA0067CEC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53690FEAC3EA0067CEC1 /* AlienProgressView.h */,
+				ADFB536A0FEAC3EA0067CEC1 /* AlienProgressView.m */,
+				ADFB536B0FEAC3EA0067CEC1 /* CommentAccessoryView.h */,
+				ADFB536C0FEAC3EA0067CEC1 /* CommentAccessoryView.m */,
+				ADFB536F0FEAC3EA0067CEC1 /* MessageCell.h */,
+				ADFB53700FEAC3EA0067CEC1 /* MessageCell.m */,
+				ADFB53710FEAC3EA0067CEC1 /* RedditWebView.h */,
+				ADFB53720FEAC3EA0067CEC1 /* RedditWebView.m */,
+				ADFB53730FEAC3EA0067CEC1 /* StoryCell.h */,
+				ADFB53740FEAC3EA0067CEC1 /* StoryCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ADFB53750FEAC3EA0067CEC1 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		ADFB53930FEAC4010067CEC1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53940FEAC4010067CEC1 /* back.png */,
+				ADFB53950FEAC4010067CEC1 /* commentBubble.png */,
+				ADFB53960FEAC4010067CEC1 /* comments.png */,
+				ADFB53970FEAC4010067CEC1 /* error.png */,
+				ADFB53980FEAC4010067CEC1 /* forward.png */,
+				ADFB53990FEAC4010067CEC1 /* Loading0.png */,
+				ADFB539A0FEAC4010067CEC1 /* Loading1.png */,
+				ADFB539B0FEAC4010067CEC1 /* Loading2.png */,
+				ADFB539C0FEAC4010067CEC1 /* Loading3.png */,
+				ADFB539D0FEAC4010067CEC1 /* Loading4.png */,
+				ADFB539E0FEAC4010067CEC1 /* mainTitle.png */,
+				ADFB539F0FEAC4010067CEC1 /* noimage.png */,
+				ADFB53A00FEAC4010067CEC1 /* refresh.png */,
+				ADD830631009632D00138F44 /* stop.png */,
+				ADFB53A10FEAC4010067CEC1 /* Sounds */,
+				ADFB53AC0FEAC4010067CEC1 /* voteDown.png */,
+				ADFB53AD0FEAC4010067CEC1 /* voteUp.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADFB53A10FEAC4010067CEC1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53A20FEAC4010067CEC1 /* alien-hunter.pcm */,
+				ADFB53A30FEAC4010067CEC1 /* alley-brawler.pcm */,
+				ADFB53A40FEAC4010067CEC1 /* beam-me.pcm */,
+				ADFB53A50FEAC4010067CEC1 /* en-garde.pcm */,
+				ADFB53A60FEAC4010067CEC1 /* lightsaber.pcm */,
+				ADFB53A70FEAC4010067CEC1 /* pipe.pcm */,
+				ADFB53A80FEAC4010067CEC1 /* pure-evil.pcm */,
+				ADFB53A90FEAC4010067CEC1 /* rollout.pcm */,
+				ADFB53AA0FEAC4010067CEC1 /* scream.pcm */,
+				ADFB53AB0FEAC4010067CEC1 /* thedoor.pcm */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		ADFB53EC0FEAC5920067CEC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADFB53F30FEAC5920067CEC1 /* libThree20.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iReddit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iReddit" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADFB53F70FEAC5D30067CEC1 /* PBXTargetDependency */,
+			);
+			name = iReddit;
+			productName = iReddit;
+			productReference = 1D6058910D05DD3D006BFB54 /* iReddit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADB29E760FEAD09E00405C52 /* iReddit Free */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB29EC30FEAD09E00405C52 /* Build configuration list for PBXNativeTarget "iReddit Free" */;
+			buildPhases = (
+				ADB29E790FEAD09E00405C52 /* Resources */,
+				ADB29E9A0FEAD09E00405C52 /* Sources */,
+				ADB29EB40FEAD09E00405C52 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADB29E770FEAD09E00405C52 /* PBXTargetDependency */,
+			);
+			name = "iReddit Free";
+			productName = iReddit;
+			productReference = ADB29EC80FEAD09E00405C52 /* iReddit Free.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iReddit" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = ADFB53EC0FEAC5920067CEC1 /* Products */;
+					ProjectRef = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iReddit */,
+				ADB29E760FEAD09E00405C52 /* iReddit Free */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		ADFB53F30FEAC5920067CEC1 /* libThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20.a;
+			remoteRef = ADFB53F20FEAC5920067CEC1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				ADFB537C0FEAC3EA0067CEC1 /* comments.html in Resources */,
+				ADFB53AE0FEAC4010067CEC1 /* back.png in Resources */,
+				ADFB53AF0FEAC4010067CEC1 /* commentBubble.png in Resources */,
+				ADFB53B00FEAC4010067CEC1 /* comments.png in Resources */,
+				ADFB53B10FEAC4010067CEC1 /* error.png in Resources */,
+				ADFB53B20FEAC4010067CEC1 /* forward.png in Resources */,
+				ADFB53B30FEAC4010067CEC1 /* Loading0.png in Resources */,
+				ADFB53B40FEAC4010067CEC1 /* Loading1.png in Resources */,
+				ADFB53B50FEAC4010067CEC1 /* Loading2.png in Resources */,
+				ADFB53B60FEAC4010067CEC1 /* Loading3.png in Resources */,
+				ADFB53B70FEAC4010067CEC1 /* Loading4.png in Resources */,
+				ADFB53B80FEAC4010067CEC1 /* mainTitle.png in Resources */,
+				ADFB53B90FEAC4010067CEC1 /* noimage.png in Resources */,
+				ADFB53BA0FEAC4010067CEC1 /* refresh.png in Resources */,
+				ADFB53BB0FEAC4010067CEC1 /* alien-hunter.pcm in Resources */,
+				ADFB53BC0FEAC4010067CEC1 /* alley-brawler.pcm in Resources */,
+				ADFB53BD0FEAC4010067CEC1 /* beam-me.pcm in Resources */,
+				ADFB53BE0FEAC4010067CEC1 /* en-garde.pcm in Resources */,
+				ADFB53BF0FEAC4010067CEC1 /* lightsaber.pcm in Resources */,
+				ADFB53C00FEAC4010067CEC1 /* pipe.pcm in Resources */,
+				ADFB53C10FEAC4010067CEC1 /* pure-evil.pcm in Resources */,
+				ADFB53C20FEAC4010067CEC1 /* rollout.pcm in Resources */,
+				ADFB53C30FEAC4010067CEC1 /* scream.pcm in Resources */,
+				ADFB53C40FEAC4010067CEC1 /* thedoor.pcm in Resources */,
+				ADFB53C50FEAC4010067CEC1 /* voteDown.png in Resources */,
+				ADFB53C60FEAC4010067CEC1 /* voteUp.png in Resources */,
+				ADFB53C80FEAC4C30067CEC1 /* RedditIcon2.png in Resources */,
+				ADFB53FA0FEAC5E70067CEC1 /* Three20.bundle in Resources */,
+				ADFB556C0FEACC5C0067CEC1 /* Default.png in Resources */,
+				ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */,
+				ADEACD8E0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */,
+				ADD830641009632D00138F44 /* stop.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB29E790FEAD09E00405C52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB29E7A0FEAD09E00405C52 /* MainWindow.xib in Resources */,
+				ADB29E7B0FEAD09E00405C52 /* comments.html in Resources */,
+				ADB29E7E0FEAD09E00405C52 /* back.png in Resources */,
+				ADB29E7F0FEAD09E00405C52 /* commentBubble.png in Resources */,
+				ADB29E800FEAD09E00405C52 /* comments.png in Resources */,
+				ADB29E810FEAD09E00405C52 /* error.png in Resources */,
+				ADB29E820FEAD09E00405C52 /* forward.png in Resources */,
+				ADB29E830FEAD09E00405C52 /* Loading0.png in Resources */,
+				ADB29E840FEAD09E00405C52 /* Loading1.png in Resources */,
+				ADB29E850FEAD09E00405C52 /* Loading2.png in Resources */,
+				ADB29E860FEAD09E00405C52 /* Loading3.png in Resources */,
+				ADB29E870FEAD09E00405C52 /* Loading4.png in Resources */,
+				ADB29E880FEAD09E00405C52 /* mainTitle.png in Resources */,
+				ADB29E890FEAD09E00405C52 /* noimage.png in Resources */,
+				ADB29E8A0FEAD09E00405C52 /* refresh.png in Resources */,
+				ADB29E8F0FEAD09E00405C52 /* lightsaber.pcm in Resources */,
+				ADB29E950FEAD09E00405C52 /* voteDown.png in Resources */,
+				ADB29E960FEAD09E00405C52 /* voteUp.png in Resources */,
+				ADB29E970FEAD09E00405C52 /* RedditIcon2.png in Resources */,
+				ADB29E980FEAD09E00405C52 /* Three20.bundle in Resources */,
+				ADB29E990FEAD09E00405C52 /* Default.png in Resources */,
+				ADEACD8F0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */,
+				ADD830651009632D00138F44 /* stop.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				ADFB53780FEAC3EA0067CEC1 /* AdCell.m in Sources */,
+				ADFB53790FEAC3EA0067CEC1 /* AdField.m in Sources */,
+				ADFB537D0FEAC3EA0067CEC1 /* Constants.m in Sources */,
+				ADFB537E0FEAC3EA0067CEC1 /* LoginController.m in Sources */,
+				ADFB537F0FEAC3EA0067CEC1 /* RedditMessage.m in Sources */,
+				ADFB53800FEAC3EA0067CEC1 /* MessageDataSource.m in Sources */,
+				ADFB53810FEAC3EA0067CEC1 /* Story.m in Sources */,
+				ADFB53820FEAC3EA0067CEC1 /* SubredditDataSource.m in Sources */,
+				ADFB53830FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m in Sources */,
+				ADFB53840FEAC3EA0067CEC1 /* iRedditAppDelegate.m in Sources */,
+				ADFB53850FEAC3EA0067CEC1 /* LoginViewController.m in Sources */,
+				ADFB53860FEAC3EA0067CEC1 /* MessageViewController.m in Sources */,
+				ADFB53870FEAC3EA0067CEC1 /* RootViewController.m in Sources */,
+				ADFB53880FEAC3EA0067CEC1 /* SettingsViewController.m in Sources */,
+				ADFB53890FEAC3EA0067CEC1 /* StoryViewController.m in Sources */,
+				ADFB538A0FEAC3EA0067CEC1 /* SubredditViewController.m in Sources */,
+				ADFB538B0FEAC3EA0067CEC1 /* AlienProgressView.m in Sources */,
+				ADFB538C0FEAC3EA0067CEC1 /* CommentAccessoryView.m in Sources */,
+				ADFB538E0FEAC3EA0067CEC1 /* MessageCell.m in Sources */,
+				ADFB538F0FEAC3EA0067CEC1 /* RedditWebView.m in Sources */,
+				ADFB53900FEAC3EA0067CEC1 /* StoryCell.m in Sources */,
+				ADFB54A80FEAC8A60067CEC1 /* Three20Extensions.m in Sources */,
+				ADFB556E0FEACC7A0067CEC1 /* NSDictionary+JSON.m in Sources */,
+				ADB2A0B10FEC203500405C52 /* Heartbeat.m in Sources */,
+				ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB29E9A0FEAD09E00405C52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB29E9B0FEAD09E00405C52 /* main.m in Sources */,
+				ADB29E9C0FEAD09E00405C52 /* AdCell.m in Sources */,
+				ADB29E9D0FEAD09E00405C52 /* AdField.m in Sources */,
+				ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */,
+				ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */,
+				ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */,
+				ADB29EA10FEAD09E00405C52 /* MessageDataSource.m in Sources */,
+				ADB29EA20FEAD09E00405C52 /* Story.m in Sources */,
+				ADB29EA30FEAD09E00405C52 /* SubredditDataSource.m in Sources */,
+				ADB29EA40FEAD09E00405C52 /* NSString+HTMLEncoding.m in Sources */,
+				ADB29EA50FEAD09E00405C52 /* iRedditAppDelegate.m in Sources */,
+				ADB29EA60FEAD09E00405C52 /* LoginViewController.m in Sources */,
+				ADB29EA70FEAD09E00405C52 /* MessageViewController.m in Sources */,
+				ADB29EA80FEAD09E00405C52 /* RootViewController.m in Sources */,
+				ADB29EA90FEAD09E00405C52 /* SettingsViewController.m in Sources */,
+				ADB29EAA0FEAD09E00405C52 /* StoryViewController.m in Sources */,
+				ADB29EAB0FEAD09E00405C52 /* SubredditViewController.m in Sources */,
+				ADB29EAC0FEAD09E00405C52 /* AlienProgressView.m in Sources */,
+				ADB29EAD0FEAD09E00405C52 /* CommentAccessoryView.m in Sources */,
+				ADB29EAF0FEAD09E00405C52 /* MessageCell.m in Sources */,
+				ADB29EB00FEAD09E00405C52 /* RedditWebView.m in Sources */,
+				ADB29EB10FEAD09E00405C52 /* StoryCell.m in Sources */,
+				ADB29EB20FEAD09E00405C52 /* Three20Extensions.m in Sources */,
+				ADB29EB30FEAD09E00405C52 /* NSDictionary+JSON.m in Sources */,
+				ADB2A0B20FEC203500405C52 /* Heartbeat.m in Sources */,
+				ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADB29E770FEAD09E00405C52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = ADB29E780FEAD09E00405C52 /* PBXContainerItemProxy */;
+		};
+		ADFB53F70FEAC5D30067CEC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = ADFB53F60FEAC5D30067CEC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
+				INFOPLIST_FILE = "iReddit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = iReddit;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
+				INFOPLIST_FILE = "iReddit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = iReddit;
+			};
+			name = Release;
+		};
+		ADB29EC40FEAD09E00405C52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				INFOPLIST_FILE = "iReddit-Info Free.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = "iReddit Free";
+			};
+			name = Debug;
+		};
+		ADB29EC60FEAD09E00405C52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				INFOPLIST_FILE = "iReddit-Info Free.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = "iReddit Free";
+			};
+			name = Release;
+		};
+		ADB29F820FEB03DC00405C52 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../three20/src;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Distribution;
+		};
+		ADB29F830FEB03DC00405C52 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
+				INFOPLIST_FILE = "iReddit-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = iReddit;
+			};
+			name = Distribution;
+		};
+		ADB29F840FEB03DC00405C52 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
+				INFOPLIST_FILE = "iReddit-Info Free.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/Ads\"",
+					"\"$(SRCROOT)/Classes/Analytics\"",
+					"\"$(SRCROOT)/../three20/src/build/Release-iphoneos\"",
+				);
+				PRODUCT_NAME = "iReddit Free";
+			};
+			name = Distribution;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../three20/src;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../three20/src;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iReddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				ADB29F830FEB03DC00405C52 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ADB29EC30FEAD09E00405C52 /* Build configuration list for PBXNativeTarget "iReddit Free" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB29EC40FEAD09E00405C52 /* Debug */,
+				ADB29EC60FEAD09E00405C52 /* Release */,
+				ADB29F840FEB03DC00405C52 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iReddit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				ADB29F820FEB03DC00405C52 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

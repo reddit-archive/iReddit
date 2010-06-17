@@ -1,0 +1,6 @@
+build/Debug-iphoneos/
+build/Debug-iphonesimulator/
+build/Release-iphoneos/
+build/Release-iphonesimulator/
+build/iReddit.build/
+build
