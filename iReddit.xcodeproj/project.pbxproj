@@ -21,81 +21,12 @@
 		3821EF4E11CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */; };
 		3821EF4F11CAC990002CCCE2 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */; };
 		3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4711CAC990002CCCE2 /* CDataScanner.m */; };
-		3821EF5111CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */; };
-		3821EF5211CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3811CAC98F002CCCE2 /* CDataScanner_Extensions.m */; };
-		3821EF5311CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3A11CAC98F002CCCE2 /* NSDictionary_JSONExtensions.m */; };
-		3821EF5411CAC990002CCCE2 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3D11CAC98F002CCCE2 /* CJSONScanner.m */; };
-		3821EF5511CAC990002CCCE2 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF3F11CAC98F002CCCE2 /* CJSONSerializer.m */; };
-		3821EF5611CAC990002CCCE2 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4111CAC98F002CCCE2 /* CJSONDeserializer.m */; };
-		3821EF5711CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */; };
-		3821EF5811CAC990002CCCE2 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */; };
-		3821EF5911CAC990002CCCE2 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4711CAC990002CCCE2 /* CDataScanner.m */; };
-		ADB29E7A0FEAD09E00405C52 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		ADB29E7B0FEAD09E00405C52 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
-		ADB29E7E0FEAD09E00405C52 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53940FEAC4010067CEC1 /* back.png */; };
-		ADB29E7F0FEAD09E00405C52 /* commentBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53950FEAC4010067CEC1 /* commentBubble.png */; };
-		ADB29E800FEAD09E00405C52 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53960FEAC4010067CEC1 /* comments.png */; };
-		ADB29E810FEAD09E00405C52 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53970FEAC4010067CEC1 /* error.png */; };
-		ADB29E820FEAD09E00405C52 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53980FEAC4010067CEC1 /* forward.png */; };
-		ADB29E830FEAD09E00405C52 /* Loading0.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53990FEAC4010067CEC1 /* Loading0.png */; };
-		ADB29E840FEAD09E00405C52 /* Loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539A0FEAC4010067CEC1 /* Loading1.png */; };
-		ADB29E850FEAD09E00405C52 /* Loading2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539B0FEAC4010067CEC1 /* Loading2.png */; };
-		ADB29E860FEAD09E00405C52 /* Loading3.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539C0FEAC4010067CEC1 /* Loading3.png */; };
-		ADB29E870FEAD09E00405C52 /* Loading4.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539D0FEAC4010067CEC1 /* Loading4.png */; };
-		ADB29E880FEAD09E00405C52 /* mainTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539E0FEAC4010067CEC1 /* mainTitle.png */; };
-		ADB29E890FEAD09E00405C52 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB539F0FEAC4010067CEC1 /* noimage.png */; };
-		ADB29E8A0FEAD09E00405C52 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A00FEAC4010067CEC1 /* refresh.png */; };
-		ADB29E8F0FEAD09E00405C52 /* lightsaber.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53A60FEAC4010067CEC1 /* lightsaber.pcm */; };
-		ADB29E950FEAD09E00405C52 /* voteDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AC0FEAC4010067CEC1 /* voteDown.png */; };
-		ADB29E960FEAD09E00405C52 /* voteUp.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AD0FEAC4010067CEC1 /* voteUp.png */; };
-		ADB29E970FEAD09E00405C52 /* RedditIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */; };
-		ADB29E980FEAD09E00405C52 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */; };
-		ADB29E990FEAD09E00405C52 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB556B0FEACC5C0067CEC1 /* Default.png */; };
-		ADB29E9B0FEAD09E00405C52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
-		ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
-		ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53460FEAC3EA0067CEC1 /* RedditMessage.m */; };
-		ADB29EA10FEAD09E00405C52 /* MessageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53480FEAC3EA0067CEC1 /* MessageDataSource.m */; };
-		ADB29EA20FEAD09E00405C52 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534A0FEAC3EA0067CEC1 /* Story.m */; };
-		ADB29EA30FEAD09E00405C52 /* SubredditDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */; };
-		ADB29EA40FEAD09E00405C52 /* NSString+HTMLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53580FEAC3EA0067CEC1 /* NSString+HTMLEncoding.m */; };
-		ADB29EA50FEAD09E00405C52 /* iRedditAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */; };
-		ADB29EA60FEAD09E00405C52 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535D0FEAC3EA0067CEC1 /* LoginViewController.m */; };
-		ADB29EA70FEAD09E00405C52 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB535F0FEAC3EA0067CEC1 /* MessageViewController.m */; };
-		ADB29EA80FEAD09E00405C52 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53610FEAC3EA0067CEC1 /* RootViewController.m */; };
-		ADB29EA90FEAD09E00405C52 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53630FEAC3EA0067CEC1 /* SettingsViewController.m */; };
-		ADB29EAA0FEAD09E00405C52 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */; };
-		ADB29EAB0FEAD09E00405C52 /* SubredditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */; };
-		ADB29EAC0FEAD09E00405C52 /* AlienProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536A0FEAC3EA0067CEC1 /* AlienProgressView.m */; };
-		ADB29EAD0FEAD09E00405C52 /* CommentAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB536C0FEAC3EA0067CEC1 /* CommentAccessoryView.m */; };
-		ADB29EAF0FEAD09E00405C52 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53700FEAC3EA0067CEC1 /* MessageCell.m */; };
-		ADB29EB00FEAD09E00405C52 /* RedditWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53720FEAC3EA0067CEC1 /* RedditWebView.m */; };
-		ADB29EB10FEAD09E00405C52 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53740FEAC3EA0067CEC1 /* StoryCell.m */; };
-		ADB29EB20FEAD09E00405C52 /* Three20Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */; };
-		ADB29EB30FEAD09E00405C52 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */; };
-		ADB29EB50FEAD09E00405C52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		ADB29EB60FEAD09E00405C52 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		ADB29EB70FEAD09E00405C52 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		ADB29EBA0FEAD09E00405C52 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB53F30FEAC5920067CEC1 /* libThree20.a */; };
-		ADB29EBB0FEAD09E00405C52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */; };
-		ADB29EBC0FEAD09E00405C52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */; };
-		ADB29EBD0FEAD09E00405C52 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54160FEAC61B0067CEC1 /* libsqlite3.dylib */; };
-		ADB29EBE0FEAD09E00405C52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54180FEAC6270067CEC1 /* CoreLocation.framework */; };
-		ADB29EBF0FEAD09E00405C52 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB541C0FEAC6370067CEC1 /* SystemConfiguration.framework */; };
-		ADB29EC00FEAD09E00405C52 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54200FEAC63E0067CEC1 /* libz.dylib */; };
-		ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54940FEAC6700067CEC1 /* libxml2.dylib */; };
-		ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB549A0FEAC6FB0067CEC1 /* AddressBook.framework */; };
 		ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB29F880FEB046200405C52 /* Entitlements.plist */; };
 		ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
-		ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
 		ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
-		ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
 		ADD830641009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
-		ADD830651009632D00138F44 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD830631009632D00138F44 /* stop.png */; };
 		ADEACD8E0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
-		ADEACD8F0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */; };
 		ADF243ED1014171400C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
-		ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF243EC1014171400C392BF /* MessageUI.framework */; };
 		ADFB537C0FEAC3EA0067CEC1 /* comments.html in Resources */ = {isa = PBXBuildFile; fileRef = ADFB533F0FEAC3EA0067CEC1 /* comments.html */; };
 		ADFB537D0FEAC3EA0067CEC1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53410FEAC3EA0067CEC1 /* Constants.m */; };
 		ADFB537E0FEAC3EA0067CEC1 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB53440FEAC3EA0067CEC1 /* LoginController.m */; };
@@ -158,13 +89,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		ADB29E780FEAD09E00405C52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
-			remoteInfo = Three20;
-		};
 		ADFB53F20FEAC5920067CEC1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */;
@@ -208,7 +132,6 @@
 		3821EF4611CAC98F002CCCE2 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner.h; path = ../TouchJSON/Source/CDataScanner.h; sourceTree = SOURCE_ROOT; };
 		3821EF4711CAC990002CCCE2 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner.m; path = ../TouchJSON/Source/CDataScanner.m; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* iReddit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iReddit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		ADB29EC80FEAD09E00405C52 /* iReddit Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iReddit Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Info Free.plist"; sourceTree = "<group>"; };
 		ADB29F880FEB046200405C52 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -329,27 +252,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADB29EB40FEAD09E00405C52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADB29EB50FEAD09E00405C52 /* Foundation.framework in Frameworks */,
-				ADB29EB60FEAD09E00405C52 /* UIKit.framework in Frameworks */,
-				ADB29EB70FEAD09E00405C52 /* CoreGraphics.framework in Frameworks */,
-				ADB29EBA0FEAD09E00405C52 /* libThree20.a in Frameworks */,
-				ADB29EBB0FEAD09E00405C52 /* QuartzCore.framework in Frameworks */,
-				ADB29EBC0FEAD09E00405C52 /* AudioToolbox.framework in Frameworks */,
-				ADB29EBD0FEAD09E00405C52 /* libsqlite3.dylib in Frameworks */,
-				ADB29EBE0FEAD09E00405C52 /* CoreLocation.framework in Frameworks */,
-				ADB29EBF0FEAD09E00405C52 /* SystemConfiguration.framework in Frameworks */,
-				ADB29EC00FEAD09E00405C52 /* libz.dylib in Frameworks */,
-				ADB29EC10FEAD09E00405C52 /* libxml2.dylib in Frameworks */,
-				ADB29EC20FEAD09E00405C52 /* AddressBook.framework in Frameworks */,
-				ADB2A0C70FEC208400405C52 /* CFNetwork.framework in Frameworks */,
-				ADF244031014177A00C392BF /* MessageUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -357,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* iReddit.app */,
-				ADB29EC80FEAD09E00405C52 /* iReddit Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -635,24 +536,6 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* iReddit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADB29E760FEAD09E00405C52 /* iReddit Free */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADB29EC30FEAD09E00405C52 /* Build configuration list for PBXNativeTarget "iReddit Free" */;
-			buildPhases = (
-				ADB29E790FEAD09E00405C52 /* Resources */,
-				ADB29E9A0FEAD09E00405C52 /* Sources */,
-				ADB29EB40FEAD09E00405C52 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADB29E770FEAD09E00405C52 /* PBXTargetDependency */,
-			);
-			name = "iReddit Free";
-			productName = iReddit;
-			productReference = ADB29EC80FEAD09E00405C52 /* iReddit Free.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -679,7 +562,6 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* iReddit */,
-				ADB29E760FEAD09E00405C52 /* iReddit Free */,
 			);
 		};
 /* End PBXProject section */
@@ -735,36 +617,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADB29E790FEAD09E00405C52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADB29E7A0FEAD09E00405C52 /* MainWindow.xib in Resources */,
-				ADB29E7B0FEAD09E00405C52 /* comments.html in Resources */,
-				ADB29E7E0FEAD09E00405C52 /* back.png in Resources */,
-				ADB29E7F0FEAD09E00405C52 /* commentBubble.png in Resources */,
-				ADB29E800FEAD09E00405C52 /* comments.png in Resources */,
-				ADB29E810FEAD09E00405C52 /* error.png in Resources */,
-				ADB29E820FEAD09E00405C52 /* forward.png in Resources */,
-				ADB29E830FEAD09E00405C52 /* Loading0.png in Resources */,
-				ADB29E840FEAD09E00405C52 /* Loading1.png in Resources */,
-				ADB29E850FEAD09E00405C52 /* Loading2.png in Resources */,
-				ADB29E860FEAD09E00405C52 /* Loading3.png in Resources */,
-				ADB29E870FEAD09E00405C52 /* Loading4.png in Resources */,
-				ADB29E880FEAD09E00405C52 /* mainTitle.png in Resources */,
-				ADB29E890FEAD09E00405C52 /* noimage.png in Resources */,
-				ADB29E8A0FEAD09E00405C52 /* refresh.png in Resources */,
-				ADB29E8F0FEAD09E00405C52 /* lightsaber.pcm in Resources */,
-				ADB29E950FEAD09E00405C52 /* voteDown.png in Resources */,
-				ADB29E960FEAD09E00405C52 /* voteUp.png in Resources */,
-				ADB29E970FEAD09E00405C52 /* RedditIcon2.png in Resources */,
-				ADB29E980FEAD09E00405C52 /* Three20.bundle in Resources */,
-				ADB29E990FEAD09E00405C52 /* Default.png in Resources */,
-				ADEACD8F0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */,
-				ADD830651009632D00138F44 /* stop.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -807,53 +659,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADB29E9A0FEAD09E00405C52 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADB29E9B0FEAD09E00405C52 /* main.m in Sources */,
-				ADB29E9E0FEAD09E00405C52 /* Constants.m in Sources */,
-				ADB29E9F0FEAD09E00405C52 /* LoginController.m in Sources */,
-				ADB29EA00FEAD09E00405C52 /* RedditMessage.m in Sources */,
-				ADB29EA10FEAD09E00405C52 /* MessageDataSource.m in Sources */,
-				ADB29EA20FEAD09E00405C52 /* Story.m in Sources */,
-				ADB29EA30FEAD09E00405C52 /* SubredditDataSource.m in Sources */,
-				ADB29EA40FEAD09E00405C52 /* NSString+HTMLEncoding.m in Sources */,
-				ADB29EA50FEAD09E00405C52 /* iRedditAppDelegate.m in Sources */,
-				ADB29EA60FEAD09E00405C52 /* LoginViewController.m in Sources */,
-				ADB29EA70FEAD09E00405C52 /* MessageViewController.m in Sources */,
-				ADB29EA80FEAD09E00405C52 /* RootViewController.m in Sources */,
-				ADB29EA90FEAD09E00405C52 /* SettingsViewController.m in Sources */,
-				ADB29EAA0FEAD09E00405C52 /* StoryViewController.m in Sources */,
-				ADB29EAB0FEAD09E00405C52 /* SubredditViewController.m in Sources */,
-				ADB29EAC0FEAD09E00405C52 /* AlienProgressView.m in Sources */,
-				ADB29EAD0FEAD09E00405C52 /* CommentAccessoryView.m in Sources */,
-				ADB29EAF0FEAD09E00405C52 /* MessageCell.m in Sources */,
-				ADB29EB00FEAD09E00405C52 /* RedditWebView.m in Sources */,
-				ADB29EB10FEAD09E00405C52 /* StoryCell.m in Sources */,
-				ADB29EB20FEAD09E00405C52 /* Three20Extensions.m in Sources */,
-				ADB29EB30FEAD09E00405C52 /* NSDictionary+JSON.m in Sources */,
-				ADBC92080FFDA1DE0033E60A /* AddRedditViewController.m in Sources */,
-				3821EF5111CAC990002CCCE2 /* NSCharacterSet_Extensions.m in Sources */,
-				3821EF5211CAC990002CCCE2 /* CDataScanner_Extensions.m in Sources */,
-				3821EF5311CAC990002CCCE2 /* NSDictionary_JSONExtensions.m in Sources */,
-				3821EF5411CAC990002CCCE2 /* CJSONScanner.m in Sources */,
-				3821EF5511CAC990002CCCE2 /* CJSONSerializer.m in Sources */,
-				3821EF5611CAC990002CCCE2 /* CJSONDeserializer.m in Sources */,
-				3821EF5711CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */,
-				3821EF5811CAC990002CCCE2 /* CSerializedJSONData.m in Sources */,
-				3821EF5911CAC990002CCCE2 /* CDataScanner.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ADB29E770FEAD09E00405C52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Three20;
-			targetProxy = ADB29E780FEAD09E00405C52 /* PBXContainerItemProxy */;
-		};
 		ADFB53F70FEAC5D30067CEC1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Three20;
@@ -898,40 +706,6 @@
 			};
 			name = Release;
 		};
-		ADB29EC40FEAD09E00405C52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
-				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				PRODUCT_NAME = "iReddit Free";
-			};
-			name = Debug;
-		};
-		ADB29EC60FEAD09E00405C52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
-				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				PRODUCT_NAME = "iReddit Free";
-			};
-			name = Release;
-		};
 		ADB29F820FEB03DC00405C52 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -966,22 +740,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
 				INFOPLIST_FILE = "iReddit-Info.plist";
 				PRODUCT_NAME = iReddit;
-			};
-			name = Distribution;
-		};
-		ADB29F840FEB03DC00405C52 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
-				INFOPLIST_FILE = "iReddit-Info Free.plist";
-				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Distribution;
 		};
@@ -1032,16 +790,6 @@
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
 				ADB29F830FEB03DC00405C52 /* Distribution */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		ADB29EC30FEAD09E00405C52 /* Build configuration list for PBXNativeTarget "iReddit Free" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADB29EC40FEAD09E00405C52 /* Debug */,
-				ADB29EC60FEAD09E00405C52 /* Release */,
-				ADB29F840FEB03DC00405C52 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
