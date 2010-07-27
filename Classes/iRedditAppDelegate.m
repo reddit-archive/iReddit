@@ -156,7 +156,7 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	if (rand()%4 != 0 && [viewControllers count] > 2 && 
 		[[viewControllers objectAtIndex:[viewControllers count] - 2] isKindOfClass:[SubredditViewController class]] && 
-		[[[viewControllers objectAtIndex:[viewControllers count] - 2] dataSource] isLoaded])
+		[(SubredditDataSource *)[[viewControllers objectAtIndex:[viewControllers count] - 2] dataSource] isLoaded])
 		activeDataSource = (id <TTTableViewDataSource, TTURLRequestDelegate>)[[viewControllers objectAtIndex:[viewControllers count] - 2] dataSource];
 	
 	int count = [activeDataSource totalStories];

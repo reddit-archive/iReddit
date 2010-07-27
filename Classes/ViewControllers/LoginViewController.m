@@ -93,7 +93,7 @@
 
 - (void)dismiss:(id)sender
 {
-	if ([self.delegate respondsToSelector:@selector(loginViewController:didFinishWithContext:)])
+	if ([(id)self.delegate respondsToSelector:@selector(loginViewController:didFinishWithContext:)])
 		[self.delegate loginViewController:self didFinishWithContext:self.context];
 
 	[[iRedditAppDelegate sharedAppDelegate].navController dismissModalViewControllerAnimated:YES];
