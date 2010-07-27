@@ -21,6 +21,25 @@
 		3821EF4E11CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4311CAC98F002CCCE2 /* CJSONDataSerializer.m */; };
 		3821EF4F11CAC990002CCCE2 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */; };
 		3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3821EF4711CAC990002CCCE2 /* CDataScanner.m */; };
+		61C35E0111FF0B1D001A2F85 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB53F30FEAC5920067CEC1 /* libThree20.a */; };
+		61C35E1111FF0C85001A2F85 /* RedditPremiumIcon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35E0F11FF0C85001A2F85 /* RedditPremiumIcon-72.png */; };
+		61C35E1211FF0C85001A2F85 /* RedditPremiumIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35E1011FF0C85001A2F85 /* RedditPremiumIcon@2x.png */; };
+		61C35F0211FF29DB001A2F85 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF211FF29DB001A2F85 /* back@2x.png */; };
+		61C35F0311FF29DB001A2F85 /* commentBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF311FF29DB001A2F85 /* commentBubble@2x.png */; };
+		61C35F0411FF29DB001A2F85 /* comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF411FF29DB001A2F85 /* comments@2x.png */; };
+		61C35F0511FF29DB001A2F85 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF511FF29DB001A2F85 /* error@2x.png */; };
+		61C35F0611FF29DB001A2F85 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF611FF29DB001A2F85 /* forward@2x.png */; };
+		61C35F0711FF29DB001A2F85 /* Loading0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF711FF29DB001A2F85 /* Loading0@2x.png */; };
+		61C35F0811FF29DB001A2F85 /* Loading1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF811FF29DB001A2F85 /* Loading1@2x.png */; };
+		61C35F0911FF29DB001A2F85 /* Loading2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EF911FF29DB001A2F85 /* Loading2@2x.png */; };
+		61C35F0A11FF29DB001A2F85 /* Loading3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFA11FF29DB001A2F85 /* Loading3@2x.png */; };
+		61C35F0B11FF29DB001A2F85 /* Loading4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFB11FF29DB001A2F85 /* Loading4@2x.png */; };
+		61C35F0C11FF29DB001A2F85 /* mainTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFC11FF29DB001A2F85 /* mainTitle@2x.png */; };
+		61C35F0D11FF29DB001A2F85 /* noimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFD11FF29DB001A2F85 /* noimage@2x.png */; };
+		61C35F0E11FF29DB001A2F85 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFE11FF29DB001A2F85 /* refresh@2x.png */; };
+		61C35F0F11FF29DB001A2F85 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35EFF11FF29DB001A2F85 /* stop@2x.png */; };
+		61C35F1011FF29DB001A2F85 /* voteDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35F0011FF29DB001A2F85 /* voteDown@2x.png */; };
+		61C35F1111FF29DB001A2F85 /* voteUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35F0111FF29DB001A2F85 /* voteUp@2x.png */; };
 		ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB29F880FEB046200405C52 /* Entitlements.plist */; };
 		ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
 		ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
@@ -72,8 +91,6 @@
 		ADFB53C40FEAC4010067CEC1 /* thedoor.pcm in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AB0FEAC4010067CEC1 /* thedoor.pcm */; };
 		ADFB53C50FEAC4010067CEC1 /* voteDown.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AC0FEAC4010067CEC1 /* voteDown.png */; };
 		ADFB53C60FEAC4010067CEC1 /* voteUp.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53AD0FEAC4010067CEC1 /* voteUp.png */; };
-		ADFB53C80FEAC4C30067CEC1 /* RedditIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */; };
-		ADFB53F40FEAC5A50067CEC1 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB53F30FEAC5920067CEC1 /* libThree20.a */; };
 		ADFB53FA0FEAC5E70067CEC1 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */; };
 		ADFB540F0FEAC6010067CEC1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */; };
 		ADFB54130FEAC60E0067CEC1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB54120FEAC60E0067CEC1 /* AudioToolbox.framework */; };
@@ -111,7 +128,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* iReddit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iReddit_Prefix.pch; sourceTree = "<group>"; };
-		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../../MainWindow.xib; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = ../MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3821EF3511CAC98F002CCCE2 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCharacterSet_Extensions.h; path = ../TouchJSON/Source/Extensions/NSCharacterSet_Extensions.h; sourceTree = SOURCE_ROOT; };
 		3821EF3611CAC98F002CCCE2 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSCharacterSet_Extensions.m; path = ../TouchJSON/Source/Extensions/NSCharacterSet_Extensions.m; sourceTree = SOURCE_ROOT; };
@@ -131,6 +148,24 @@
 		3821EF4511CAC98F002CCCE2 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSerializedJSONData.m; path = ../TouchJSON/Source/JSON/CSerializedJSONData.m; sourceTree = SOURCE_ROOT; };
 		3821EF4611CAC98F002CCCE2 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner.h; path = ../TouchJSON/Source/CDataScanner.h; sourceTree = SOURCE_ROOT; };
 		3821EF4711CAC990002CCCE2 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner.m; path = ../TouchJSON/Source/CDataScanner.m; sourceTree = SOURCE_ROOT; };
+		61C35E0F11FF0C85001A2F85 /* RedditPremiumIcon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RedditPremiumIcon-72.png"; sourceTree = "<group>"; };
+		61C35E1011FF0C85001A2F85 /* RedditPremiumIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RedditPremiumIcon@2x.png"; sourceTree = "<group>"; };
+		61C35EF211FF29DB001A2F85 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		61C35EF311FF29DB001A2F85 /* commentBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commentBubble@2x.png"; sourceTree = "<group>"; };
+		61C35EF411FF29DB001A2F85 /* comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments@2x.png"; sourceTree = "<group>"; };
+		61C35EF511FF29DB001A2F85 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		61C35EF611FF29DB001A2F85 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
+		61C35EF711FF29DB001A2F85 /* Loading0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading0@2x.png"; sourceTree = "<group>"; };
+		61C35EF811FF29DB001A2F85 /* Loading1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading1@2x.png"; sourceTree = "<group>"; };
+		61C35EF911FF29DB001A2F85 /* Loading2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading2@2x.png"; sourceTree = "<group>"; };
+		61C35EFA11FF29DB001A2F85 /* Loading3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading3@2x.png"; sourceTree = "<group>"; };
+		61C35EFB11FF29DB001A2F85 /* Loading4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading4@2x.png"; sourceTree = "<group>"; };
+		61C35EFC11FF29DB001A2F85 /* mainTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainTitle@2x.png"; sourceTree = "<group>"; };
+		61C35EFD11FF29DB001A2F85 /* noimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noimage@2x.png"; sourceTree = "<group>"; };
+		61C35EFE11FF29DB001A2F85 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		61C35EFF11FF29DB001A2F85 /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
+		61C35F0011FF29DB001A2F85 /* voteDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voteDown@2x.png"; sourceTree = "<group>"; };
+		61C35F0111FF29DB001A2F85 /* voteUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voteUp@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iReddit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iReddit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Info Free.plist"; sourceTree = "<group>"; };
 		ADB29F880FEB046200405C52 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -213,7 +248,6 @@
 		ADFB53AB0FEAC4010067CEC1 /* thedoor.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = thedoor.pcm; sourceTree = "<group>"; };
 		ADFB53AC0FEAC4010067CEC1 /* voteDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voteDown.png; sourceTree = "<group>"; };
 		ADFB53AD0FEAC4010067CEC1 /* voteUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voteUp.png; sourceTree = "<group>"; };
-		ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedditIcon2.png; sourceTree = "<group>"; };
 		ADFB53EB0FEAC5920067CEC1 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		ADFB53F90FEAC5E70067CEC1 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		ADFB540E0FEAC6010067CEC1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -238,13 +272,13 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
-				ADFB53F40FEAC5A50067CEC1 /* libThree20.a in Frameworks */,
 				ADFB540F0FEAC6010067CEC1 /* QuartzCore.framework in Frameworks */,
 				ADFB54130FEAC60E0067CEC1 /* AudioToolbox.framework in Frameworks */,
 				ADFB54170FEAC61B0067CEC1 /* libsqlite3.dylib in Frameworks */,
 				ADFB54190FEAC6270067CEC1 /* CoreLocation.framework in Frameworks */,
 				ADFB541D0FEAC6370067CEC1 /* SystemConfiguration.framework in Frameworks */,
 				ADFB54210FEAC63E0067CEC1 /* libz.dylib in Frameworks */,
+				61C35E0111FF0B1D001A2F85 /* libThree20.a in Frameworks */,
 				ADFB54950FEAC6700067CEC1 /* libxml2.dylib in Frameworks */,
 				ADFB549B0FEAC6FB0067CEC1 /* AddressBook.framework in Frameworks */,
 				ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */,
@@ -288,8 +322,9 @@
 			isa = PBXGroup;
 			children = (
 				ADFB53930FEAC4010067CEC1 /* Resources */,
-				ADFB53C70FEAC4C30067CEC1 /* RedditIcon2.png */,
 				ADEACD8D0FED97C7003CBAE3 /* RedditPremiumIcon.png */,
+				61C35E0F11FF0C85001A2F85 /* RedditPremiumIcon-72.png */,
+				61C35E1011FF0C85001A2F85 /* RedditPremiumIcon@2x.png */,
 				ADFB556B0FEACC5C0067CEC1 /* Default.png */,
 				8D1107310486CEB800E47090 /* iReddit-Info.plist */,
 				ADB29ECA0FEAD09E00405C52 /* iReddit-Info Free.plist */,
@@ -362,6 +397,14 @@
 			path = ../TouchJSON/Source/JSON;
 			sourceTree = SOURCE_ROOT;
 		};
+		61C35E0211FF0B67001A2F85 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
 		ADFB53350FEAC3EA0067CEC1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +420,7 @@
 				ADFB535A0FEAC3EA0067CEC1 /* iRedditAppDelegate.m */,
 				ADFB535B0FEAC3EA0067CEC1 /* ViewControllers */,
 				ADFB53680FEAC3EA0067CEC1 /* Views */,
-				ADFB53750FEAC3EA0067CEC1 /* XIBs */,
+				61C35E0211FF0B67001A2F85 /* XIBs */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -458,14 +501,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		ADFB53750FEAC3EA0067CEC1 /* XIBs */ = {
-			isa = PBXGroup;
-			children = (
-				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-			);
-			path = XIBs;
-			sourceTree = "<group>";
-		};
 		ADFB53930FEAC4010067CEC1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +521,22 @@
 				ADFB53A10FEAC4010067CEC1 /* Sounds */,
 				ADFB53AC0FEAC4010067CEC1 /* voteDown.png */,
 				ADFB53AD0FEAC4010067CEC1 /* voteUp.png */,
+				61C35EF211FF29DB001A2F85 /* back@2x.png */,
+				61C35EF311FF29DB001A2F85 /* commentBubble@2x.png */,
+				61C35EF411FF29DB001A2F85 /* comments@2x.png */,
+				61C35EF511FF29DB001A2F85 /* error@2x.png */,
+				61C35EF611FF29DB001A2F85 /* forward@2x.png */,
+				61C35EF711FF29DB001A2F85 /* Loading0@2x.png */,
+				61C35EF811FF29DB001A2F85 /* Loading1@2x.png */,
+				61C35EF911FF29DB001A2F85 /* Loading2@2x.png */,
+				61C35EFA11FF29DB001A2F85 /* Loading3@2x.png */,
+				61C35EFB11FF29DB001A2F85 /* Loading4@2x.png */,
+				61C35EFC11FF29DB001A2F85 /* mainTitle@2x.png */,
+				61C35EFD11FF29DB001A2F85 /* noimage@2x.png */,
+				61C35EFE11FF29DB001A2F85 /* refresh@2x.png */,
+				61C35EFF11FF29DB001A2F85 /* stop@2x.png */,
+				61C35F0011FF29DB001A2F85 /* voteDown@2x.png */,
+				61C35F0111FF29DB001A2F85 /* voteUp@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -608,12 +659,29 @@
 				ADFB53C40FEAC4010067CEC1 /* thedoor.pcm in Resources */,
 				ADFB53C50FEAC4010067CEC1 /* voteDown.png in Resources */,
 				ADFB53C60FEAC4010067CEC1 /* voteUp.png in Resources */,
-				ADFB53C80FEAC4C30067CEC1 /* RedditIcon2.png in Resources */,
 				ADFB53FA0FEAC5E70067CEC1 /* Three20.bundle in Resources */,
 				ADFB556C0FEACC5C0067CEC1 /* Default.png in Resources */,
 				ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */,
 				ADEACD8E0FED97C7003CBAE3 /* RedditPremiumIcon.png in Resources */,
 				ADD830641009632D00138F44 /* stop.png in Resources */,
+				61C35E1111FF0C85001A2F85 /* RedditPremiumIcon-72.png in Resources */,
+				61C35E1211FF0C85001A2F85 /* RedditPremiumIcon@2x.png in Resources */,
+				61C35F0211FF29DB001A2F85 /* back@2x.png in Resources */,
+				61C35F0311FF29DB001A2F85 /* commentBubble@2x.png in Resources */,
+				61C35F0411FF29DB001A2F85 /* comments@2x.png in Resources */,
+				61C35F0511FF29DB001A2F85 /* error@2x.png in Resources */,
+				61C35F0611FF29DB001A2F85 /* forward@2x.png in Resources */,
+				61C35F0711FF29DB001A2F85 /* Loading0@2x.png in Resources */,
+				61C35F0811FF29DB001A2F85 /* Loading1@2x.png in Resources */,
+				61C35F0911FF29DB001A2F85 /* Loading2@2x.png in Resources */,
+				61C35F0A11FF29DB001A2F85 /* Loading3@2x.png in Resources */,
+				61C35F0B11FF29DB001A2F85 /* Loading4@2x.png in Resources */,
+				61C35F0C11FF29DB001A2F85 /* mainTitle@2x.png in Resources */,
+				61C35F0D11FF29DB001A2F85 /* noimage@2x.png in Resources */,
+				61C35F0E11FF29DB001A2F85 /* refresh@2x.png in Resources */,
+				61C35F0F11FF29DB001A2F85 /* stop@2x.png in Resources */,
+				61C35F1011FF29DB001A2F85 /* voteDown@2x.png in Resources */,
+				61C35F1111FF29DB001A2F85 /* voteUp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,10 +743,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -694,10 +758,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
@@ -716,13 +776,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../three20/src;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Distribution;
 		};
@@ -731,10 +792,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Classes/Analytics\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = PREMIUM;
@@ -753,12 +810,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../three20/src;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -771,13 +829,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../three20/src;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

@@ -24,7 +24,7 @@
 
 		showCommentsButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 30.0, 44.0)];
 
-		[showCommentsButton setImage:[[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"commentBubble" ofType:@"png"]] autorelease] forState:UIControlStateNormal];
+		[showCommentsButton setImage:[UIImage imageNamed:@"commentBubble.png"] forState:UIControlStateNormal];
 		
 		showCommentsButton.adjustsImageWhenHighlighted = YES;
 		

@@ -182,7 +182,7 @@
 	
 	self.tableView.allowsSelectionDuringEditing = NO;
 	
-	UIImage *mainTitleImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mainTitle" ofType:@"png"]];
+	UIImage *mainTitleImage = [UIImage imageNamed:@"mainTitle.png"];
 	self.navigationItem.titleView = [[[UIImageView alloc] initWithImage:mainTitleImage] autorelease];
 	[mainTitleImage release];
 	
