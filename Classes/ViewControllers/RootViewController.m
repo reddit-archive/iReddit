@@ -182,9 +182,7 @@
 	
 	self.tableView.allowsSelectionDuringEditing = NO;
 	
-	UIImage *mainTitleImage = [UIImage imageNamed:@"mainTitle.png"];
-	self.navigationItem.titleView = [[[UIImageView alloc] initWithImage:mainTitleImage] autorelease];
-	[mainTitleImage release];
+	self.navigationItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainTitle.png"]] autorelease];
 	
 	self.tableView.editing = NO;
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];

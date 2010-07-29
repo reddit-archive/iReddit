@@ -146,7 +146,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
 	TTSectionedDataSource *data = (TTSectionedDataSource *)self.dataSource;
-	NSArray *sections = [data sections];
+	NSArray *sections = [data sectionsCopy];
 
 	NSString *username = [defaults stringForKey:redditUsernameKey];
 	NSString *password = [defaults stringForKey:redditPasswordKey];
@@ -186,6 +186,8 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 		}
 	}
 
+	[sections release];
+	
 	[defaults synchronize];
 	
 	if (![username isEqual:[defaults stringForKey:redditUsernameKey]] || ![password isEqual:[defaults stringForKey:redditPasswordKey]])

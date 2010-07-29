@@ -37,7 +37,7 @@
 
 @interface TTSectionedDataSource (Reddit)
 
-- (NSArray *)sections;
+- (NSArray *)sectionsCopy;
 
 - (NSMutableArray *)itemsInSection:(unsigned int)aSection;
 

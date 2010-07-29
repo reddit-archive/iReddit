@@ -77,7 +77,7 @@
 
 @implementation TTSectionedDataSource (Reddit)
 
-- (NSArray *)sections
+- (NSArray *)sectionsCopy
 {
     return [_sections copy];
 }

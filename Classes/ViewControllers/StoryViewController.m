@@ -73,11 +73,11 @@
 		
 		[items addObject:[[[UIBarButtonItem alloc] initWithCustomView:commentCountItem] autorelease]];
 		
-		[items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"commentBubble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showComments:)]];
+		[items addObject:[[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"commentBubble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showComments:)] autorelease]];
 	}
 	else
 	{
-		[items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showStory:)]];
+		[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showStory:)] autorelease]];
 	}
 	
 	toggleButtonItem = [items lastObject];
