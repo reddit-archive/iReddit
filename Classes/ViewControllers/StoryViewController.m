@@ -62,7 +62,7 @@
 
 	if (!isForComments)
 	{
-		commentCountItem = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+		self.commentCountItem = [UIButton buttonWithType:UIButtonTypeCustom];
 		commentCountItem.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 		commentCountItem.showsTouchWhenHighlighted = NO;
 		commentCountItem.adjustsImageWhenHighlighted = NO;
@@ -80,12 +80,12 @@
 		[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showStory:)] autorelease]];
 	}
 	
-	toggleButtonItem = [items lastObject];
+	self.toggleButtonItem = [items lastObject];
 
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)] autorelease]];
 
-	[self setToolbarItems:items animated:YES];
+	[self setToolbarItems:items animated:NO];
 	
 	NSArray *viewControllers = [[self navigationController] viewControllers];
 
@@ -638,15 +638,6 @@
 
 - (void)dealloc 
 {
-	[webview setDelegate:nil];
-	[webview stopLoading];
-
-	self.webview = nil;
-	self.scoreItem = nil;
-	self.commentCountItem = nil;
-	self.toggleButtonItem = nil;
-	self.segmentedControl = nil;
-	self.loadingView = nil;
 	self.story = nil;
 	
     [super dealloc];
