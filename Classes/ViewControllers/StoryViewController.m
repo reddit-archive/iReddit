@@ -41,8 +41,8 @@
 	
 	NSMutableArray *items = [NSMutableArray array];
 	
-	UIImage *voteUpImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"voteUp" ofType:@"png"]];
-	UIImage *voteDownImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"voteDown" ofType:@"png"]];
+	UIImage *voteUpImage = [UIImage imageNamed:@"voteUp.png"];
+	UIImage *voteDownImage = [UIImage imageNamed:@"voteDown.png"];
 	
 	[items addObject:[[[UIBarButtonItem alloc] initWithImage:voteUpImage style:UIBarButtonItemStylePlain target:self action:@selector(voteUp:)] autorelease]];
 	
@@ -58,14 +58,11 @@
 	[items addObject:[[[UIBarButtonItem alloc] initWithCustomView:scoreItem] autorelease]];
 	[items addObject:[[[UIBarButtonItem alloc] initWithImage:voteDownImage style:UIBarButtonItemStylePlain target:self action:@selector(voteDown:)] autorelease]];
 	
-	[voteUpImage release];
-	[voteDownImage release];
-	
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
 
 	if (!isForComments)
 	{
-		commentCountItem = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+		self.commentCountItem = [UIButton buttonWithType:UIButtonTypeCustom];
 		commentCountItem.titleLabel.font = [UIFont boldSystemFontOfSize:18.0];
 		commentCountItem.showsTouchWhenHighlighted = NO;
 		commentCountItem.adjustsImageWhenHighlighted = NO;
@@ -76,21 +73,19 @@
 		
 		[items addObject:[[[UIBarButtonItem alloc] initWithCustomView:commentCountItem] autorelease]];
 		
-		UIImage *commentBubbleImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"comments" ofType:@"png"]];
-		[items addObject:[[UIBarButtonItem alloc] initWithImage:commentBubbleImage style:UIBarButtonItemStylePlain target:self action:@selector(showComments:)]];
-		[commentBubbleImage release];
+		[items addObject:[[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"commentBubble.png"] style:UIBarButtonItemStylePlain target:self action:@selector(showComments:)] autorelease]];
 	}
 	else
 	{
-		[items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showStory:)]];
+		[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showStory:)] autorelease]];
 	}
 	
-	toggleButtonItem = [items lastObject];
+	self.toggleButtonItem = [items lastObject];
 
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)] autorelease]];
 
-	[self setToolbarItems:items animated:YES];
+	[self setToolbarItems:items animated:NO];
 	
 	NSArray *viewControllers = [[self navigationController] viewControllers];
 
@@ -101,9 +96,9 @@
 	}
 
 	NSArray *segmentItems = [NSArray arrayWithObjects:
-							 [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"back" ofType:@"png"]] autorelease],
-							 [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"refresh" ofType:@"png"]] autorelease],
-							 [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"forward" ofType:@"png"]] autorelease],
+							 [UIImage imageNamed:@"back.png"],
+							 [UIImage imageNamed:@"refresh.png"],
+							 [UIImage imageNamed:@"forward.png"],
 							 nil
 							 ];
 	
@@ -574,14 +569,10 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-	UIImage *stopImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stop" ofType:@"png"]];
-
 	[(UILabel *)(self.navigationItem.titleView) setText:@"Loading..."];
 	[segmentedControl setEnabled:[webView canGoBack] forSegmentAtIndex:0];
 	[segmentedControl setEnabled:[webView canGoForward] forSegmentAtIndex:2];
-	[segmentedControl setImage:stopImage forSegmentAtIndex:1];
-	
-	[stopImage release];
+	[segmentedControl setImage:[UIImage imageNamed:@"stop.png"] forSegmentAtIndex:1];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
@@ -592,11 +583,9 @@
 		[loadingView stopAnimating];
 	}
 
-	UIImage *refreshImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"refresh" ofType:@"png"]];
 	[segmentedControl setEnabled:[webView canGoBack] forSegmentAtIndex:0];
 	[segmentedControl setEnabled:[webView canGoForward] forSegmentAtIndex:2];
-	[segmentedControl setImage:refreshImage forSegmentAtIndex:1];
-	[refreshImage release];
+	[segmentedControl setImage:[UIImage imageNamed:@"refresh.png"] forSegmentAtIndex:1];
 	
 	[(UILabel *)(self.navigationItem.titleView) setText:[webView stringByEvaluatingJavaScriptFromString:@"document.title"]];
 }
@@ -649,15 +638,6 @@
 
 - (void)dealloc 
 {
-	[webview setDelegate:nil];
-	[webview stopLoading];
-
-	self.webview = nil;
-	self.scoreItem = nil;
-	self.commentCountItem = nil;
-	self.toggleButtonItem = nil;
-	self.segmentedControl = nil;
-	self.loadingView = nil;
 	self.story = nil;
 	
     [super dealloc];

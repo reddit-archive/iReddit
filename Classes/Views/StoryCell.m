@@ -77,7 +77,7 @@
 		[[self contentView] addSubview:secondaryDescriptionView];
 		
 		storyImage = [[TTImageView alloc] initWithFrame:CGRectZero];
-		storyImage.defaultImage = [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"noimage" ofType:@"png"]] autorelease];
+		storyImage.defaultImage = [UIImage imageNamed:@"noimage.png"];
 
 		storyImage.autoresizesToImage = NO;
 		storyImage.autoresizesSubviews = NO;

@@ -172,12 +172,12 @@
 
 - (UIImage*)imageForError:(NSError*)error
 {
-	return [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"error" ofType:@"png"]] autorelease];
+	return [UIImage imageNamed:@"error.png"];
 }
 
 - (UIImage*)imageForNoData
 {
-	return [[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"error" ofType:@"png"]] autorelease];
+	return [UIImage imageNamed:@"error.png"];
 }
 
 - (NSString*)titleForNoData

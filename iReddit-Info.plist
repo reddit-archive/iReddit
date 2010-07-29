@@ -10,6 +10,12 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>RedditPremiumIcon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>RedditPremiumIcon.png</string>
+		<string>RedditPremiumIcon-72.png</string>
+		<string>RedditPremiumIcon@2x.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.condenet.reddit</string>
 	<key>CFBundleInfoDictionaryVersion</key>

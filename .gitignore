@@ -5,4 +5,7 @@ build/Release-iphonesimulator/
 build/iReddit.build/
 build
 iReddit.xcodeproj/*.mode1v3
+iReddit.xcodeproj/*.mode2v3
 iReddit.xcodeproj/*.pbxuser
+*.perspective
+*.perspectivev3
