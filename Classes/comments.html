@@ -466,16 +466,21 @@ p {
                     return element;
                     
                 //first keep track of the global scoring/voting data
-                if (data.likes && data.likes === true)
-                    VOTES[data.name] = 1; 
-                else if (data.likes && data.likes === false)
+                if (data.likes != undefined && data.likes === true) {
+                    VOTES[data.name] = 1;
+					element.className = "comment voted-up";
+				}
+                else if (data.likes != undefined && data.likes === false) {
                     VOTES[data.name] = -1;
-                else
+					element.className = "comment voted-down";
+				}
+                else {
                     VOTES[data.name] = 0;
+					element.className = "comment not-voted";
+				}
                     
                 SCORES[data.name] = data.ups - data.downs - VOTES[data.name];
                     
-                element.className = "comment";
                 element.id = data.id;
                 
                 var header = document.createElement("div");
@@ -504,13 +509,6 @@ p {
                 commentPoints.className = "comment-points";
                 commentPoints.id = data.id+"_points";
                 commentPoints.innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
-                
-                if (VOTES[data.name] == 1)
-                    commentPoints.style.color = "#ff4500";
-                else if (VOTES[data.name] == -1)
-                    commentPoints.style.color = "blue";
-                else
-                    commentPoints.style.color = "black";
                     
                 header.appendChild(commentPoints);
                 
@@ -708,10 +706,12 @@ p {
                     else
                         VOTES[data.name] = -1;
                     
-                    if (VOTES[data.name] == -1)
-                        $(data.id+"_points").style.color = "blue";
-                    else
-                        $(data.id+"_points").style.color = "black";
+                    if (VOTES[data.name] == -1) {
+						$(data.id).className = "comment voted-down";
+					}
+                    else {
+						$(data.id).className = "comment not-voted";
+					}
 
                     $(data.id+"_points").innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
                     
@@ -744,10 +744,12 @@ p {
                     else
                         VOTES[data.name] = 1;
                     
-                    if (VOTES[data.name] == 1)
-                        $(data.id+"_points").style.color = "#ff4500";
-                    else
-                        $(data.id+"_points").style.color = "black";
+                    if (VOTES[data.name] == 1) {
+						$(data.id).className = "comment voted-up";
+					}
+                    else {
+						$(data.id).className = "comment not-voted";
+					}
 
                     $(data.id+"_points").innerText = " "+(SCORES[data.name]+VOTES[data.name])+" points ";
 
