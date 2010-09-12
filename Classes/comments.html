@@ -206,15 +206,31 @@ body
 			height: 90px;
 			display: none;
 		}
+		.comment-reply button {
+			-webkit-border-radius: 6px;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CEE3F8), to(#5F99CF));
+			height: 24px;
+			color: white;
+			font-weight: bold;
+			margin: 5px 4px 5px 0;
+			padding: 0 3px;
+			border: none;
+		}
+			.comment-reply button:last-child {
+				margin-right: 0;
+			}
+		.vote-down, .vote-up {
+			background: gray;
+		}
 
-	.voted-down > .comment-body, .voted-down > .comment-header {
-		background: rgba(0, 0, 255, 0.1);
+	.voted-down > .comment-reply .vote-down {
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0000ff), to(#00007F));
 	}
 		.voted-down > .comment-header .comment-points {
 			color: blue;
 		}
-	.voted-up > .comment-body, .voted-up > .comment-header {
-		background: #ff4500;
+	.voted-up > .comment-reply .vote-up {
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff4500), to(#7F2200));
 	}
 		.voted-up > .comment-header .comment-points {
 			color: #ff4500;
