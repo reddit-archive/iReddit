@@ -164,47 +164,69 @@ body
     background-color: rgb(250, 250, 250);
 }
 
-.comment-header {
-    font-size: 11px;
-    padding-bottom: 3px;
-}
-
 .comment {
     padding-left: 10px;
     padding-top: 6px;
 }
 
-.comment-author {
-    color: rgb(50, 100, 155);
-    font-weight: bold;
+.comment-header {
+    font-size: 11px;
+    padding-bottom: 3px;
+	margin-bottom: 0;
+	overflow: auto;
 }
+	.comment-points {
+		color: black;
+	}
 
-.comment-author:after { content: " "; }
+	.comment-author {
+		color: rgb(50, 100, 155);
+		font-weight: bold;
+	}
 
-.comment-body {
-    padding-bottom: 6px;
-    -webkit-touch-callout: none;
-}
+		.comment-author:after { content: " "; }
 
-.comment-reply {
-    display: none;
-	
-	width: 90%;
-	
-	position: absolute;
-	left: 6px;
-	
-	padding: 10px;
-}
+	.comment-body {
+		padding-bottom: 6px;
+		-webkit-touch-callout: none;
+	}
 
-.comment-reply-padding {
-	height: 90px;
-	display: none;
-}
+	.comment-reply {
+		display: none;
+		
+		width: 90%;
+		
+		position: absolute;
+		left: 6px;
+		
+		padding: 10px;
+	}
 
-.coment-status {
-    display: none;
-}
+		.comment-reply input {
+			background: red;
+		}
+
+		.comment-reply-padding {
+			height: 90px;
+			display: none;
+		}
+
+	.voted-down > .comment-body, .voted-down > .comment-header {
+		background: rgba(0, 0, 255, 0.1);
+	}
+		.voted-down > .comment-header .comment-points {
+			color: blue;
+		}
+	.voted-up > .comment-body, .voted-up > .comment-header {
+		background: #ff4500;
+	}
+		.voted-up > .comment-header .comment-points {
+			color: #ff4500;
+		}
+
+	.coment-status {
+		display: none;
+	}
 
 #REPLY {
     padding: 6px;
