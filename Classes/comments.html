@@ -206,7 +206,7 @@ body
 			height: 90px;
 			display: none;
 		}
-		.comment-reply button {
+		.comment-reply button, #REPLY_submit {
 			-webkit-border-radius: 6px;
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#757575), to(#4B4B4B));
 			height: 24px;
@@ -245,14 +245,19 @@ body
 	display: none;
 }
 
-#reply-textarea {
-	width: 100%;
-	height: 80px;
-}
+	#reply-textarea {
+		width: 100%;
+		height: 80px;
+	}
 
-#REPLY_status {
-	display: none;
-}
+	#REPLY_status {
+		display: none;
+	}
+
+	#REPLY_submit {
+		margin: 5px 0 5px auto;
+		display: block;
+	}
 
 #META {
 	padding-left: 10px;
@@ -300,7 +305,7 @@ p {
 	<div id="REPLY">
 		<textarea id="reply-textarea"></textarea>
 		<div id="REPLY_status"></div>
-		<input id="REPLY_submit" type="button" value="comment" />
+		<button id="REPLY_submit" type="button">comment</button>
 	</div>
 	
 	<div id="META"> </div>
