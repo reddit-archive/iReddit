@@ -587,10 +587,10 @@ p {
 				commentControls.style.cssFloat = "right";
 				//commentControls.style.width = "120px";
 				
-				var commentCancelButton = document.createElement("input");
+				var commentCancelButton = document.createElement("button");
 				
 				commentCancelButton.type = "button";
-				commentCancelButton.value = "cancel";
+				commentCancelButton.innerHTML = "cancel";
 				//commentCancelButton.style.clear = "left";
 				
 				commentCancelButton.onclick = function(anEvent)
@@ -605,10 +605,10 @@ p {
 				
 				commentControls.appendChild(commentCancelButton);
 
-				var commentSubmitButton = document.createElement("input");
+				var commentSubmitButton = document.createElement("button");
 				
 				commentSubmitButton.type = "button";
-				commentSubmitButton.value = "reply";
+				commentSubmitButton.innerHTML = "reply";
 		   
 				commentSubmitButton.onclick = function(anEvent)
 				{					
@@ -686,10 +686,11 @@ p {
 				
 				//commentVotingControls = commentControls;
 
-				var commentVoteDownButton = document.createElement("input");
+				var commentVoteDownButton = document.createElement("button");
 				
 				commentVoteDownButton.type = "button";
-				commentVoteDownButton.value = "vote down";
+				commentVoteDownButton.className = "vote-down";
+				commentVoteDownButton.innerHTML = "vote down";
 				
 				
 				commentVoteDownButton.onclick = function(anEvent)
@@ -725,10 +726,11 @@ p {
 
 				commentVotingControls.insertBefore(commentVoteDownButton, commentVotingControls.firstChild);
 
-								var commentVoteUpButton = document.createElement("input");
+								var commentVoteUpButton = document.createElement("button");
 				
 				commentVoteUpButton.type = "button";
-				commentVoteUpButton.value = "vote up";
+				commentVoteUpButton.innerHTML = "vote up";
+				commentVoteUpButton.className = "vote-up";
 				
 				commentVoteUpButton.onclick = function(anEvent)
 				{
