@@ -16,9 +16,6 @@
 #import "NSDictionary+JSON.h"
 #import "SubredditViewController.h"
 
-#define STORIES_BETWEEN_ADS 20
-#define AD_OFFSET 17
-
 @implementation SubredditDataSource
 
 @synthesize viewController;
