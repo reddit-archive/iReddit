@@ -136,28 +136,63 @@
 
 	NSString *url = [NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditComposeMessageAPIString];
 	
-	activeRequest = [TTURLRequest requestWithURL:url delegate:nil];
-	
+	activeRequest = [TTURLRequest requestWithURL:url delegate:self];
 	activeRequest.cacheExpirationAge = 0;
     activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;
     activeRequest.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 	activeRequest.httpMethod = @"POST";
 	activeRequest.contentType = @"application/x-www-form-urlencoded";
-	
 	activeRequest.httpBody = 	 [[NSString stringWithFormat:@"id=%@&uh=%@&to=%@&subject=%@&text=%@",
 								   @"%23compose-message",
 								   [[LoginController sharedLoginController] modhash],
-								   [toField.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-								   [subjectField.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-								   [messageBody.text stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
+								   [[toField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+								   [[subjectField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+								   [[messageBody.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
 								   ] dataUsingEncoding:NSASCIIStringEncoding];
-	
 	activeRequest.response = [[[TTURLDataResponse alloc] init] autorelease];
 
 	[activeRequest send];
 
 	[controller dismissModalViewControllerAnimated:YES];
 }
+
+// for the message composer!
+- (void)requestDidFinishLoad:(TTURLRequest*)request
+{
+    NSString *responseBody = [[NSString alloc] initWithData:((TTURLDataResponse *)request.response).data encoding:NSUTF8StringEncoding];
+
+    if([responseBody rangeOfString:@"error"].location != NSNotFound)
+    {
+        [[[[UIAlertView alloc] initWithTitle:@"Error Sending Message" 
+                           message:@"Could not send your message at this time. Please try again later." 
+                           delegate:nil 
+						   cancelButtonTitle:@"OK" 
+						   otherButtonTitles:nil] autorelease] show];
+    }
+    
+    [responseBody release];
+    
+    activeRequest = nil;
+}
+
+// for the message composer!
+- (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
+{
+    activeRequest = nil;
+    
+    [[[[UIAlertView alloc] initWithTitle:@"Error Sending Message" 
+                           message:@"Could not send your message at this time. Please try again later." 
+                           delegate:nil 
+						   cancelButtonTitle:@"OK" 
+						   otherButtonTitles:nil] autorelease] show];
+}
+
+// for the message composer!
+- (void)requestDidCancelLoad:(TTURLRequest*)request
+{
+	activeRequest = nil;
+}
+
 
 - (void)dealloc
 {
