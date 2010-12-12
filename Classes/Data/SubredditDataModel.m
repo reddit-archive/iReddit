@@ -29,7 +29,8 @@
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more
 {	
     NSString *loadURL = [self fullURL];
-    if(more) {
+    if(more) 
+    {
         id object = [self.stories lastObject];
 
         //rb what the fuck is this doing?
@@ -40,7 +41,9 @@
         NSString *lastItemID = story.name;
 
         loadURL = [NSString stringWithFormat:@"%@%@%@", [self fullURL], MoreItemsFormattedString, lastItemID];
-    } else {
+    } 
+    else
+    {
         // clear the cache for this subreddit
         //rb sigh... ditch three20 loading asap...
         [[TTURLCache sharedCache] removeURL:loadURL fromDisk:YES];
@@ -96,9 +99,10 @@
 	}
     
 	canLoadMore = [_stories count] > totalCount;
-    if(canLoadMore) {
+    if(canLoadMore) 
+    {
         //rb testing
-        [self performSelector:@selector(loadNewRequest:) withObject:request afterDelay:2.0];
+        //[self performSelector:@selector(loadNewRequest:) withObject:request afterDelay:2.0];
     }
     [super requestDidFinishLoad:request];
 }
@@ -135,7 +139,8 @@
 	[self.stories removeAllObjects];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     TT_RELEASE_SAFELY(_stories);
     TT_RELEASE_SAFELY(_subreddit);
     [super dealloc];

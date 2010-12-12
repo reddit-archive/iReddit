@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Three20/Three20.h"
 
-@interface SubredditDataModel : TTURLRequestModel {
+@interface SubredditDataModel : TTURLRequestModel
+{
     NSString *_subreddit;
     NSMutableArray *_stories;
     

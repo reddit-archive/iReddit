@@ -8,7 +8,8 @@
 
 #import "CDataScanner.h"
 
-@interface CJSONScanner : CDataScanner {
+@interface CJSONScanner : CDataScanner
+{
 }
 
 - (BOOL)scanJSONObject:(id *)outObject error:(NSError **)outError;

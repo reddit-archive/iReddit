@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CJSONSerializer : NSObject {
+@interface CJSONSerializer : NSObject
+{
 }
 
 + (id)serializer;

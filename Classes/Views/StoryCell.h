@@ -10,7 +10,8 @@
 #import <Three20/Three20.h>
 #import "Story.h"
 
-@interface StoryCell : UITableViewCell {
+@interface StoryCell : UITableViewCell
+{
 	Story		*story;
 	UILabel		*storyTitleView;
 	UILabel		*storyDescriptionView;

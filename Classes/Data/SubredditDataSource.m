@@ -20,7 +20,8 @@
 
 @synthesize viewController;
 
-- (id)initWithSubreddit:(NSString *)subreddit {
+- (id)initWithSubreddit:(NSString *)subreddit
+{
     if (self = [self init])
 	{
         _subredditModel = [[SubredditDataModel alloc] initWithSubreddit:subreddit];
@@ -28,7 +29,8 @@
     return self;
 }
 
-- (id<TTModel>)model {
+- (id<TTModel>)model
+{
   return _subredditModel;
 }
 
@@ -45,7 +47,8 @@
 	[super dealloc];
 }
 
-- (void)tableViewDidLoadModel:(UITableView*)tableView {
+- (void)tableViewDidLoadModel:(UITableView*)tableView
+{
     [lastLoadedTime release];
     lastLoadedTime = [[NSDate date] retain];
     self.items = _subredditModel.stories;

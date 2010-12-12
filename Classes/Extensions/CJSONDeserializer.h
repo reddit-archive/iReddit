@@ -18,7 +18,8 @@ extern NSString *const kJSONDeserializerErrorDomain /* = @"CJSONDeserializerErro
 
 #pragma mark -
 
-@interface CJSONDeserializer : NSObject <CDeserializerProtocol> {
+@interface CJSONDeserializer : NSObject <CDeserializerProtocol> 
+{
 
 }
 

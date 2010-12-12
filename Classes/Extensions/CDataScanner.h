@@ -10,7 +10,8 @@
 
 // NSScanner
 
-@interface CDataScanner : NSObject {
+@interface CDataScanner : NSObject
+{
 	NSData *data;
 
 	u_int8_t *start;

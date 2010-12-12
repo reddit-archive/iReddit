@@ -115,7 +115,8 @@
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableViewDidLoadModel:(UITableView*)tableView {
+- (void)tableViewDidLoadModel:(UITableView*)tableView
+{
     NSLog(@"wut");
 }
 

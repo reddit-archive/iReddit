@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Three20/Three20.h>
 
-@interface RootViewController : TTTableViewController {
+@interface RootViewController : TTTableViewController
+{
 	NSArray *customSubreddits;
 	TTURLRequest *activeRequest;
 }

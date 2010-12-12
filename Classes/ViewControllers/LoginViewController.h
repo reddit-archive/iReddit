@@ -15,7 +15,8 @@
 
 @end
 
-@interface LoginViewController : TTTableViewController {
+@interface LoginViewController : TTTableViewController
+{
 	id <LoginViewControllerDelegate>delegate;
 	id context;
 	

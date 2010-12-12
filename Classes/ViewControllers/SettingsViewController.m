@@ -12,7 +12,8 @@
 #import "Constants.h"
 #import "Three20Extensions.h"
 
-static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
+static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) 
+{
 	AudioServicesRemoveSystemSoundCompletion(mySSID);
 	AudioServicesDisposeSystemSoundID(mySSID);
 }

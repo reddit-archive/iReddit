@@ -156,7 +156,8 @@
 }
 */
 
-- (void)createModel {
+- (void)createModel
+{
     SubredditDataSource *source = [[SubredditDataSource alloc] initWithSubreddit:subredditItem.URL];
     source.viewController = self;
     self.dataSource = source;
