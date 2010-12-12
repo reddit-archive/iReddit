@@ -13,14 +13,6 @@
 #import "Constants.h"
 #import "LoginController.h"
 
-#define kAccelerometerFrequency			25 //Hz
-#define kFilteringFactor				0.15
-#define kMinEraseInterval				0.8
-#define kEraseAccelerationThreshold		3.0
-
-UIAccelerationValue	myAccelerometer[3];
-CFAbsoluteTime lastTime = 0.0;
-
 extern NSMutableArray *visitedArray;
 
 iRedditAppDelegate *sharedAppDelegate;
@@ -87,17 +79,28 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	SubredditViewController *controller = [[[SubredditViewController alloc] initWithField:[TTTableTextItem itemWithText:initialRedditTitle URL:initialRedditURL]] autorelease];
 	[navController pushViewController:controller animated:NO];
-	
-	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / kAccelerometerFrequency)];
-	[[UIAccelerometer sharedAccelerometer] setDelegate:(id <UIAccelerometerDelegate>)self];
+
 	
 	//login
 	[[LoginController sharedLoginController] loginWithUsername:[defaults stringForKey:redditUsernameKey] password:[defaults stringForKey:redditPasswordKey]];
 	
 	shakingSound = 0;
 	[self reloadSound];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(deviceDidShake:)
+                                          name:DeviceDidShakeNotification
+                                          object:nil]; 
 	
 	[self performSelector:@selector(loadDataWithDelay) withObject:nil afterDelay:1.0];
+}
+
+- (void)deviceDidShake:(NSNotification *)notif
+{
+    if(shouldDetectDeviceShake)
+    {   
+        [self showRandomStory];
+    }
 }
 
 - (void)loadDataWithDelay
@@ -151,16 +154,9 @@ iRedditAppDelegate *sharedAppDelegate;
 		//[[Beacon shared] startSubBeaconWithName:@"serendipityTime" timeSession:YES];
 	}
 	
-	SubredditDataSource *activeDataSource = randomDataSource;
-	NSArray *viewControllers = navController.viewControllers;
-	
-	if (rand()%4 != 0 && [viewControllers count] > 2 && 
-		[[viewControllers objectAtIndex:[viewControllers count] - 2] isKindOfClass:[SubredditViewController class]] && 
-		[(SubredditDataSource *)[[viewControllers objectAtIndex:[viewControllers count] - 2] dataSource] isLoaded])
-		activeDataSource = (id <TTTableViewDataSource, TTURLRequestDelegate>)[[viewControllers objectAtIndex:[viewControllers count] - 2] dataSource];
-	
-	int count = [activeDataSource totalStories];
-	int randomIndex = rand()%count;
+	SubredditDataSource *activeDataSource = [SubredditDataSource lastLoadedSubreddit];
+    NSInteger count = [((SubredditDataModel *)activeDataSource.model) totalStories];
+	NSInteger randomIndex = count > 0 ? arc4random() % count : 0;
 	
 	Story *story = nil;
 	
@@ -201,39 +197,6 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	[randomController release];	
 	randomController = nil;
-}
-
-- (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration
-{
-	UIAccelerationValue	length, x, y, z;
-	
-	//Use a basic high-pass filter to remove the influence of the gravity
-	myAccelerometer[0] = acceleration.x * kFilteringFactor + myAccelerometer[0] * (1.0 - kFilteringFactor);
-	myAccelerometer[1] = acceleration.y * kFilteringFactor + myAccelerometer[1] * (1.0 - kFilteringFactor);
-	myAccelerometer[2] = acceleration.z * kFilteringFactor + myAccelerometer[2] * (1.0 - kFilteringFactor);
-	
-	// Compute values for the three axes of the acceleromater
-	x = acceleration.x - myAccelerometer[0];
-	y = acceleration.y - myAccelerometer[0];
-	z = acceleration.z - myAccelerometer[0];
-	
-	//Compute the intensity of the current acceleration 
-	length = sqrt(x * x + y * y + z * z);
-	
-	// If above a given threshold, play the erase sounds and erase the drawing view
-	if((length >= kEraseAccelerationThreshold) && (CFAbsoluteTimeGetCurrent() > lastTime + kMinEraseInterval)) 
-	{
-		if ([[NSUserDefaults standardUserDefaults] boolForKey:playSoundOnShakeKey]) 
-		{
-			AudioServicesPlaySystemSound(shakingSound);
-			AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-		}
-		
-		if ([[NSUserDefaults standardUserDefaults] boolForKey:shakeForStoryKey])
-			[self showRandomStory];
-		
-		lastTime = CFAbsoluteTimeGetCurrent();
-	}
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated

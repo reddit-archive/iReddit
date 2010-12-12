@@ -26,6 +26,7 @@
 
 @property (nonatomic, assign) TTTableViewController *viewController;
 
++ (SubredditDataSource *)lastLoadedSubreddit;
 - (id)initWithSubreddit:(NSString *)subreddit;
 - (Story *)storyWithIndex:(int)anIndex;
 

@@ -50,6 +50,10 @@ NSString *const RedditWasAddedNotification			 = @"RedditWasAddedNotification";
 
 NSString *const MessageCountDidChangeNotification = @"MessageCountDidChangeNotification";
 
+NSString *const DeviceDidShakeNotification = @"DeviceDidShakeNotification";
+
+BOOL            shouldDetectDeviceShake = YES;
+
 NSString *const redditSoundLightsaber	= @"lightsaber";
 NSString *const redditSoundAlienHunter	= @"alien-hunter";
 NSString *const redditSoundAlleyBrawler	= @"alley-brawler";

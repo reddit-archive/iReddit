@@ -13,7 +13,7 @@
 #import "StoryViewController.h"
 #import "MessageDataSource.h"
 
-@interface iRedditAppDelegate : NSObject <UIApplicationDelegate, UIAccelerometerDelegate> 
+@interface iRedditAppDelegate : NSObject <UIApplicationDelegate> 
 {
     UIWindow *window;
 	UINavigationController *navController;

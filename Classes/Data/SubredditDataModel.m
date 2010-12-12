@@ -50,7 +50,6 @@
         [[TTURLCache sharedCache] removeURL:loadURL fromDisk:YES];
     }
     
-	NSLog(@"loadURL: %@", loadURL);
 	BOOL savedReddit = [self.subreddit isEqual:@"/saved/"];
 	
     TTURLRequest *activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
@@ -94,7 +93,7 @@
 		NSDictionary *data = [result objectForKey:@"data"];
 		
 		Story *theStory = [Story storyWithDictionary:data inReddit:self];
-		theStory.index = totalStories++;
+		theStory.index = [_stories count];
 		
         [_stories addObject:theStory];
 	}
@@ -116,6 +115,11 @@
 - (NSString *)fullURL
 {
 	return [NSString stringWithFormat:@"%@%@%@%@", RedditBaseURLString, self.subreddit, [self newsModeString], RedditAPIExtensionString];
+}
+
+- (NSUInteger)totalStories
+{
+    return [self.stories count];
 }
 
 - (NSString *)newsModeString

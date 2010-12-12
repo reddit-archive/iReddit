@@ -211,7 +211,7 @@
 
 - (void)edit:(id)sender
 {
-	[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
+	shouldDetectDeviceShake = NO;
 
 	self.tableView.editing = YES;
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(stopEditing:)] autorelease];
@@ -235,7 +235,7 @@
 	[[NSUserDefaults standardUserDefaults] setObject:order forKey:redditSortOrderKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 
-	[[UIAccelerometer sharedAccelerometer] setDelegate:(id <UIAccelerometerDelegate>)[iRedditAppDelegate sharedAppDelegate]];
+	shouldDetectDeviceShake = YES;
 }
 
 - (void)messageCountChanged:(NSNotification *)note

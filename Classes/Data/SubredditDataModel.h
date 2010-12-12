@@ -17,7 +17,7 @@
     int newsModeIndex;
     
     BOOL canLoadMore;
-    NSInteger totalStories;
+    NSUInteger totalStories;
 }
 @property (nonatomic, readonly) NSString *subreddit;
 @property (nonatomic, readonly) NSMutableArray *stories;
@@ -26,6 +26,6 @@
 
 - (id)initWithSubreddit:(NSString *)subreddit;
 - (NSString *)newsModeString;
-- (int)totalStories;
+- (NSUInteger)totalStories;
 
 @end

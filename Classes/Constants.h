@@ -47,6 +47,9 @@ NSString *const RedditDidFinishLoggingInNotification;
 NSString *const RedditWasAddedNotification;
 NSString *const MessageCountDidChangeNotification;
 
+BOOL            shouldDetectDeviceShake;
+NSString *const DeviceDidShakeNotification;
+
 NSString *const redditSoundLightsaber;
 NSString *const redditSoundAlienHunter;	
 NSString *const redditSoundAlleyBrawler;

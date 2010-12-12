@@ -117,7 +117,7 @@
 
 - (void)tableViewDidLoadModel:(UITableView*)tableView
 {
-    NSLog(@"wut");
+    NSLog(@"table loaded model");
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request

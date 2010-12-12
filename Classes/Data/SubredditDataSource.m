@@ -16,9 +16,16 @@
 #import "NSDictionary+JSON.h"
 #import "SubredditViewController.h"
 
+static id lastLoadedSubreddit = nil;
+
 @implementation SubredditDataSource
 
 @synthesize viewController;
+
++ (SubredditDataSource *)lastLoadedSubreddit
+{
+    return lastLoadedSubreddit;
+}
 
 - (id)initWithSubreddit:(NSString *)subreddit
 {
@@ -52,6 +59,7 @@
     [lastLoadedTime release];
     lastLoadedTime = [[NSDate date] retain];
     self.items = _subredditModel.stories;
+    lastLoadedSubreddit = self;
 }
 
 - (Story *)storyWithIndex:(int)anIndex

@@ -201,7 +201,8 @@
     for (NSDictionary *result in results) 
 	{     
 		RedditMessage *newMessage = [RedditMessage messageWithDictionary:[result objectForKey:@"data"]];
-        NSLog(@"fuck %@", result);
+        //rb
+        NSLog(@"message %@", result);
 		if (newMessage) 
 		{
 			[self.items	addObject:newMessage];
