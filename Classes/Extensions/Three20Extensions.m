@@ -24,7 +24,7 @@
 
 - (void)dealloc
 {
-	TT_RELEASE_MEMBER(group);
+	TT_RELEASE_SAFELY(group);
 	[super dealloc];
 }
 
@@ -68,7 +68,7 @@
 
 - (void)dealloc
 {
-	TT_RELEASE_MEMBER(key);
+	TT_RELEASE_SAFELY(key);
 	[super dealloc];
 }
 
