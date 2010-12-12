@@ -82,7 +82,7 @@ LoginController *SharedLoginController = nil;
 
 - (void)requestDidStartLoad:(TTURLRequest*)request
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidBeginLoggingInNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidBeginLoggingInNotification object:nil];
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request

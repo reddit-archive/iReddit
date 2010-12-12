@@ -241,7 +241,6 @@
 - (void)messageCountChanged:(NSNotification *)note
 {
 	unsigned int count = [[iRedditAppDelegate sharedAppDelegate].messageDataSource unreadMessageCount];
-    NSLog(@"CHANGED!!!! %d", count);
     
 	if (count > 0)
 		self.title = [NSString stringWithFormat:@"Home (%u)", count];

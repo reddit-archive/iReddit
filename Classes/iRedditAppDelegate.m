@@ -113,7 +113,7 @@ iRedditAppDelegate *sharedAppDelegate;
 
 - (void)didEndLogin:(NSNotification *)notif
 {    
-    if([[LoginController sharedLoginController] isLoggedIn])
+    if([[LoginController sharedLoginController] isLoggedIn] && !messageDataSource && !messageTimer)
     {
         messageDataSource = [[MessageDataSource alloc] init];
         [messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];

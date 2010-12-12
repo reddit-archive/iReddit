@@ -32,6 +32,14 @@
 	[self.view addSubview:self.tableView];
 	
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(compose:)] autorelease];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageCountChanged:) name:MessageCountDidChangeNotification object:nil];
+}
+
+- (void)messageCountChanged:(NSNotification *)notif
+{
+    [self createModel];
+    [self refresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -117,59 +125,6 @@
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)tableViewDidLoadModel:(UITableView*)tableView
-{
-    NSLog(@"table loaded model");
-}
-
-- (void)requestDidFinishLoad:(TTURLRequest*)request
-{
-	activeRequest = nil;
-	
-    TTURLDataResponse *response = request.response;
-    NSString *responseBody = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
-	
-    // parse the JSON data that we retrieved from the server
-    //NSDictionary *json = [NSDictionary dictionaryWithJSONString:responseBody error:nil];
-    [responseBody release];
-/*    
-    // drill down into the JSON object to get the part 
-    // that we're actually interested in.
-	
-	if (![json isKindOfClass:[NSDictionary class]] || ![json objectForKey:@"data"])
-	{
-		[self updateView];
-		return;
-	}
-	
-	NSDictionary *data = [json objectForKey:@"data"];
-	NSMutableArray *loadedReddits = [NSMutableArray array];
-	NSArray *children = [data objectForKey:@"children"];
-	
-	for (int i=0, count=[children count]; i<count; i++)
-	{
-		NSDictionary *thisReddit = [[children objectAtIndex:i] objectForKey:@"data"];
-		[loadedReddits addObject:[[[TTTableField alloc] initWithText:[[thisReddit objectForKey:@"title"] stringByDecodingHTMLEncodedCharacters]
-																 url:[thisReddit objectForKey:@"url"]] autorelease]];
-	}	
-	
-	customSubreddits = [loadedReddits copy];
-	[self updateView];
- */
-}
-
-- (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
-{
-    activeRequest = nil;
-	//FIXME error out
-}
-
-- (void)requestDidCancelLoad:(TTURLRequest*)request
-{
-	activeRequest = nil;
-	//FIXME error out
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // TTMessageControllerDelegate
 
@@ -202,6 +157,12 @@
 	[activeRequest send];
 
 	[controller dismissModalViewControllerAnimated:YES];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 

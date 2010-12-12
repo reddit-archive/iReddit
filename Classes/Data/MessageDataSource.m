@@ -113,25 +113,6 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // TTTableViewDataSource
 
-// marking as read doesn't actually work from the API, so let's not pretend it does
-/*
-- (void)markRead:(id)sender
-{
-	NSString *loadURL = [self fullURL];
-	
-    activeRequest = [TTURLRequest requestWithURL:loadURL delegate:nil];
-	activeRequest.cacheExpirationAge = 0;
-    activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;
-	activeRequest.httpMethod = @"GET";
-
-    [activeRequest send];
-
-	unreadMessageCount = 0;
-
-	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:self];
-}
-*/
-
 - (NSString *)fullURL
 {
     return [NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditMessagesAPIString];	
@@ -216,10 +197,10 @@
 	}
     
 	canLoadMore = [self.items count] > totalCount;
-	
-	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:self];
-
+	    
     [self didFinishLoad];
+    
+	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:nil];
 }
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
