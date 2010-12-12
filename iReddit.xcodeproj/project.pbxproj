@@ -112,6 +112,7 @@
 		E58C0FEA12B48BB4004D2070 /* libThree20UINavigator-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0FAF12B48AB0004D2070 /* libThree20UINavigator-Xcode3.2.5.a */; };
 		E58C100E12B49244004D2070 /* SubredditDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E58C100D12B49244004D2070 /* SubredditDataModel.m */; };
 		E58C109812B4A0DD004D2070 /* RedditWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E58C109712B4A0DD004D2070 /* RedditWindow.m */; };
+		E58C14B412B4E04A004D2070 /* SubredditTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58C14B312B4E04A004D2070 /* SubredditTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -611,6 +612,8 @@
 		E58C100D12B49244004D2070 /* SubredditDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditDataModel.m; sourceTree = "<group>"; };
 		E58C109612B4A0DD004D2070 /* RedditWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditWindow.h; sourceTree = "<group>"; };
 		E58C109712B4A0DD004D2070 /* RedditWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditWindow.m; sourceTree = "<group>"; };
+		E58C14B212B4E04A004D2070 /* SubredditTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditTableViewDelegate.h; sourceTree = "<group>"; };
+		E58C14B312B4E04A004D2070 /* SubredditTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -835,6 +838,8 @@
 				ADFB53650FEAC3EA0067CEC1 /* StoryViewController.m */,
 				ADFB53660FEAC3EA0067CEC1 /* SubredditViewController.h */,
 				ADFB53670FEAC3EA0067CEC1 /* SubredditViewController.m */,
+				E58C14B212B4E04A004D2070 /* SubredditTableViewDelegate.h */,
+				E58C14B312B4E04A004D2070 /* SubredditTableViewDelegate.m */,
 				ADBC92030FFDA1DE0033E60A /* AddRedditViewController.h */,
 				ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */,
 			);
@@ -1518,6 +1523,7 @@
 				3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */,
 				E58C100E12B49244004D2070 /* SubredditDataModel.m in Sources */,
 				E58C109812B4A0DD004D2070 /* RedditWindow.m in Sources */,
+				E58C14B412B4E04A004D2070 /* SubredditTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,5 +28,6 @@
 - (NSString *)newsModeString;
 - (NSUInteger)totalStories;
 - (NSString *)fullURL;
+- (BOOL)canLoadMore;
 
 @end

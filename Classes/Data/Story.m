@@ -78,10 +78,10 @@ NSMutableDictionary *storyDictionary;
 	UIFont *storyFont = [UIFont boldSystemFontOfSize:14];
 	CGFloat height;
 	
-	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(268.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
+	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(266.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
 	[aStory setHeight:height forIndex:PORTRAIT_INDEX];
 	
-	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(268.0-68.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
+	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(266.0-68.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
 	[aStory setHeight:height forIndex:PORTRAIT_THUMBNAIL_INDEX];
 	
 	height = (CGFloat)[aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(428.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation].height;

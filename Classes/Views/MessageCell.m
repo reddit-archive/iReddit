@@ -15,7 +15,7 @@
 
 + (float)tableView:(UITableView *)aTableView rowHeightForObject:(RedditMessage *)aMessage
 {
-	return [aMessage heightForDeviceMode:[[UIDevice currentDevice] orientation]];
+    return [aMessage heightForDeviceMode:[[UIDevice currentDevice] orientation]];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)aStyle reuseIdentifier:(NSString *)reuseIdentifier 

@@ -16,10 +16,11 @@
 
 + (float)tableView:(UITableView *)aTableView rowHeightForObject:(Story *)aStory
 {
-	float height = [aStory heightForDeviceMode:[[UIDevice currentDevice] orientation] 
+    float height = [aStory heightForDeviceMode:[[UIDevice currentDevice] orientation] 
 								 withThumbnail:[[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey] && [aStory hasThumbnail]] + 46.0;
 	
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey])
+    NSLog(@"height: %f", height);
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey])
 		return MAX(height, 68.0);
 	else
 		return height;
@@ -29,7 +30,7 @@
 {	
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) 
 	{
-		self.opaque = YES;
+        self.opaque = YES;
 		self.backgroundColor = [UIColor whiteColor];
 
 		for (UIView *view in [self subviews])
@@ -119,7 +120,7 @@
 		labelRect.origin.y = contentRect.origin.y + 4.0;
 		labelRect.origin.x = contentRect.origin.x + 8.0;
 		
-		labelRect.size.width = contentRect.size.width - 24.0;
+		labelRect.size.width = contentRect.size.width - 14.0;
 		labelRect.size.height = contentRect.size.height - 44.0;
 	}
 	else
@@ -129,7 +130,7 @@
 		labelRect.origin.y = labelRect.origin.y + 4.0;
 		labelRect.origin.x = labelRect.origin.x + 16.0 + storyImage.frame.size.height;
 				
-		labelRect.size.width = contentRect.size.width - 32.0 - storyImage.frame.size.height;
+		labelRect.size.width = contentRect.size.width - 22.0 - storyImage.frame.size.width;
 		labelRect.size.height = contentRect.size.height - 44.0;		
 	}
 	

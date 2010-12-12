@@ -11,6 +11,7 @@
 #import "StoryViewController.h"
 #import "iRedditAppDelegate.h"
 #import "Constants.h"
+#import "SubredditTableViewDelegate.h" 
 
 @implementation SubredditViewController
 
@@ -91,8 +92,7 @@
 	self.tableView = [[[UITableView alloc] initWithFrame:aFrame style:UITableViewStylePlain] autorelease];
     self.tableView.rowHeight = 80.f;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	
-	//self.tableView.tableHeaderView = tabBar;
+    //self.tableView.tableHeaderView = tabBar;
 	
 	//[wrapper addSubview:self.tableView];
 	
@@ -156,11 +156,17 @@
 }
 */
 
-- (void)createModel {
+- (void)createModel 
+{
     SubredditDataSource *source = [[SubredditDataSource alloc] initWithSubreddit:subredditItem.URL];
     source.viewController = self;
     self.dataSource = source;
     [source release];
+}
+
+- (id<TTTableViewDelegate>)createDelegate
+{
+    return [[[SubredditTableViewDelegate alloc] initWithController:self] autorelease]; 
 }
 
 - (NSString *)titleForError:(NSError*)error
@@ -206,11 +212,6 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:allowLandscapeOrientationKey] ? YES : UIInterfaceOrientationIsPortrait(interfaceOrientation) ; 
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-	[self.tableView reloadData];
-}
-
 #pragma mark Table view methods
 
 - (void)didSelectObject:(id)object atIndexPath:(NSIndexPath*)indexPath
@@ -246,12 +247,6 @@
 	}
 }
 
-/*
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-	[super scrollViewDidEndDecelerating:scrollView];	
-}
-*/
 
 @end
 

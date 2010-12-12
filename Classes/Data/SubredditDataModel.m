@@ -27,6 +27,11 @@
 	return self;
 }
 
+- (BOOL)canLoadMore
+{
+    return canLoadMore;
+}
+
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more
 {	
     NSString *loadURL = [self fullURL];
@@ -46,16 +51,17 @@
     else
     {
         // clear the cache for this subreddit
-        //rb sigh... ditch three20 loading asap...
+        // sigh... ditch three20 loading asap...
+        // clearing the whole cache as even when specifying no cache, things get cached
         [self.stories removeAllObjects];
-        [[TTURLCache sharedCache] removeURL:loadURL fromDisk:YES];
+        //[[TTURLCache sharedCache] removeAll:YES];
     }
     
 	BOOL savedReddit = [self.subreddit isEqual:@"/saved/"];
 	
     TTURLRequest *activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
-	activeRequest.cacheExpirationAge = savedReddit ? 0 : 60 * 5;
-    activeRequest.cachePolicy = savedReddit ? TTURLRequestCachePolicyNone : TTURLRequestCachePolicyDisk;
+	activeRequest.cacheExpirationAge = savedReddit || more ? 0 : 60 * 5;
+    activeRequest.cachePolicy = savedReddit || more ? TTURLRequestCachePolicyNone : TTURLRequestCachePolicyDisk;
     activeRequest.shouldHandleCookies = ([[LoginController sharedLoginController] isLoggedIn] || [[LoginController sharedLoginController] isLoggingIn]) ? YES : NO;
     
     id<TTURLResponse> response = [[TTURLDataResponse alloc] init];
@@ -101,17 +107,7 @@
 	}
     
 	canLoadMore = [_stories count] > totalCount;
-    if(canLoadMore) 
-    {
-        //rb testing
-        //[self performSelector:@selector(loadNewRequest:) withObject:request afterDelay:2.0];
-    }
     [super requestDidFinishLoad:request];
-}
-
-- (void)loadNewRequest:(TTURLRequest *)request 
-{
-    [self load:request.cachePolicy more:YES];
 }
 
 - (NSString *)fullURL

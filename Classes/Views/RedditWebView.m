@@ -177,7 +177,6 @@ id _realDelegate;
 					  [RedditBaseURLString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [(commentID ? commentID : @"no_such_id") stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
 					  ];
-	NSLog(@"%@", path);
 	NSURL *url = [[NSURL alloc] initWithScheme:@"file" host:@"localhost" path:path];
 		
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
