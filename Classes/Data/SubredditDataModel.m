@@ -46,6 +46,7 @@
     {
         // clear the cache for this subreddit
         //rb sigh... ditch three20 loading asap...
+        [self.stories removeAllObjects];
         [[TTURLCache sharedCache] removeURL:loadURL fromDisk:YES];
     }
     
