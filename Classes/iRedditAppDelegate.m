@@ -99,7 +99,14 @@ iRedditAppDelegate *sharedAppDelegate;
 {
     if(shouldDetectDeviceShake)
     {   
-        [self showRandomStory];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:playSoundOnShakeKey]) 
+		{
+			AudioServicesPlaySystemSound(shakingSound);
+			AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+		}
+		
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:shakeForStoryKey])
+			[self showRandomStory];
     }
 }
 
