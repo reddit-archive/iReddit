@@ -22,13 +22,15 @@
 	StoryViewController *randomController;
 	
 	MessageDataSource *messageDataSource;
-	
+    NSTimer *messageTimer;
+    
 	SystemSoundID shakingSound;
 }
 
 + (UIColor *)redditNavigationBarTintColor;
 + (iRedditAppDelegate *)sharedAppDelegate;
 
+- (void)startMessageTimer;
 - (void)reloadSound;
 - (void)showRandomStory;
 

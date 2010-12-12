@@ -112,6 +112,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // TTTableViewDataSource
 
+// marking as read doesn't actually work from the API, so let's not pretend it does
+/*
 - (void)markRead:(id)sender
 {
 	NSString *loadURL = [self fullURL];
@@ -127,6 +129,7 @@
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:self];
 }
+*/
 
 - (NSString *)fullURL
 {
@@ -197,11 +200,10 @@
 	if ([self.items count] && [[self.items lastObject] isKindOfClass:[TTTableMoreButton class]])
 		[self.items removeLastObject];
 
-	
+	unreadMessageCount = 0;
     for (NSDictionary *result in results) 
 	{     
 		RedditMessage *newMessage = [RedditMessage messageWithDictionary:[result objectForKey:@"data"]];
-        //rb
 		if (newMessage) 
 		{
 			[self.items	addObject:newMessage];
@@ -210,7 +212,7 @@
 				unreadMessageCount++;
 		}
 	}
-
+    
 	canLoadMore = [self.items count] > totalCount;
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:self];

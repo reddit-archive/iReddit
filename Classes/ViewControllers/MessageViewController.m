@@ -37,7 +37,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
-	[[iRedditAppDelegate sharedAppDelegate].messageDataSource markRead:self];
+    
+    // marking as read doesn't actually work, so let's not pretend it does
+	//[[iRedditAppDelegate sharedAppDelegate].messageDataSource markRead:self];
 }
 
 -(void)createModel 
@@ -158,7 +160,7 @@
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
 {
-	activeRequest = nil;
+    activeRequest = nil;
 	//FIXME error out
 }
 

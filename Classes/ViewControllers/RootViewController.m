@@ -249,7 +249,7 @@
 		self.title = @"Home";
     
     [self createModel];
-	[self.tableView reloadData];
+	[self reload];
 }
 
 - (void)didEndLogin:(NSNotification *)note
@@ -260,13 +260,25 @@
 	[activeRequest cancel];
 	activeRequest = nil;
 
+    NSLog(@"logged in from root: %d", [[LoginController sharedLoginController] isLoggedIn]);
+    
 	if ([[LoginController sharedLoginController] isLoggedIn]  && [[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
 		self.navigationItem.leftBarButtonItem =  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
 	else
 		self.navigationItem.leftBarButtonItem = nil;
 
+    [self.tableView setContentOffset:CGPointZero animated:NO];
+    
 	if (![[LoginController sharedLoginController] isLoggedIn] || ![[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
+    {
+        if(![[LoginController sharedLoginController] isLoggedIn])
+        {
+            self.title = @"Home";
+        }
+        [self createModel];
+        [self reload];
 		return;
+    }
 
     NSString *url = [NSString stringWithFormat:@"%@%@?limit=500", RedditBaseURLString, CustomRedditsAPIString];
 
@@ -278,7 +290,7 @@
 	[activeRequest send];
 	
     [self createModel];
-	[self.tableView reloadData];
+	[self reload];
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request
@@ -300,7 +312,7 @@
 	if (![json isKindOfClass:[NSDictionary class]] || ![json objectForKey:@"data"])
 	{
         [self createModel];
-		[self.tableView reloadData];
+		[self reload];
 		return;
 	}
 
@@ -318,21 +330,21 @@
 
 	customSubreddits = [loadedReddits copy];
     [self createModel];
-	[self.tableView reloadData];
+	[self reload];
 }
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
 {
-	activeRequest = nil;
+    activeRequest = nil;
     [self createModel];
-	[self.tableView reloadData];
+	[self reload];
 }
 
 - (void)requestDidCancelLoad:(TTURLRequest*)request
 {
-	activeRequest = nil;
+    activeRequest = nil;
     [self createModel];
-	[self.tableView reloadData];
+	[self reload];
 }
 
 - (void)didAddReddit:(NSNotification *)note
@@ -360,7 +372,6 @@
 			
 			if ([item.URL isEqual:[redditInfo objectForKey:@"subreddit_url"]])
 			{
-				NSLog(@"HERE");
 				NSMutableArray *items = [customSubreddits mutableCopy];
 				
 				id item = [[items objectAtIndex:i] retain];
@@ -387,7 +398,7 @@
 				[[NSUserDefaults standardUserDefaults] synchronize];
 
                 [self createModel];
-				[self.tableView reloadData];
+				[self reload];
 		
 				return;
 			}
@@ -424,7 +435,7 @@
 		[[NSUserDefaults standardUserDefaults] synchronize];
 
         [self createModel];
-		[self.tableView reloadData];
+		[self reload];
 	}
 }
 
@@ -487,7 +498,9 @@
 		return [NSArray arrayWithObjects:homeField, mailboxField, saved, nil];
 	}
 	else 
-		return [NSArray arrayWithObject:homeField];
+    {
+        return [NSArray arrayWithObject:homeField];
+    }
 }
 
 - (id<UITableViewDelegate>)createDelegate 
@@ -500,10 +513,10 @@
 	NSArray *topItems   = [self topItems];
 	NSArray *subreddits = [self subreddits];
 	NSArray *extra      = [self extraItems];
-	NSArray *settingsItems = [NSArray arrayWithObjects:[TTTableTextItem itemWithText:@"Settings" URL:@"/settings/"], nil];
+	NSArray *settingsItems = [NSArray arrayWithObjects:[TTTableTextItem itemWithText:@"Settings..." URL:@"/settings/"], nil];
 	
 	self.dataSource = [SubredditSectionedDataSource dataSourceWithArrays:@"", topItems, @"reddits", subreddits, @"", extra, @"", settingsItems, nil];
-    [self.tableView reloadData];
+    [self reload];
 }
 
 - (void)didSelectObject:(TTTableLinkedItem *)object atIndexPath:(NSIndexPath*)indexPath

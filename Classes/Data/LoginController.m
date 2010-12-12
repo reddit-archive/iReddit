@@ -47,8 +47,13 @@ LoginController *SharedLoginController = nil;
 
 - (void)loginWithUsername:(NSString *)aUsername password:(NSString *)aPassword
 {
-	if (!aUsername || !aPassword || ![aUsername length] || ![aPassword length])
-		return;
+    self.lastLoginTime = nil;
+    
+    if (!aUsername || !aPassword || ![aUsername length] || ![aPassword length])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
+        return;
+    }
 	
 	isLoggingIn = YES;
 	
@@ -98,7 +103,6 @@ LoginController *SharedLoginController = nil;
 	if (loggedIn)
 	{		
 		self.modhash = (NSString *)[(NSDictionary *)[responseJSON objectForKey:@"data"] objectForKey:@"modhash"];
-		NSLog(@"modhash %@", modhash);
 		self.lastLoginTime = [NSDate date];
 	}
 	else
@@ -108,21 +112,21 @@ LoginController *SharedLoginController = nil;
 	}
 	
 	isLoggingIn = NO;
-	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
 }
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
 {
-	isLoggingIn = NO;
+    isLoggingIn = NO;
 	self.lastLoginTime = nil;	
-	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
 }
 
 - (void)requestDidCancelLoad:(TTURLRequest*)request
 {
 	isLoggingIn = NO;
 	self.lastLoginTime = nil;
-	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:self];
+	[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
 }
 
 

@@ -82,6 +82,7 @@ iRedditAppDelegate *sharedAppDelegate;
 
 	
 	//login
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndLogin:) name:RedditDidFinishLoggingInNotification object:nil];
 	[[LoginController sharedLoginController] loginWithUsername:[defaults stringForKey:redditUsernameKey] password:[defaults stringForKey:redditPasswordKey]];
 	
 	shakingSound = 0;
@@ -110,13 +111,40 @@ iRedditAppDelegate *sharedAppDelegate;
     }
 }
 
+- (void)didEndLogin:(NSNotification *)notif
+{    
+    if([[LoginController sharedLoginController] isLoggedIn])
+    {
+        messageDataSource = [[MessageDataSource alloc] init];
+        [messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];
+
+        messageTimer = [[NSTimer scheduledTimerWithTimeInterval:60.0
+                                 target:self
+                                 selector:@selector(reloadMessages)
+                                 userInfo:nil
+                                 repeats:YES] retain];
+    }
+    else
+    {
+        [messageDataSource cancel];
+        [messageDataSource release];
+        messageDataSource = nil;
+        
+        [messageTimer invalidate];
+        [messageTimer release];
+        messageTimer = nil;
+    }
+}
+
+- (void)reloadMessages
+{
+    [messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];
+}
+
 - (void)loadDataWithDelay
 {
 	randomDataSource = [[SubredditDataSource alloc] initWithSubreddit:@"/randomrising/"];
 	[randomDataSource load:TTURLRequestCachePolicyNoCache more:NO];
-	
-	messageDataSource = [[MessageDataSource alloc] init];
-	[messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];	
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application 
@@ -144,6 +172,9 @@ iRedditAppDelegate *sharedAppDelegate;
 	self.navController = nil;
 	self.messageDataSource = nil;
 	
+    [messageTimer invalidate];
+    [messageTimer release];
+    
 	AudioServicesDisposeSystemSoundID(shakingSound);
     
 	[window release];

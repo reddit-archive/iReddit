@@ -23,7 +23,8 @@
 
 - (NSString *)fullURL;
 - (unsigned int)unreadMessageCount;
-- (void)markRead:(id)sender;
+// marking as read doesn't actually work from the API, so let's not pretend it does
+//- (void)markRead:(id)sender;
 - (BOOL)canLoadMore;
 
 @end

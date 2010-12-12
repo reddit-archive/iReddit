@@ -75,7 +75,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself)
 {
 	[super loadView];
 	
-	self.title = @"Settings";
+	self.title = @"Settings...";
 	self.autoresizesForKeyboard = YES;
 	self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
 
@@ -185,9 +185,13 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself)
 	[defaults synchronize];
 	
 	if (![username isEqual:[defaults stringForKey:redditUsernameKey]] || ![password isEqual:[defaults stringForKey:redditPasswordKey]])
-		[[LoginController sharedLoginController] loginWithUsername:[defaults stringForKey:redditUsernameKey] password:[defaults stringForKey:redditPasswordKey]];
+    {
+        [[LoginController sharedLoginController] loginWithUsername:[defaults stringForKey:redditUsernameKey] password:[defaults stringForKey:redditPasswordKey]];
+    }
 	else if (useAccountSettings != [defaults boolForKey:useCustomRedditListKey])
+    {
 		[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
+    }
 	
 	[[iRedditAppDelegate sharedAppDelegate] reloadSound];
 }

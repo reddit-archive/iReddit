@@ -135,7 +135,7 @@
 	passwordItem.control = textField;
 
 	self.passwordField = textField;
-	
+
 	self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
 			@"reddit Account Information", usernameItem, passwordItem, nil];
 }
