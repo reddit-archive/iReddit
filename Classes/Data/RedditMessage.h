@@ -7,22 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <Three20/Three20.h>
 
 @interface RedditMessage : NSObject 
 {
-	NSString	*body;
-	NSString	*name;
-	NSString	*identifier;
-	NSString	*author;
-	NSString	*destination;
-	NSString	*subject;
-	NSString	*created;
-	NSString	*context;
-	BOOL		isCommentReply;
-	BOOL		isNew;
+	TTStyledText	*body;
+    NSString        *name;
+    NSString        *identifier;
+    NSString        *author;
+    NSString        *destination;
+    NSString        *subject;
+    NSString        *created;
+    NSString        *context;
+    BOOL            isCommentReply;
+    BOOL            isNew;
 	
-	float		heights[2];
+	float           heights[2];
 }
 
 + (RedditMessage *)messageWithDictionary:(NSDictionary *)dict;
@@ -34,7 +34,7 @@
 - (void)setHeight:(CGFloat)aHeight forIndex:(int)anIndex;
 
 
-@property (nonatomic, retain) NSString	*body;
+@property (nonatomic, retain) TTStyledText	*body;
 @property (nonatomic, retain) NSString	*name;
 @property (nonatomic, retain) NSString	*identifier;
 @property (nonatomic, retain) NSString	*author;

@@ -44,16 +44,11 @@
 		[subjectLabel setNumberOfLines:0];
 		
 		
-		bodyLabel = [[UILabel alloc] initWithFrame:CGRectZero];		
+		bodyLabel = [[TTStyledTextLabel alloc] initWithFrame:CGRectZero];		
+        bodyLabel.userInteractionEnabled = NO;
 		bodyLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		
 		[bodyLabel setFont:[UIFont systemFontOfSize:14]];
 		[bodyLabel setTextColor:[UIColor blackColor]];
-		
-		[bodyLabel setLineBreakMode:UILineBreakModeTailTruncation];
-		[bodyLabel setNumberOfLines:0];
-
-
 		
 		dateLabel = [[UILabel alloc] initWithFrame:CGRectZero];		
 		dateLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
@@ -63,9 +58,7 @@
 		
 		[dateLabel setLineBreakMode:UILineBreakModeTailTruncation];
 		[dateLabel setNumberOfLines:1];
-		
-		
-		
+				
 		[[self contentView] addSubview:fromLabel];
 		[[self contentView] addSubview:subjectLabel];
 		[[self contentView] addSubview:bodyLabel];
@@ -82,7 +75,7 @@
 	
 	if (!message)
 	{
-		[bodyLabel setText:@""];
+		[bodyLabel setText:[TTStyledText textFromXHTML:@""]];
 		[fromLabel setText:@""];
 		[subjectLabel setText:@""];
 		[dateLabel setText:@""];
@@ -115,7 +108,9 @@
  
 	subjectLabel.frame = frame;
 
-	size = [bodyLabel sizeThatFits:CGRectInset([self bounds], 20.0, 12.0).size];
+    CGSize constrainedSize = CGRectInset([self bounds], 20.0, 12.0).size;
+    bodyLabel.text.width = constrainedSize.width;
+	size = [bodyLabel sizeThatFits:constrainedSize];
 	frame = bodyLabel.frame;
 	
 	frame.size = size;

@@ -19,9 +19,17 @@
 
 + (RedditMessage *)messageWithDictionary:(NSDictionary *)dict
 {			
-	RedditMessage *aMessage = [[[RedditMessage alloc] init] autorelease];
-	
-	aMessage.body = [(NSString *)[dict objectForKey:@"body"] stringByDecodingHTMLEncodedCharacters];
+    RedditMessage *aMessage = [[[RedditMessage alloc] init] autorelease];
+	NSString *messageBody = [(NSString *)[dict objectForKey:@"body_html"] stringByDecodingHTMLEncodedCharacters];
+    
+    // unfortunately need to conform to Three20 for markup in messages...
+    messageBody = [messageBody stringByReplacingOccurrencesOfString:@"<em>" withString:@"<i>"];
+    messageBody = [messageBody stringByReplacingOccurrencesOfString:@"</em>" withString:@"</i>"];
+    messageBody = [messageBody stringByReplacingOccurrencesOfString:@"<strong>" withString:@"<b>"];
+    messageBody = [messageBody stringByReplacingOccurrencesOfString:@"</strong>" withString:@"</b>"];
+
+	aMessage.body = [TTStyledText textFromXHTML:messageBody lineBreaks:NO URLs:NO];
+    aMessage.body.font = [UIFont systemFontOfSize:14.0];
 	aMessage.author = (NSString *)[dict objectForKey:@"author"];
 	aMessage.subject = (NSString *)[dict objectForKey:@"subject"];
 	aMessage.destination = (NSString *)[dict objectForKey:@"destination"];
@@ -36,17 +44,21 @@
 	
 	
 	UIFont *subjectFont = [UIFont boldSystemFontOfSize:14.0];
-	UIFont *bodyFont = [UIFont systemFontOfSize:14.0];
 	CGFloat height;
 	
-	height = (CGFloat)([aMessage.body sizeWithFont:bodyFont constrainedToSize:CGSizeMake(280, 1000) lineBreakMode:UILineBreakModeTailTruncation]).height;
-	height += (CGFloat)([aMessage.subject sizeWithFont:subjectFont constrainedToSize:CGSizeMake(280, 1000) lineBreakMode:UILineBreakModeTailTruncation]).height;
+    // sets up the TTStyledText's width, which allows "height" to do the proper calculation (for body only)
+    CGSize constrainedSize = CGSizeMake(280, 1000);
+    aMessage.body.width = constrainedSize.width;
+	height = aMessage.body.height;
+	height += (CGFloat)([aMessage.subject sizeWithFont:subjectFont constrainedToSize:constrainedSize lineBreakMode:UILineBreakModeTailTruncation]).height;
 	height += 18.0 + 12.0 + 12.0;
 	
 	[aMessage setHeight:height forIndex:PORTRAIT_INDEX];
 
-	height = (CGFloat)([aMessage.body sizeWithFont:bodyFont constrainedToSize:CGSizeMake(440, 1000) lineBreakMode:UILineBreakModeTailTruncation]).height;
-	height += (CGFloat)([aMessage.subject sizeWithFont:subjectFont constrainedToSize:CGSizeMake(440, 1000) lineBreakMode:UILineBreakModeTailTruncation]).height;
+    constrainedSize = CGSizeMake(440, 1000);
+    aMessage.body.width = constrainedSize.width;
+	height = (CGFloat)[aMessage.body height];
+	height += (CGFloat)([aMessage.subject sizeWithFont:subjectFont constrainedToSize:constrainedSize lineBreakMode:UILineBreakModeTailTruncation]).height;
 	height += 18.0 + 12.0 + 12.0;
 
 	[aMessage setHeight:height forIndex:LANDSCAPE_INDEX];	

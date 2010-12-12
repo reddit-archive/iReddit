@@ -130,12 +130,12 @@
 
 - (NSString *)fullURL
 {
-	return [NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditMessagesAPIString];	
+    return [NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditMessagesAPIString];	
 }
 
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more
 {	
-	NSString *loadURL = [NSString stringWithFormat:@"%@%@", [self fullURL], @"?mark=false"];
+	NSString *loadURL = [self fullURL];
 
 	if (more)
 	{
@@ -202,7 +202,6 @@
 	{     
 		RedditMessage *newMessage = [RedditMessage messageWithDictionary:[result objectForKey:@"data"]];
         //rb
-        NSLog(@"message %@", result);
 		if (newMessage) 
 		{
 			[self.items	addObject:newMessage];
