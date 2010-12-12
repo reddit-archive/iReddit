@@ -50,18 +50,15 @@
     } 
     else
     {
-        // clear the cache for this subreddit
-        // sigh... ditch three20 loading asap...
-        // clearing the whole cache as even when specifying no cache, things get cached
+        // clear the stories for this subreddit
         [self.stories removeAllObjects];
-        //[[TTURLCache sharedCache] removeAll:YES];
     }
     
 	BOOL savedReddit = [self.subreddit isEqual:@"/saved/"];
 	
     TTURLRequest *activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
-	activeRequest.cacheExpirationAge = savedReddit || more ? 0 : 60 * 5;
-    activeRequest.cachePolicy = savedReddit || more ? TTURLRequestCachePolicyNone : TTURLRequestCachePolicyDisk;
+	activeRequest.cacheExpirationAge = 0;
+    activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;
     activeRequest.shouldHandleCookies = ([[LoginController sharedLoginController] isLoggedIn] || [[LoginController sharedLoginController] isLoggingIn]) ? YES : NO;
     
     id<TTURLResponse> response = [[TTURLDataResponse alloc] init];
@@ -73,7 +70,7 @@
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request
-{
+{    
     NSInteger totalCount = [_stories count];
 	canLoadMore = NO;
 		

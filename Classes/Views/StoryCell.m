@@ -19,7 +19,6 @@
     float height = [aStory heightForDeviceMode:[[UIDevice currentDevice] orientation] 
 								 withThumbnail:[[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey] && [aStory hasThumbnail]] + 46.0;
 	
-    NSLog(@"height: %f", height);
     if ([[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey])
 		return MAX(height, 68.0);
 	else

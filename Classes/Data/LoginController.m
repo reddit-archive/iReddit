@@ -62,7 +62,7 @@ LoginController *SharedLoginController = nil;
 	
 	TTURLRequest *request = [TTURLRequest requestWithURL:loadURL delegate:self];
 	request.cacheExpirationAge = 0;
-	request.cachePolicy = TTURLRequestCachePolicyNone;
+    request.cachePolicy = TTURLRequestCachePolicyNoCache;
 
 	request.response = [[[TTURLDataResponse alloc] init] autorelease];
 
