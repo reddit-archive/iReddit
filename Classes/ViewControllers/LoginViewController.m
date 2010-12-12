@@ -186,4 +186,10 @@
 	[self.usernameField becomeFirstResponder];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+    // this interface is portrait only, but allow it to operate in *either* portrait
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation); 
+}
+
 @end
