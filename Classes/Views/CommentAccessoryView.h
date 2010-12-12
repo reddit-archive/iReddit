@@ -9,19 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Story.h"
 
-@interface CommentAccessoryView : UIView 
+@interface CommentAccessoryView : UIButton 
 {
-	UIButton *showCommentsButton;
-	UILabel  *commentCountLabel;
+	//UIButton *showCommentsButton;
+	//UILabel  *commentCountLabel;
 	Story *story;
-	
-	id	target;
-	SEL	action;
 }
 
-- (void)setTarget:(id)aTarget action:(SEL)action;
 - (void)setCommentCount:(unsigned)aCount;
-
 @property (nonatomic, retain) Story *story;
 
 @end
