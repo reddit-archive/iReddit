@@ -75,7 +75,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself)
 {
 	[super loadView];
 	
-	self.title = @"Settings...";
+	self.title = @"Settings";
 	self.autoresizesForKeyboard = YES;
 	self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
 

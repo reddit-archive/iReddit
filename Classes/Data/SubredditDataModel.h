@@ -27,5 +27,6 @@
 - (id)initWithSubreddit:(NSString *)subreddit;
 - (NSString *)newsModeString;
 - (NSUInteger)totalStories;
+- (NSString *)fullURL;
 
 @end

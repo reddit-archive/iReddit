@@ -273,7 +273,8 @@
 	request.httpBody = [[NSString stringWithFormat:@"dir=%d&uh=%@&id=%@&_=", story.likes ? 0 : 1, 
 						   [[LoginController sharedLoginController] modhash], story.name] 
 						  dataUsingEncoding:NSASCIIStringEncoding];
-	
+    request.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
+
 	[request send];
 
 	
@@ -303,7 +304,8 @@
 	request.httpBody = [[NSString stringWithFormat:@"dir=%d&uh=%@&id=%@&_=", story.dislikes ? 0 : -1, 
 						 [[LoginController sharedLoginController] modhash], story.name] 
 						dataUsingEncoding:NSASCIIStringEncoding];
-	
+    request.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
+
 	[request send];
 
 
@@ -497,7 +499,7 @@
 	request.httpBody = [[NSString stringWithFormat:@"uh=%@&id=%@&_=", 
 						[[LoginController sharedLoginController] modhash], story.name] 
 						dataUsingEncoding:NSASCIIStringEncoding];
-	
+    request.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 	[request send];
 }
 

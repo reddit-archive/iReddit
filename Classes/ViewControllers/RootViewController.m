@@ -126,7 +126,7 @@
 			TTURLRequest *request = [TTURLRequest requestWithURL:[NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditSubscribeAPIString] delegate:nil];
 			request.cachePolicy = TTURLRequestCachePolicyNoCache;
 			request.cacheExpirationAge = 0;
-			
+            request.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 			request.contentType = @"application/x-www-form-urlencoded";
 			request.httpMethod = @"POST";
 			request.httpBody = [[NSString stringWithFormat:@"uh=%@&sr=%@&action=unsub",
@@ -259,8 +259,6 @@
 	customSubreddits = nil;
 	[activeRequest cancel];
 	activeRequest = nil;
-
-    NSLog(@"logged in from root: %d", [[LoginController sharedLoginController] isLoggedIn]);
     
 	if ([[LoginController sharedLoginController] isLoggedIn]  && [[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
 		self.navigationItem.leftBarButtonItem =  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
@@ -271,9 +269,9 @@
     
 	if (![[LoginController sharedLoginController] isLoggedIn] || ![[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
     {
-        if(![[LoginController sharedLoginController] isLoggedIn])
+        if([[LoginController sharedLoginController] isLoggedIn])
         {
-            self.title = @"Home";
+        		self.title = @"Home";
         }
         [self createModel];
         [self reload];
@@ -286,6 +284,7 @@
 	activeRequest.response = [[[TTURLDataResponse alloc] init] autorelease];
 	activeRequest.cacheExpirationAge = 0;
 	activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;
+    activeRequest.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 
 	[activeRequest send];
 	
@@ -372,6 +371,7 @@
 			
 			if ([item.URL isEqual:[redditInfo objectForKey:@"subreddit_url"]])
 			{
+				NSLog(@"HERE");
 				NSMutableArray *items = [customSubreddits mutableCopy];
 				
 				id item = [[items objectAtIndex:i] retain];
@@ -407,7 +407,7 @@
 		TTURLRequest *request = [TTURLRequest requestWithURL:[NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditSubscribeAPIString] delegate:nil];
 		request.cachePolicy = TTURLRequestCachePolicyNoCache;
 		request.cacheExpirationAge = 0;
-
+        request.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 		request.contentType = @"application/x-www-form-urlencoded";
 		request.httpMethod = @"POST";
 		request.httpBody = [[NSString stringWithFormat:@"uh=%@&sr=%@&action=sub", 
@@ -513,7 +513,7 @@
 	NSArray *topItems   = [self topItems];
 	NSArray *subreddits = [self subreddits];
 	NSArray *extra      = [self extraItems];
-	NSArray *settingsItems = [NSArray arrayWithObjects:[TTTableTextItem itemWithText:@"Settings..." URL:@"/settings/"], nil];
+	NSArray *settingsItems = [NSArray arrayWithObjects:[TTTableTextItem itemWithText:@"Settings" URL:@"/settings/"], nil];
 	
 	self.dataSource = [SubredditSectionedDataSource dataSourceWithArrays:@"", topItems, @"reddits", subreddits, @"", extra, @"", settingsItems, nil];
     [self reload];

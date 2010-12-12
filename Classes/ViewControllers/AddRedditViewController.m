@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "Three20Extensions.h"
 #import "NSDictionary+JSON.h"
+#import "LoginController.h"
 
 @implementation AddRedditViewController
 
@@ -148,8 +149,9 @@
 	activeRequest.response = [[[TTURLDataResponse alloc] init] autorelease];
 	activeRequest.cacheExpirationAge = 0;
 	activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;
+    activeRequest.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
 	
-	[activeRequest send];
+    [activeRequest send];
 	
 	[self updateView];
 }

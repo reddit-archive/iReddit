@@ -9,6 +9,7 @@
 #import "SubredditDataModel.h"
 #import "Constants.h"
 #import "Story.h"
+#import "LoginController.h"
 
 @implementation SubredditDataModel
 @synthesize subreddit = _subreddit, stories = _stories;
@@ -55,7 +56,8 @@
     TTURLRequest *activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
 	activeRequest.cacheExpirationAge = savedReddit ? 0 : 60 * 5;
     activeRequest.cachePolicy = savedReddit ? TTURLRequestCachePolicyNone : TTURLRequestCachePolicyDisk;
-
+    activeRequest.shouldHandleCookies = ([[LoginController sharedLoginController] isLoggedIn] || [[LoginController sharedLoginController] isLoggingIn]) ? YES : NO;
+    
     id<TTURLResponse> response = [[TTURLDataResponse alloc] init];
     activeRequest.response = response;
     TT_RELEASE_SAFELY(response);

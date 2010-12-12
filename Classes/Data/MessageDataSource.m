@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "RedditMessage.h"
 #import "MessageCell.h"
+#import "LoginController.h"
 
 @implementation MessageDataSource
 
@@ -159,6 +160,7 @@
 	
     activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
 	activeRequest.cacheExpirationAge = 60 * 2;
+    activeRequest.shouldHandleCookies = [[LoginController sharedLoginController] isLoggedIn] ? YES : NO;
     activeRequest.cachePolicy = TTURLRequestCachePolicyMemory;
     activeRequest.response = [[[TTURLDataResponse alloc] init] autorelease];
     activeRequest.httpMethod = @"GET";
