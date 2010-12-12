@@ -357,7 +357,7 @@
 	
 	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
 	
-	[actionSheet showInView:self.view];
+	[actionSheet showInView:self.navigationController.view];
 	[actionSheet release];
 }
 
