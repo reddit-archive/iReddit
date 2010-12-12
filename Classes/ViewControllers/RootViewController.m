@@ -479,7 +479,7 @@
 	if ([[LoginController sharedLoginController] isLoggedIn])
 	{
 		unsigned int count = [[iRedditAppDelegate sharedAppDelegate].messageDataSource unreadMessageCount];
-		NSString *mailboxString = count > 0 ? [NSString stringWithFormat:@"Mailbox (%u)", count] : @"Mailbox";
+		NSString *mailboxString = count > 0 ? [NSString stringWithFormat:@"Inbox (%u)", count] : @"Inbox";
 
 		TTTableItem *saved = [TTTableTextItem itemWithText:@"Saved" URL:@"/saved/"];
 		TTTableItem *mailboxField = [TTTableTextItem itemWithText:mailboxString URL:@"/messages/"];

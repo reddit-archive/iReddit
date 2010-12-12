@@ -20,7 +20,7 @@
 {
 	[super loadView];
 	
-	self.title = @"Mailbox";
+	self.title = @"Inbox";
 
 	self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
 	
