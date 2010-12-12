@@ -13,7 +13,7 @@
 
 @synthesize message, subjectLabel, fromLabel, bodyLabel, dateLabel;
 
-+ (float)tableView:(UITableView *)aTableView rowHeightForItem:(RedditMessage *)aMessage
++ (float)tableView:(UITableView *)aTableView rowHeightForObject:(RedditMessage *)aMessage
 {
 	return [aMessage heightForDeviceMode:[[UIDevice currentDevice] orientation]];
 }

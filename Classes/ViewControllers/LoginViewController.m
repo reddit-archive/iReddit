@@ -99,7 +99,7 @@
 	[[iRedditAppDelegate sharedAppDelegate].navController dismissModalViewControllerAnimated:YES];
 }
 
-- (id<TTTableViewDataSource>)createDataSource 
+-(void)createModel 
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
@@ -136,7 +136,7 @@
 
 	self.passwordField = textField;
 	
-	return [TTSectionedDataSource dataSourceWithObjects:
+	self.dataSource = [TTSectionedDataSource dataSourceWithObjects:
 			@"reddit Account Information", usernameItem, passwordItem, nil];
 }
 

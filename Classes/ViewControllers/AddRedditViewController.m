@@ -24,10 +24,8 @@
 - (IBAction)save:(id)sender
 {
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-	
-	UITextField *textField = (UITextField *)[cell firstViewOfClass:[UITextField class]];
-
+	TTTableControlCell *cell = (TTTableControlCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+	UITextField *textField = cell.control;
 	if (textField)
 	{
 		[self loadReddit:textField.text];
@@ -86,7 +84,7 @@
 	[self performSelector:@selector(focus) withObject:nil afterDelay:0.5];
 }
 
-- (id<TTTableViewDataSource>)createDataSource 
+-(void)createModel 
 {
 	TTTableControlItem *item = [SettingsControlItem textFieldControlWithTitle:@"reddit.com/r/" text:@"" placeholder:@"pics" key:@"" secure:NO];	
 	UITextField *textField = (UITextField *)item.control;
@@ -98,23 +96,26 @@
 	if (activeRequest)
 	{
 		TTTableActivityItem *informationField = [TTTableActivityItem itemWithText:@"Loading reddit..."];
-		return [TTSectionedDataSource dataSourceWithArrays:@"Enter a reddit URL (e.g. /r/pics)", [NSArray arrayWithObject:item], @"", [NSArray arrayWithObject:informationField], nil];
+		self.dataSource = [TTSectionedDataSource dataSourceWithArrays:@"Enter a reddit URL (e.g. /r/pics)", [NSArray arrayWithObject:item], @"", [NSArray arrayWithObject:informationField], nil];
 	}
 	else
-		return [TTSectionedDataSource dataSourceWithArrays:@"Enter a reddit URL (e.g. /r/pics)", [NSArray arrayWithObject:item], nil];	
+		self.dataSource = [TTSectionedDataSource dataSourceWithArrays:@"Enter a reddit URL (e.g. /r/pics)", [NSArray arrayWithObject:item], nil];	
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 
+/*
 	UILabel *label = (UILabel *)[[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] firstViewOfClass:[UILabel class]];
 	label.font = [UIFont boldSystemFontOfSize:14.0];
+*/
 }
 
 - (void)focus
 {
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	/*
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
 	
 	UITextField *textField = (UITextField *)[cell firstViewOfClass:[UITextField class]];
@@ -126,6 +127,7 @@
 		[textField becomeFirstResponder];
 		return;
 	}
+    */
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)aField

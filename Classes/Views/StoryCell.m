@@ -14,7 +14,7 @@
 @synthesize storyTitleView, storyDescriptionView, storyImage;
 @dynamic story;
 
-+ (float)tableView:(UITableView *)aTableView rowHeightForItem:(Story *)aStory
++ (float)tableView:(UITableView *)aTableView rowHeightForObject:(Story *)aStory
 {
 	float height = [aStory heightForDeviceMode:[[UIDevice currentDevice] orientation] 
 								 withThumbnail:[[NSUserDefaults standardUserDefaults] boolForKey:showStoryThumbnailKey] && [aStory hasThumbnail]] + 46.0;
@@ -85,7 +85,6 @@
 		storyImage.clipsToBounds = YES;
 		storyImage.opaque = YES;
 		storyImage.backgroundColor = [UIColor whiteColor];
-
 		storyImage.style =  [TTSolidFillStyle styleWithColor:[UIColor clearColor] 
 														next:[TTShapeStyle styleWithShape:[TTRoundedRectangleShape shapeWithRadius:6.0f] 
 																					 next:[TTContentStyle styleWithNext:nil]]];
@@ -177,7 +176,7 @@
 
 	if (!story)
 	{
-		[storyImage setImage:storyImage.defaultImage];
+		[storyImage setUrlPath:nil];
 		[storyTitleView setText:@""];
 		[storyDescriptionView setText:@""];
 		[secondaryDescriptionView setText:@""];
@@ -189,7 +188,7 @@
 		if ([story hasThumbnail])
 		{
 			[storyImage setHidden:NO];
-			[storyImage setURL:story.thumbnailURL];
+			[storyImage setUrlPath:story.thumbnailURL];
 		}
 		else
 		{

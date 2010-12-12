@@ -8,40 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import <Three20/Three20.h>
+#import "SubredditDataModel.h"
 
 @class Story;
 
 @interface SubredditDataSource : TTListDataSource <TTURLRequestDelegate>
 {
+    SubredditDataModel *_subredditModel;
+    
 	NSString *url;
 	NSString *title;
 	
     NSDate *lastLoadedTime;
-    BOOL isLoading;
-    BOOL isLoadingMore;
-	BOOL canLoadMore;
 
 	TTTableViewController *viewController;
-	
-	int totalStories;
-	int newsModeIndex;
-	
-	TTURLRequest *activeRequest;
 }
 
 @property (nonatomic, assign) TTTableViewController *viewController;
-@property (nonatomic, assign) int newsModeIndex;
-@property (nonatomic, readonly) BOOL canLoadMore;
 
-- (id)initWithURL:(NSString *)aURL title:(NSString *)aTitle;
-
+- (id)initWithSubreddit:(NSString *)subreddit;
 - (Story *)storyWithIndex:(int)anIndex;
-- (int)totalStories;
-
-- (NSString *)url;
-- (NSString *)title;
-
-- (NSString *)newsModeString;
-- (int)totalStories;
 
 @end

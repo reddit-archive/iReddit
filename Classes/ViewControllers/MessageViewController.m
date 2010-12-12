@@ -40,9 +40,9 @@
 	[[iRedditAppDelegate sharedAppDelegate].messageDataSource markRead:self];
 }
 
-- (id<TTTableViewDataSource>)createDataSource 
+-(void)createModel 
 {
-	return [iRedditAppDelegate sharedAppDelegate].messageDataSource;
+	self.dataSource = [iRedditAppDelegate sharedAppDelegate].messageDataSource;
 }
 
 - (void)compose:(id)sender
@@ -113,6 +113,10 @@
 	}
 
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableViewDidLoadModel:(UITableView*)tableView {
+    NSLog(@"wut");
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request

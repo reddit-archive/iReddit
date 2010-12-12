@@ -17,6 +17,7 @@
 #import "MessageViewController.h"
 #import "Three20Extensions.h"
 #import "AddRedditViewController.h"
+#import "Three20/Three20.h"
 
 @interface SubredditTableItem : TTTableTextItem
 {
@@ -150,6 +151,7 @@
 		self.title = @"Home";
 		self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
 		self.hidesBottomBarWhenPushed = YES;
+        self.tableViewStyle = UITableViewStyleGrouped;
 		
 		NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
 		[center addObserver:self selector:@selector(messageCountChanged:) name:MessageCountDidChangeNotification object:nil];
@@ -174,24 +176,26 @@
 {
 	[super loadView];
 	
-	self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
+    UIImage *mainTitleImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"mainTitle" ofType:@"png"]];
+	self.navigationItem.titleView = [[[UIImageView alloc] initWithImage:mainTitleImage] autorelease];
+	[mainTitleImage release];
 	
-	self.tableView = [[[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped] autorelease];
-	self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	self.tableView.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:238.0/255.0 blue:1 alpha:1];
-	
-	self.tableView.allowsSelectionDuringEditing = NO;
-	
-	self.navigationItem.titleView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainTitle.png"]] autorelease];
-	
-	self.tableView.editing = NO;
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit:)] autorelease];
 
 	[self.view addSubview:self.tableView];
 }
 
+- (void)viewDidLoad {
+
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
+    self.tableView.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:238.0/255.0 blue:1 alpha:1];
+	self.tableView.allowsSelectionDuringEditing = NO;
+	self.tableView.editing = NO;
+
 	if ([[LoginController sharedLoginController] isLoggedIn] && [[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
 		self.navigationItem.leftBarButtonItem =  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
 	else
@@ -237,23 +241,24 @@
 - (void)messageCountChanged:(NSNotification *)note
 {
 	unsigned int count = [[iRedditAppDelegate sharedAppDelegate].messageDataSource unreadMessageCount];
-
+    NSLog(@"CHANGED!!!! %d", count);
+    
 	if (count > 0)
 		self.title = [NSString stringWithFormat:@"Home (%u)", count];
 	else
 		self.title = @"Home";
-
-	[self updateView];
+    
+    [self createModel];
+	[self.tableView reloadData];
 }
 
 - (void)didEndLogin:(NSNotification *)note
 {	
+    
 	[customSubreddits release];
 	customSubreddits = nil;
 	[activeRequest cancel];
 	activeRequest = nil;
-
-	[self updateView];
 
 	if ([[LoginController sharedLoginController] isLoggedIn]  && [[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
 		self.navigationItem.leftBarButtonItem =  [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)] autorelease];
@@ -263,11 +268,7 @@
 	if (![[LoginController sharedLoginController] isLoggedIn] || ![[NSUserDefaults standardUserDefaults] boolForKey:useCustomRedditListKey])
 		return;
 
-#ifdef PREMIUM	
-	NSString *url = [NSString stringWithFormat:@"%@%@?limit=500", RedditBaseURLString, CustomRedditsAPIString];
-#else
-	NSString *url = [NSString stringWithFormat:@"%@%@?limit=100", RedditBaseURLString, CustomRedditsAPIString];	
-#endif
+    NSString *url = [NSString stringWithFormat:@"%@%@?limit=500", RedditBaseURLString, CustomRedditsAPIString];
 
 	activeRequest = [TTURLRequest requestWithURL:url delegate:(id <TTURLRequestDelegate>)self];
 	activeRequest.response = [[[TTURLDataResponse alloc] init] autorelease];
@@ -276,7 +277,8 @@
 
 	[activeRequest send];
 	
-	[self updateView];
+    [self createModel];
+	[self.tableView reloadData];
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request
@@ -290,12 +292,15 @@
     NSDictionary *json = [NSDictionary dictionaryWithJSONString:responseBody error:nil];
     [responseBody release];
     
+    NSLog(@"REDDITS LOADED");
+    
     // drill down into the JSON object to get the part 
     // that we're actually interested in.
 	
 	if (![json isKindOfClass:[NSDictionary class]] || ![json objectForKey:@"data"])
 	{
-		[self updateView];
+        [self createModel];
+		[self.tableView reloadData];
 		return;
 	}
 
@@ -312,19 +317,22 @@
 	}	
 
 	customSubreddits = [loadedReddits copy];
-	[self updateView];
+    [self createModel];
+	[self.tableView reloadData];
 }
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
 {
 	activeRequest = nil;
-	[self updateView];
+    [self createModel];
+	[self.tableView reloadData];
 }
 
 - (void)requestDidCancelLoad:(TTURLRequest*)request
 {
 	activeRequest = nil;
-	[self updateView];
+    [self createModel];
+	[self.tableView reloadData];
 }
 
 - (void)didAddReddit:(NSNotification *)note
@@ -378,7 +386,8 @@
 				[[NSUserDefaults standardUserDefaults] setObject:newSortOrder forKey:redditSortOrderKey];
 				[[NSUserDefaults standardUserDefaults] synchronize];
 
-				[self updateView];
+                [self createModel];
+				[self.tableView reloadData];
 		
 				return;
 			}
@@ -414,7 +423,8 @@
 		[[NSUserDefaults standardUserDefaults] setObject:newSortOrder forKey:redditSortOrderKey];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 
-		[self updateView];
+        [self createModel];
+		[self.tableView reloadData];
 	}
 }
 
@@ -485,14 +495,15 @@
 	return [[[SubredditDelegate alloc] initWithController:self] autorelease];
 }
 
-- (id<TTTableViewDataSource>)createDataSource 
+-(void)createModel 
 {
 	NSArray *topItems   = [self topItems];
 	NSArray *subreddits = [self subreddits];
 	NSArray *extra      = [self extraItems];
 	NSArray *settingsItems = [NSArray arrayWithObjects:[TTTableTextItem itemWithText:@"Settings" URL:@"/settings/"], nil];
 	
-	return [SubredditSectionedDataSource dataSourceWithArrays:@"", topItems, @"reddits", subreddits, @"", extra, @"", settingsItems, nil];
+	self.dataSource = [SubredditSectionedDataSource dataSourceWithArrays:@"", topItems, @"reddits", subreddits, @"", extra, @"", settingsItems, nil];
+    [self.tableView reloadData];
 }
 
 - (void)didSelectObject:(TTTableLinkedItem *)object atIndexPath:(NSIndexPath*)indexPath
@@ -528,7 +539,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:allowLandscapeOrientationKey] ? YES : UIInterfaceOrientationIsPortrait(interfaceOrientation);
+    return [[NSUserDefaults standardUserDefaults] boolForKey:allowLandscapeOrientationKey] ? YES : UIInterfaceOrientationIsPortrait(interfaceOrientation) ; 
 }
 
 @end

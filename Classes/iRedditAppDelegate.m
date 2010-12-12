@@ -102,11 +102,11 @@ iRedditAppDelegate *sharedAppDelegate;
 
 - (void)loadDataWithDelay
 {
-	randomDataSource = [[SubredditDataSource alloc] initWithURL:@"/randomrising/" title:@"serendipity"];
-	[randomDataSource load:TTURLRequestCachePolicyNoCache nextPage:NO];
+	randomDataSource = [[SubredditDataSource alloc] initWithSubreddit:@"/randomrising/"];
+	[randomDataSource load:TTURLRequestCachePolicyNoCache more:NO];
 	
 	messageDataSource = [[MessageDataSource alloc] init];
-	[messageDataSource load:TTURLRequestCachePolicyNoCache nextPage:NO];	
+	[messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];	
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application 
@@ -175,7 +175,7 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	if (!story)
 	{
-		[randomDataSource load:TTURLRequestCachePolicyDefault nextPage:YES];
+		[randomDataSource load:TTURLRequestCachePolicyDefault more:YES];
 		return;
 	}
 

@@ -19,7 +19,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 
 @implementation SettingsTableViewDataSource
 
-- (void)tableView:(UITableView *)tableView prepareCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)tableView:(UITableView *)tableView cell:(UITableViewCell *)cell willAppearAtIndexPath:(NSIndexPath *)indexPath 
 {
 	id object = [self tableView:tableView objectForRowAtIndexPath:indexPath];
 	
@@ -33,7 +33,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 			cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	else
-        [super tableView:tableView prepareCell:cell forRowAtIndexPath:indexPath]; 
+        [super tableView:tableView cell:cell willAppearAtIndexPath:indexPath]; 
 } 
 
 @end
@@ -95,12 +95,12 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 	return [[[SettingsTableViewDelegate alloc] initWithController:self] autorelease];
 }
 
-- (id<TTTableViewDataSource>)createDataSource 
+-(void)createModel 
 {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *currentSound = [defaults stringForKey:shakingSoundKey];
 	
-	return [SettingsTableViewDataSource dataSourceWithObjects:
+	self.dataSource = [SettingsTableViewDataSource dataSourceWithObjects:
 			@"reddit Account Information",
 			[SettingsControlItem textFieldControlWithTitle:@"Username" text:[defaults stringForKey:redditUsernameKey] placeholder:@"splashy" key:redditUsernameKey secure:NO],
 			[SettingsControlItem textFieldControlWithTitle:@"Password" text:[defaults stringForKey:redditPasswordKey] placeholder:@"••••••" key:redditPasswordKey secure:YES],
@@ -115,13 +115,10 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 			@"Display Preferences",
 			[SettingsControlItem switchControlWithTitle:@"Show Thumbnails" on:[defaults boolForKey:showStoryThumbnailKey] key:showStoryThumbnailKey],
 			[SettingsControlItem switchControlWithTitle:@"Shake for New Story" on:[defaults boolForKey:shakeForStoryKey] key:shakeForStoryKey],
-#ifdef PREMIUM
 			[SettingsControlItem switchControlWithTitle:@"Play Sound on Shake" on:[defaults boolForKey:playSoundOnShakeKey] key:playSoundOnShakeKey],
-#endif
 			[SettingsControlItem switchControlWithTitle:@"Show Loading Alien" on:[defaults boolForKey:showLoadingAlienKey] key:showLoadingAlienKey],
 			[SettingsControlItem switchControlWithTitle:@"Allow Landscape" on:[defaults boolForKey:allowLandscapeOrientationKey] key:allowLandscapeOrientationKey],
 
-#ifdef PREMIUM
 			@"Serendipity Mode Sound",
 			[CheckGroupTableItem itemWithText:@"Light Sword Swing" on:[currentSound isEqual:redditSoundLightsaber] URL:redditSoundLightsaber group:shakingSoundKey],
 			[CheckGroupTableItem itemWithText:@"Alley Brawler" on:[currentSound isEqual:redditSoundAlleyBrawler] URL:redditSoundAlleyBrawler group:shakingSoundKey],
@@ -133,10 +130,6 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 			[CheckGroupTableItem itemWithText:@"Roll Out" on:[currentSound isEqual:redditSoundRollout] URL:redditSoundRollout group:shakingSoundKey],
 			[CheckGroupTableItem itemWithText:@"Alien Hunter" on:[currentSound isEqual:redditSoundAlienHunter] URL:redditSoundAlienHunter group:shakingSoundKey],
 			[CheckGroupTableItem itemWithText:@"Scream" on:[currentSound isEqual:redditSoundScream] URL:redditSoundScream group:shakingSoundKey],
-#else
-			@"Premium Version",
-			[TTTableBelowCaptionedItem itemWithText:@"Upgrade to the paid app" caption:@"You'll stop seeing ads" URL:@"http://itunes.com/apps/ireddit"],
-#endif
 			
 			nil];
 }
@@ -195,9 +188,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 	else if (useAccountSettings != [defaults boolForKey:useCustomRedditListKey])
 		[[NSNotificationCenter defaultCenter] postNotificationName:RedditDidFinishLoggingInNotification object:nil];
 	
-#ifdef PREMIUM
 	[[iRedditAppDelegate sharedAppDelegate] reloadSound];
-#endif
 }
 
 - (void)didSelectObject:(TTTableLinkedItem*)object atIndexPath:(NSIndexPath*)indexPath
@@ -213,7 +204,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself) {
 		AudioServicesAddSystemSoundCompletion (sound,NULL,NULL,settingsSoundPlayedCallback,(void*) self);		
 		AudioServicesPlaySystemSound(sound);
 	}
-	else if ([object isKindOfClass:[TTTableBelowCaptionedItem class]])
+	else if ([object isKindOfClass:[TTTableSubtextItem class]])
 	{
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:object.URL]];
 	}

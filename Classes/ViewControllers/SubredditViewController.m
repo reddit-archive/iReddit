@@ -112,7 +112,8 @@
 
 - (void)restoreSavedState
 {
-	if (!savedLocation)
+	/*
+    if (!savedLocation)
 		return;
 
 	if (savedLocation.row < [self.tableView numberOfRowsInSection:savedLocation.section])
@@ -124,24 +125,28 @@
 	else if (![self.dataSource isLoadingMore] && ![self.dataSource isLoading])
 	{
 		if ([(SubredditDataSource *)(self.dataSource) totalStories] < 500)
-			[self.dataSource load:TTURLRequestCachePolicyNoCache nextPage:YES];
+			[self.dataSource load:TTURLRequestCachePolicyNoCache more:YES];
 		else
 		{
 			[savedLocation release];
 			savedLocation = nil;
 		}
 	}
+    */
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	[self.tableView reloadData];
-
-	if (savedLocation && !(self.viewState & TTViewLoadingStates))
-		[self restoreSavedState];
+    
+    //TODO restore state?
+	//if (savedLocation && !(self.viewState & TTViewLoadingStates))
+	//	[self restoreSavedState];
 }
 
+//TODO restore state?
+/*
 - (void)setViewState:(TTViewState)aState
 {
 	[super setViewState:aState];
@@ -149,15 +154,13 @@
 	if (aState & TTViewDataStates && savedLocation)
 		[self restoreSavedState];
 }
+*/
 
-- (id<TTTableViewDataSource>)createDataSource
-{
-	SubredditDataSource *source = [[[SubredditDataSource alloc] initWithURL:subredditItem.URL title:subredditItem.text] autorelease];
-
-	source.viewController = self;
-	source.newsModeIndex = tabBar.selectedTabIndex;
-		
-	return source;
+- (void)createModel {
+    SubredditDataSource *source = [[SubredditDataSource alloc] initWithSubreddit:subredditItem.URL];
+    source.viewController = self;
+    self.dataSource = source;
+    [source release];
 }
 
 - (NSString *)titleForError:(NSError*)error
@@ -191,8 +194,8 @@
 {
 	[self.dataSource cancel];
 	[self.dataSource invalidate:YES];
-	[self.tableView reloadData];
-	[self updateView];
+    self.dataSource.model.newsModeIndex = selectedIndex;
+    [self reload];
 	//[self reloadContent];
 }
 
@@ -200,7 +203,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:allowLandscapeOrientationKey] ? YES : UIInterfaceOrientationIsPortrait(interfaceOrientation);
+    return [[NSUserDefaults standardUserDefaults] boolForKey:allowLandscapeOrientationKey] ? YES : UIInterfaceOrientationIsPortrait(interfaceOrientation) ; 
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation

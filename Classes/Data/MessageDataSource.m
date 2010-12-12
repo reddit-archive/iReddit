@@ -71,33 +71,29 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // TTDataSource
 
-- (void)dataSourceDidStartLoad
+- (void)didStartLoad
 {
     isLoading = YES;
-    [super dataSourceDidStartLoad];
 }
 
-- (void)dataSourceDidFinishLoad
+- (void)didFinishLoad
 {
     isLoading = NO;
     isLoadingMore = NO;
     [lastLoadedTime release];
     lastLoadedTime = [[NSDate date] retain];
-    [super dataSourceDidFinishLoad];
 }
 
-- (void)dataSourceDidFailLoadWithError:(NSError*)error
+- (void)didFailLoadWithError:(NSError*)error
 {
     isLoading = NO;
     isLoadingMore = NO;
-    [super dataSourceDidFailLoadWithError:error];
 }
 
-- (void)dataSourceDidCancelLoad
+- (void)didCancelLoad
 {
     isLoading = NO;
     isLoadingMore = NO;
-    [super dataSourceDidCancelLoad];
 }
 
 - (unsigned int)unreadMessageCount
@@ -137,11 +133,11 @@
 	return [NSString stringWithFormat:@"%@%@", RedditBaseURLString, RedditMessagesAPIString];	
 }
 
-- (void)load:(TTURLRequestCachePolicy)cachePolicy nextPage:(BOOL)nextPage
+- (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more
 {	
 	NSString *loadURL = [NSString stringWithFormat:@"%@%@", [self fullURL], @"?mark=false"];
 
-	if (nextPage)
+	if (more)
 	{
 		id object = [self.items lastObject];
 		
@@ -173,7 +169,7 @@
 
 - (void)requestDidStartLoad:(TTURLRequest*)request
 {
-    [self dataSourceDidStartLoad];
+    [self didStartLoad];
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request
@@ -187,11 +183,12 @@
     NSString *responseBody = [[NSString alloc] initWithData:response.data encoding:NSUTF8StringEncoding];
 	
     NSDictionary *json = [NSDictionary dictionaryWithJSONString:responseBody error:nil];
+
     [responseBody release];
     
 	if (![json isKindOfClass:[NSDictionary class]])
 	{
-	    [self dataSourceDidFinishLoad];
+	    [self didFinishLoad];
 		return;
 	}
 
@@ -204,7 +201,7 @@
     for (NSDictionary *result in results) 
 	{     
 		RedditMessage *newMessage = [RedditMessage messageWithDictionary:[result objectForKey:@"data"]];
-
+        NSLog(@"fuck %@", result);
 		if (newMessage) 
 		{
 			[self.items	addObject:newMessage];
@@ -218,24 +215,24 @@
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:MessageCountDidChangeNotification object:self];
 
-    [self dataSourceDidFinishLoad];
+    [self didFinishLoad];
 }
 
 - (void)request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error
 {
 	activeRequest = nil;
-    [self dataSourceDidFailLoadWithError:error];
+    [self didFailLoadWithError:error];
 }
 
 - (void)requestDidCancelLoad:(TTURLRequest*)request
 {
 	activeRequest = nil;
-    [self dataSourceDidCancelLoad];
+    [self didCancelLoad];
 }
 
 #pragma mark table view delegate stuff
 
-- (void)tableView:(UITableView *)tableView prepareCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath 
+- (void)tableView:(UITableView *)tableView cell:(UITableViewCell *)cell willAppearAtIndexPath:(NSIndexPath *)indexPath 
 { 
 	id object = [self tableView:tableView objectForRowAtIndexPath:indexPath];
 	
@@ -247,7 +244,7 @@
 		messageCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 	else
-        [super tableView:tableView prepareCell:cell forRowAtIndexPath:indexPath]; 
+        [super tableView:tableView cell:cell willAppearAtIndexPath:indexPath]; 
 } 
 
 - (Class)tableView:(UITableView *)tableView cellClassForObject:(id)object 
