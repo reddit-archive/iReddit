@@ -148,7 +148,7 @@ id _realDelegate;
 	NSString *path = [NSString stringWithFormat:@"%@?id=%@&title=%@&author=%@&created=%@&domain=%@&base=%@&jump=%@",
 					  [[NSBundle mainBundle] pathForResource:@"comments" ofType:@"html"],
 					  [theID stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-					  [@"Loading Story Title" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+					  [@"Loading story..." stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [@"reddit" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [[NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [@"reddit.com" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
