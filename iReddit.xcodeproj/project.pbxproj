@@ -110,6 +110,7 @@
 		E58C0FE812B48BAB004D2070 /* libThree20UI-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0F8B12B48AB0004D2070 /* libThree20UI-Xcode3.2.5.a */; };
 		E58C0FE912B48BAF004D2070 /* libThree20UICommon-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0F9D12B48AB0004D2070 /* libThree20UICommon-Xcode3.2.5.a */; };
 		E58C0FEA12B48BB4004D2070 /* libThree20UINavigator-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0FAF12B48AB0004D2070 /* libThree20UINavigator-Xcode3.2.5.a */; };
+		E58C100E12B49244004D2070 /* SubredditDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E58C100D12B49244004D2070 /* SubredditDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -605,6 +606,8 @@
 		E58C0F4312B48AB0004D2070 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E58C0F4612B48AB0004D2070 /* Three20UICommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UICommon.xcodeproj; path = ../three20/src/Three20UICommon/Three20UICommon.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E58C0F4912B48AB0004D2070 /* Three20UINavigator.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UINavigator.xcodeproj; path = ../three20/src/Three20UINavigator/Three20UINavigator.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E58C100C12B49244004D2070 /* SubredditDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubredditDataModel.h; sourceTree = "<group>"; };
+		E58C100D12B49244004D2070 /* SubredditDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubredditDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -787,6 +790,8 @@
 				ADFB534A0FEAC3EA0067CEC1 /* Story.m */,
 				ADFB534B0FEAC3EA0067CEC1 /* SubredditDataSource.h */,
 				ADFB534C0FEAC3EA0067CEC1 /* SubredditDataSource.m */,
+				E58C100C12B49244004D2070 /* SubredditDataModel.h */,
+				E58C100D12B49244004D2070 /* SubredditDataModel.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1506,6 +1511,7 @@
 				3821EF4E11CAC990002CCCE2 /* CJSONDataSerializer.m in Sources */,
 				3821EF4F11CAC990002CCCE2 /* CSerializedJSONData.m in Sources */,
 				3821EF5011CAC990002CCCE2 /* CDataScanner.m in Sources */,
+				E58C100E12B49244004D2070 /* SubredditDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
