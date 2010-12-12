@@ -20,13 +20,14 @@
 		self.backgroundColor = [UIColor whiteColor];
 		self.opaque = YES;
 
-		[self setBackgroundImage:[UIImage imageNamed:@"commentBubble.png"] forState:UIControlStateNormal];
+		[self setBackgroundImage:[[UIImage imageNamed:@"commentBubble.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0] forState:UIControlStateNormal];
 		
-		self.titleEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 7.0, 0.0);
-		self.titleLabel.font = [UIFont boldSystemFontOfSize:10.0];
-		self.titleLabel.textColor = [UIColor whiteColor];
-		self.titleLabel.shadowColor = [UIColor grayColor];
-		self.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+		self.titleEdgeInsets = UIEdgeInsetsMake(0.0, 1.0, 6.0, 0.0);
+		self.titleLabel.font = [UIFont boldSystemFontOfSize:11.0];
+        self.titleLabel.textAlignment = UITextAlignmentCenter;
+        self.titleLabel.textColor = [UIColor whiteColor];
+		[self setTitleShadowColor:[UIColor colorWithWhite:0.0 alpha:0.75] forState:UIControlStateNormal];
+		self.titleLabel.shadowOffset = CGSizeMake(0.0, -0.5);
     }
 	
     return self;

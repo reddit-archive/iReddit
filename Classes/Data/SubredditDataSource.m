@@ -96,7 +96,14 @@ static id lastLoadedSubreddit = nil;
 			accessory = (CommentAccessoryView *)storyCell.accessoryView;
 		}
 		
-		[accessory setCommentCount:storyCell.story.totalComments];
+        NSUInteger commentCount = storyCell.story.totalComments;
+        
+        // a somewhat hacky way to determine width, *but* much faster than sizeWithFont: on every cell
+        CGRect accessoryFrame = accessory.frame;  
+        accessoryFrame.size.width = commentCount > 999 ? 36.0 : 30.0;
+        accessory.frame = accessoryFrame;
+		
+        [accessory setCommentCount:commentCount];
 
 		[accessory addTarget:self action:@selector(accessoryViewTapped:) forControlEvents:UIControlEventTouchUpInside];
 		accessory.story = object;
