@@ -3,7 +3,7 @@
 //  iReddit
 //
 //  Created by Ryan Bruels on 7/21/10.
-//  Copyright 2010 DevToaster, LLC. All rights reserved.
+
 //
 
 #import "SubredditDataModel.h"
@@ -53,9 +53,7 @@
         // clear the stories for this subreddit
         [self.stories removeAllObjects];
     }
-    
-	BOOL savedReddit = [self.subreddit isEqual:@"/saved/"];
-	
+    	
     TTURLRequest *activeRequest = [TTURLRequest requestWithURL:loadURL delegate:self];
 	activeRequest.cacheExpirationAge = 0;
     activeRequest.cachePolicy = TTURLRequestCachePolicyNoCache;

@@ -633,9 +633,7 @@
 	self.toggleButtonItem = nil;
 	self.segmentedControl = nil;
 	self.loadingView = nil;
-	
-	NSLog(@"unloading story view controller %@", self);
-	[super viewDidUnload];
+    [super viewDidUnload];
 }
 
 - (void)dealloc 

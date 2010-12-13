@@ -188,7 +188,6 @@ id _realDelegate;
 
 - (void)dealloc 
 {
-	NSLog(@"DEALLOCING WEBVIEW %@", self);
 	super.delegate = nil;
     [super dealloc];
 }

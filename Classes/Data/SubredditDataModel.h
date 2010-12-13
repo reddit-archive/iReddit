@@ -3,7 +3,7 @@
 //  iReddit
 //
 //  Created by Ryan Bruels on 7/21/10.
-//  Copyright 2010 DevToaster, LLC. All rights reserved.
+
 //
 
 #import <Foundation/Foundation.h>

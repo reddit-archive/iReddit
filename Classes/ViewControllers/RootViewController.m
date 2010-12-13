@@ -301,9 +301,7 @@
     // parse the JSON data that we retrieved from the server
     NSDictionary *json = [NSDictionary dictionaryWithJSONString:responseBody error:nil];
     [responseBody release];
-    
-    NSLog(@"REDDITS LOADED");
-    
+        
     // drill down into the JSON object to get the part 
     // that we're actually interested in.
 	
@@ -370,7 +368,6 @@
 			
 			if ([item.URL isEqual:[redditInfo objectForKey:@"subreddit_url"]])
 			{
-				NSLog(@"HERE");
 				NSMutableArray *items = [customSubreddits mutableCopy];
 				
 				id item = [[items objectAtIndex:i] retain];

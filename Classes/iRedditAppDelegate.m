@@ -241,7 +241,6 @@ iRedditAppDelegate *sharedAppDelegate;
 {
 	if (![navigationController.viewControllers containsObject:randomController])
 	{
-		NSLog(@"RELEASING RANDOM CONTROLLER");
 		[randomController release];
 		randomController = nil;
 	}

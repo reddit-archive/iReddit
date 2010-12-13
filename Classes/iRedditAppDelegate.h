@@ -30,7 +30,6 @@
 + (UIColor *)redditNavigationBarTintColor;
 + (iRedditAppDelegate *)sharedAppDelegate;
 
-- (void)startMessageTimer;
 - (void)reloadSound;
 - (void)showRandomStory;
 

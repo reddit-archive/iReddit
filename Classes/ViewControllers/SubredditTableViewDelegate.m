@@ -3,7 +3,7 @@
 //  iReddit
 //
 //  Created by Ryan Bruels on 12/12/10.
-//  Copyright 2010 DevToaster, LLC. All rights reserved.
+
 //
 
 #import "SubredditTableViewDelegate.h"

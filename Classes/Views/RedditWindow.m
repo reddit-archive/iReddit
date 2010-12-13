@@ -3,7 +3,7 @@
 //  iReddit
 //
 //  Created by Ryan Bruels on 12/11/10.
-//  Copyright 2010 DevToaster, LLC. All rights reserved.
+
 //
 
 #import "RedditWindow.h"
