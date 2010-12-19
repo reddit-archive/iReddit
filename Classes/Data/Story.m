@@ -46,7 +46,7 @@ NSMutableDictionary *storyDictionary;
 	aStory.domain = (NSString *)[dict objectForKey:@"domain"];
 	aStory.identifier = (NSString *)[dict objectForKey:@"id"];
 	aStory.name = (NSString *)[dict objectForKey:@"name"];
-	aStory.URL = (NSString *)[dict objectForKey:@"url"];
+    aStory.URL = [(NSString *)[dict objectForKey:@"url"] stringByDecodingHTMLEncodedCharacters];
 	aStory.created = (NSString *)[(NSNumber *)[dict objectForKey:@"created_utc"] stringValue];
 	aStory.kind = @"t3";
 	aStory.thumbnailURL = (NSString *)[dict objectForKey:@"thumbnail"];
