@@ -100,8 +100,6 @@
 		ADFB54A80FEAC8A60067CEC1 /* Three20Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */; };
 		ADFB556C0FEACC5C0067CEC1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFB556B0FEACC5C0067CEC1 /* Default.png */; };
 		ADFB556E0FEACC7A0067CEC1 /* NSDictionary+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */; };
-		E566C4D012BEA98600E3E04E /* comments.css in Resources */ = {isa = PBXBuildFile; fileRef = E566C4CE12BEA98600E3E04E /* comments.css */; };
-		E566C4D112BEA98600E3E04E /* comments.js in Sources */ = {isa = PBXBuildFile; fileRef = E566C4CF12BEA98600E3E04E /* comments.js */; };
 		E58C0EFA12B48A9B004D2070 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58C0EF912B48A9B004D2070 /* Three20.bundle */; };
 		E58C0FE412B48B99004D2070 /* libThree20-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0F2D12B48AA6004D2070 /* libThree20-Xcode3.2.5.a */; };
 		E58C0FE512B48B9E004D2070 /* libThree20Core-Xcode3.2.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C0F5512B48AB0004D2070 /* libThree20Core-Xcode3.2.5.a */; };
@@ -595,8 +593,6 @@
 		ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three20Extensions.m; sourceTree = "<group>"; };
 		ADFB556B0FEACC5C0067CEC1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "Classes/Extensions/NSDictionary+JSON.m"; sourceTree = SOURCE_ROOT; };
-		E566C4CE12BEA98600E3E04E /* comments.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = comments.css; sourceTree = "<group>"; };
-		E566C4CF12BEA98600E3E04E /* comments.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = comments.js; sourceTree = "<group>"; };
 		E58C0EF912B48A9B004D2070 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		E58C0EFB12B48AA5004D2070 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E58C0F3A12B48AB0004D2070 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = ../three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -762,8 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				ADFB533F0FEAC3EA0067CEC1 /* comments.html */,
-				E566C4CE12BEA98600E3E04E /* comments.css */,
-				E566C4CF12BEA98600E3E04E /* comments.js */,
 				ADFB53400FEAC3EA0067CEC1 /* Constants.h */,
 				ADFB53410FEAC3EA0067CEC1 /* Constants.m */,
 				ADFB53420FEAC3EA0067CEC1 /* Data */,
@@ -1473,7 +1467,6 @@
 				61C35F1111FF29DB001A2F85 /* voteUp@2x.png in Resources */,
 				61DE6FA211FF399700B1F810 /* Default@2x.png in Resources */,
 				E58C0EFA12B48A9B004D2070 /* Three20.bundle in Resources */,
-				E566C4D012BEA98600E3E04E /* comments.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,7 +1510,6 @@
 				E58C100E12B49244004D2070 /* SubredditDataModel.m in Sources */,
 				E58C109812B4A0DD004D2070 /* RedditWindow.m in Sources */,
 				E58C14B412B4E04A004D2070 /* SubredditTableViewDelegate.m in Sources */,
-				E566C4D112BEA98600E3E04E /* comments.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
