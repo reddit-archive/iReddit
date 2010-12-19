@@ -802,7 +802,7 @@ p {
 				
 				commentBody.onclick = function(anEvent)
 				{
-					if (anEvent.target.nodeName !== "A")
+					if (anEvent.target.nodeName.toLowerCase() !== "a" && anEvent.target.parentNode.nodeName.toLowerCase() !== "a")
 					{
 						element.select();
 						anEvent.stopPropagation();
