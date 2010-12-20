@@ -19,7 +19,7 @@
 	{
 		self.backgroundColor = [UIColor whiteColor];
 		self.opaque = YES;
-
+        self.contentMode = UIViewContentModeCenter;
 		[self setBackgroundImage:[[UIImage imageNamed:@"commentBubble.png"] stretchableImageWithLeftCapWidth:20.0 topCapHeight:0.0] forState:UIControlStateNormal];
 		
 		self.titleEdgeInsets = UIEdgeInsetsMake(0.0, 1.0, 6.0, 0.0);

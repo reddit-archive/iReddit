@@ -90,15 +90,32 @@
 																					 next:[TTContentStyle styleWithNext:nil]]];
 
 		[[self contentView] addSubview:storyImage];
+        
+        virtualAccessory = [[UIButton alloc] initWithFrame:CGRectZero];
+        virtualAccessory.adjustsImageWhenHighlighted = NO;
+        [virtualAccessory addTarget:self action:@selector(virtualAccessoryTapped:) forControlEvents:UIControlEventTouchUpInside];
+        virtualAccessory.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleLeftMargin;
+        virtualAccessory.backgroundColor = [UIColor clearColor];
+        [self addSubview:virtualAccessory];
     }
 	
     return self;
+}
+
+- (void)virtualAccessoryTapped:(id)sender
+{
+    UITableView *enclosingTable = (UITableView *)self.superview;
+    if(self.accessoryView && enclosingTable.delegate && [enclosingTable.delegate respondsToSelector:@selector(virtualAccessoryViewTapped:)])
+    {
+        [enclosingTable.delegate virtualAccessoryViewTapped:self.accessoryView];
+    }
 }
 
 - (void)layoutSubviews 
 {
 	[super layoutSubviews];
 	
+    CGRect cellRect = self.bounds;
 	CGRect contentRect = self.contentView.bounds;
 	CGRect labelRect = contentRect;
 
@@ -112,6 +129,8 @@
 
 	//BOOL showThumbnails = [[NSUserDefaults standardUserDefaults] boolForKey:@"showStoryThumbnails"];
 	
+    virtualAccessory.frame = CGRectMake(cellRect.size.width-40, 0, 40, cellRect.size.height);
+    
 	if ([storyImage isHidden])
 	{
 		//[storyImage setHidden:YES];

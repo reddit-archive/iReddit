@@ -17,6 +17,7 @@
 	UILabel		*storyDescriptionView;
 	UILabel		*secondaryDescriptionView;
 	TTImageView	*storyImage;
+    UIButton    *virtualAccessory;
 }
 
 @property (nonatomic,retain) Story *story;

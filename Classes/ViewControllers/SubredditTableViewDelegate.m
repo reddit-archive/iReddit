@@ -29,6 +29,11 @@ static const CGFloat kRefreshingViewHeight = 22;
     return self;
 }
 
+- (void)virtualAccessoryViewTapped:(id)sender
+{
+    [self.controller.dataSource accessoryViewTapped:sender];
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView 
 {
     [super scrollViewDidEndDecelerating:scrollView];
