@@ -15,6 +15,34 @@ function replaceHTMLCharacters(string)
 	return string.replace(/<\/?[^>]+>/gi, '').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
 }
 
+function updateSortBar(e)
+{
+    var target = e.target;
+    var sortID = target.id;
+    sortID = sortID.replace("sort-", "");
+    
+    var sorters = $("sortbar").getElementsByTagName("li");
+    for(var i = 0; i < sorters.length; i++)
+    {
+        var sortElt = sorters[i];
+        sortElt.className = "";
+    }
+    target.className = "selected";
+    
+    $("COMMENTS").innerHTML = "";
+    
+    var outURL = BASE_URL+"/comments/"+STORY_ID+"/.json?sort=" + sortID;
+	
+	// cancel previous requests
+	xhr.abort();
+	
+	xhr.open("GET", outURL, true);
+	xhr.send("");
+	
+	$("loadingform").action = "ireddit://loading/" + sortID;
+	$("loadingform").submit();
+}
+
 function replaceHTMLCharactersInElement(element)
 {
 	var childNodes = element.childNodes,
@@ -240,6 +268,7 @@ body
 #REPLY {
 	padding: 6px;
 	display: none;
+	border-bottom: 1px solid #DDD;
 }
 
 	#reply-textarea {
@@ -259,7 +288,65 @@ body
 #META {
 	padding-left: 10px;
 	font-weight: bold;
+	visibility: hidden;
 }
+
+#sortbar
+{
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    height: 40px;
+    width: 285px;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+
+#sortbar li
+{   
+    float: left;
+    height: 24px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #666;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DCDCDC), to(#898989));
+    font-size: 10px;
+    line-height: 24px;
+    border-right: 1px solid #666;
+    border-left: 1px solid #AAA;
+    text-shadow: 0px -1px 1px #DDD;
+    color: #111;
+    font-family: 'Helvetica';
+    font-weight: bold;
+}
+
+#sortbar li.selected
+{
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff4500), to(#7F2200));
+    color: #FFF;
+    text-shadow: 0px -1px 1px #444;
+}
+
+#sortbar li#sort-controversial
+{
+    width: 75px;
+}
+
+#sortbar li:first-child
+{   
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    border-left: 1px solid #666;
+}
+
+#sortbar li:last-child
+{   
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+
 
 .quote {
 	border-left: 2px solid gray;
@@ -304,8 +391,20 @@ p {
 		<div id="REPLY_status"></div>
 		<button id="REPLY_submit" type="button">comment</button>
 	</div>
-	
-	<div id="META"> </div>
+	    
+    <ul id="sortbar">
+        <li id="sort-confidence">best</li>
+        <li id="sort-top">top</li>
+        <li id="sort-hot">hot</li>
+        <li id="sort-new">new</li>
+        <li id="sort-controversial">controversial</li>
+    </ul>
+        
+	<div id="META">
+	    <div>
+	        Tap a comment to vote or reply.
+	    </div>
+	</div>
 	<div id="COMMENTS"></div>
 	
 	<!-- THIS IS THE STRUCTURE OF A COMMENT
@@ -333,7 +432,7 @@ p {
 	-->
 	
 	<script type="text/javascript">
-	
+		
 	if (window.location.search)
 	{
 		var searchParams = window.location.search.substring(1).split("&"),
@@ -362,6 +461,25 @@ p {
 		};
 	}
 
+    //
+    var sorttype = arguments["sort"];
+    var sorters = $("sortbar").getElementsByTagName("li");
+    for(var i = 0; i < sorters.length; i++)
+    {
+        var sortElt = sorters[i];
+        sortElt.onclick = updateSortBar;
+    }
+    
+    if(sorttype != null) 
+    {
+        var sortID = "sort-" + sorttype;
+        var sortElt = $(sortID);
+        if(sortElt != null)
+        {
+            sortElt.className = "selected";
+        }    
+    }
+    
 	window.title = decodeURIComponent(arguments["title"]);
 
 	if (arguments["title"] && arguments["title"] != "(null)")
@@ -377,7 +495,8 @@ p {
 
 	var xhr = new XMLHttpRequest();
 	
-	xhr.open("GET", BASE_URL+"/comments/"+STORY_ID+"/.json", true);
+	var outURL = BASE_URL+"/comments/"+STORY_ID+"/.json?sort=" + sorttype;
+	xhr.open("GET", outURL, true);
 	
 	xhr.setRequestHeader("x-reddit-version", "2.1");
 	
@@ -387,8 +506,9 @@ p {
 		{
 			$("REPLY").style.display = "block";
 			$("COMMENTS").innerHTML = "";
-			$("META").innerHTML = "Tap a comment to vote or reply.";
-			
+			$("META").style.visibility = "visible";
+			$("sortbar").style.visibility = "visible";
+
 			//fill out the header
 			DATASET = eval("("+xhr.responseText+")");
 			var story  = DATASET[0].data.children[0].data;
@@ -866,13 +986,19 @@ p {
 					$(JUMP_TO).select();
 				}, 500);
 			}
+			
+			$("doneloadingform").submit();
+
 		 }
 	}
 	
 	xhr.send("");
 
    </script>
-
+    <form id="doneloadingform" method="POST" action="ireddit://doneloading">
+    </form>
+    <form id="loadingform" method="POST" action="ireddit://loading">
+    </form>
 </body>
 
 </html>

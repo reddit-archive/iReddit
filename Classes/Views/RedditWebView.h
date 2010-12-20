@@ -13,7 +13,9 @@
 @interface RedditWebView : UIWebView 
 {
 	id _realDelegate;
+    UIWebViewNavigationType currentNavigationType;
 }
+@property (nonatomic, readonly) UIWebViewNavigationType currentNavigationType;
 
 + (NSString *)storyIDForURL:(NSURL *)aURL;
 + (NSString *)storyIDForURL:(NSURL *)aURL commentID:(NSString **)stringPtr;

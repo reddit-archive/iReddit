@@ -52,6 +52,8 @@ NSString *const MessageCountDidChangeNotification = @"MessageCountDidChangeNotif
 
 NSString *const DeviceDidShakeNotification = @"DeviceDidShakeNotification";
 
+NSString *const LastStorySortMethodKey = @"LastStorySortMethodKey";
+
 BOOL            shouldDetectDeviceShake = YES;
 
 NSString *const redditSoundLightsaber	= @"lightsaber";

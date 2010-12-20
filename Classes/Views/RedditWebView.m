@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 
 @implementation RedditWebView
+@synthesize currentNavigationType;
 
 id _realDelegate;
 
@@ -51,13 +52,15 @@ id _realDelegate;
 
 - (void)awakeFromNib
 {
-	[super setDelegate:(id<UIWebViewDelegate>)self];
+	currentNavigationType = UIWebViewNavigationTypeLinkClicked;
+    [super setDelegate:(id<UIWebViewDelegate>)self];
 }
 
 - (id)initWithFrame:(CGRect)aFrame
 {
 	if (self = [super initWithFrame:aFrame])
 	{
+        currentNavigationType = UIWebViewNavigationTypeLinkClicked;
 		[super setDelegate:(id<UIWebViewDelegate>)self];
 	}
 	
@@ -113,7 +116,9 @@ id _realDelegate;
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+{    
+    currentNavigationType = navigationType;
+    
 	BOOL response = YES;
 	if (_realDelegate && [_realDelegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)])
 		response = [_realDelegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
@@ -121,7 +126,30 @@ id _realDelegate;
 	if (!response)
 		return NO;
 
-	if ([@"http://login/" isEqualToString:[[request URL] absoluteString]])
+    if ([[[request URL] absoluteString] hasPrefix:@"ireddit://loading"])
+    {
+        if (_realDelegate && [_realDelegate respondsToSelector:@selector(webViewDidStartLoad:)])
+        {
+            [_realDelegate webViewDidStartLoad:webView];
+        }
+        
+        // store the last sort type for later use
+        NSString *lastSort = [[[request URL] absoluteString] lastPathComponent];
+        [[NSUserDefaults standardUserDefaults] setObject:lastSort forKey:LastStorySortMethodKey];
+        
+        return NO;
+    }
+    
+    if ([@"ireddit://doneloading" isEqualToString:[[request URL] absoluteString]])
+    {
+        if (_realDelegate && [_realDelegate respondsToSelector:@selector(webViewDidFinishLoad:)])
+        {
+            [_realDelegate webViewDidFinishLoad:webView];
+        }
+        return NO;
+    }
+	
+    if ([@"http://login/" isEqualToString:[[request URL] absoluteString]])
 	{
 		[LoginViewController presentWithDelegate:(id <LoginViewControllerDelegate>)self context:@"RedditWebView"];
 		return NO;
@@ -145,7 +173,12 @@ id _realDelegate;
 
 - (void)loadWithStoryID:(NSString *)theID commentID:(NSString *)commentID
 {
-	NSString *path = [NSString stringWithFormat:@"%@?id=%@&title=%@&author=%@&created=%@&domain=%@&base=%@&jump=%@",
+    NSString *lastSort = [[NSUserDefaults standardUserDefaults] objectForKey:LastStorySortMethodKey];
+    if(!lastSort)
+    {
+        lastSort = @"confidence";
+    }
+	NSString *path = [NSString stringWithFormat:@"%@?id=%@&title=%@&author=%@&created=%@&domain=%@&base=%@&jump=%@&sort=%@",
 					  [[NSBundle mainBundle] pathForResource:@"comments" ofType:@"html"],
 					  [theID stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [@"Loading story..." stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
@@ -153,11 +186,10 @@ id _realDelegate;
 					  [[NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [@"reddit.com" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [RedditBaseURLString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-					  [(commentID ? commentID : @"no_such_id") stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
+                      lastSort
 					  ];
 		
 	NSURL *url = [[NSURL alloc] initWithScheme:@"file" host:@"localhost" path:path];
-		
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
 	[url release];
@@ -167,7 +199,12 @@ id _realDelegate;
 
 - (void)loadWithStory:(Story *)story commentID:(NSString *)commentID
 {
-	NSString *path = [NSString stringWithFormat:@"%@?id=%@&title=%@&author=%@&created=%@&domain=%@&base=%@",
+    NSString *lastSort = [[NSUserDefaults standardUserDefaults] objectForKey:LastStorySortMethodKey];
+    if(!lastSort)
+    {
+        lastSort = @"confidence";
+    }
+	NSString *path = [NSString stringWithFormat:@"%@?id=%@&title=%@&author=%@&created=%@&domain=%@&base=%@&sort=%@",
 					  [[NSBundle mainBundle] pathForResource:@"comments" ofType:@"html"],
 					  [story.identifier stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [story.title stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
@@ -175,10 +212,9 @@ id _realDelegate;
 					  [story.created stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [story.domain stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
 					  [RedditBaseURLString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
-					  [(commentID ? commentID : @"no_such_id") stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]
+                      lastSort
 					  ];
 	NSURL *url = [[NSURL alloc] initWithScheme:@"file" host:@"localhost" path:path];
-		
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
 	[url release];

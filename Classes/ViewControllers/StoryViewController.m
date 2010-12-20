@@ -569,9 +569,14 @@
 	//[[Beacon shared] startSubBeaconWithName:@"usedSegmentNav" timeSession:NO];
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(RedditWebView *)webView
 {
-	[(UILabel *)(self.navigationItem.titleView) setText:@"Loading..."];
+    if(webView.currentNavigationType != UIWebViewNavigationTypeOther)
+    {
+        [loadingView setHidden:NO];
+        [loadingView startAnimating];
+    }
+    [(UILabel *)(self.navigationItem.titleView) setText:@"Loading..."];
 	[segmentedControl setEnabled:[webView canGoBack] forSegmentAtIndex:0];
 	[segmentedControl setEnabled:[webView canGoForward] forSegmentAtIndex:2];
 	[segmentedControl setImage:[UIImage imageNamed:@"stop.png"] forSegmentAtIndex:1];
