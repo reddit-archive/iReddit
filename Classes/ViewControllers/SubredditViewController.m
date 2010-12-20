@@ -95,6 +95,14 @@
     //self.tableView.tableHeaderView = tabBar;
 	
 	//[wrapper addSubview:self.tableView];
+    
+    UIBarButtonItem *reloadItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"refresh.png"]
+                                                           style:UIBarButtonItemStylePlain
+                                                           target:self
+                                                           action:@selector(refresh:)];
+    reloadItem.width = 25.0;
+    self.navigationItem.rightBarButtonItem = reloadItem;
+    [reloadItem release];
 	
 	if (tabBar)
 		[self.view addSubview:tabBar];
@@ -102,6 +110,10 @@
     [self.view addSubview:self.tableView]; 
 }
 
+- (void)refresh:(id)sender
+{
+    [self.dataSource.model load:TTURLRequestCachePolicyNoCache more:NO];
+}
 /*- (void)unloadView
 {
 	[tabBar release];
