@@ -130,7 +130,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself)
 			[CheckGroupTableItem itemWithText:@"Pure Evil" on:[currentSound isEqual:redditSoundPureEvil] URL:redditSoundPureEvil group:shakingSoundKey],
 			[CheckGroupTableItem itemWithText:@"Roll Out" on:[currentSound isEqual:redditSoundRollout] URL:redditSoundRollout group:shakingSoundKey],
 			[CheckGroupTableItem itemWithText:@"Alien Hunter" on:[currentSound isEqual:redditSoundAlienHunter] URL:redditSoundAlienHunter group:shakingSoundKey],
-			[CheckGroupTableItem itemWithText:@"Scream" on:[currentSound isEqual:redditSoundScream] URL:redditSoundScream group:shakingSoundKey],
+			[CheckGroupTableItem itemWithText:@"Wilhelm" on:[currentSound isEqual:redditSoundScream] URL:redditSoundScream group:shakingSoundKey],
 			
 			nil];
 }
@@ -205,7 +205,7 @@ static void settingsSoundPlayedCallback(SystemSoundID  mySSID, void* myself)
 	{
 		SystemSoundID sound;
 		NSString *path = [[NSBundle mainBundle] pathForResource:object.URL ofType:@"pcm"];
-		AudioServicesCreateSystemSoundID((CFURLRef)[NSURL URLWithString:path], &sound);
+		AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:path], &sound);
 		AudioServicesAddSystemSoundCompletion (sound,NULL,NULL,settingsSoundPlayedCallback,(void*) self);		
 		AudioServicesPlaySystemSound(sound);
 	}

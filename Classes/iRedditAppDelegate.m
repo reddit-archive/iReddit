@@ -184,7 +184,7 @@ iRedditAppDelegate *sharedAppDelegate;
 		AudioServicesDisposeSystemSoundID(shakingSound);
 	
 	NSString *path = [[NSBundle mainBundle] pathForResource:[[NSUserDefaults standardUserDefaults] stringForKey:shakingSoundKey] ofType:@"pcm"];
-	AudioServicesCreateSystemSoundID((CFURLRef)[NSURL URLWithString:path], &shakingSound);
+	AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:path], &shakingSound);
 }
 
 - (void)dealloc 
