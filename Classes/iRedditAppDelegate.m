@@ -44,7 +44,7 @@ iRedditAppDelegate *sharedAppDelegate;
     if(![defaults boolForKey:SEEN_DEPRECATED_NOTICE])
     {
         UIAlertView *deprecatedAlert = [[UIAlertView alloc] initWithTitle:@"Goodbye, iReddit Free!" 
-        message:@"iReddit Free will no longer be supported, and this app has been updated with all the features of iReddit. We will no longer update iReddit Free, so please download iReddit for FREE from App Store to keep up with future updates!"
+        message:@"iReddit Free will no longer be supported or updated. Please download the new iReddit for FREE from App Store to keep up with future updates!"
         delegate:self 
         cancelButtonTitle:nil 
         otherButtonTitles:@"OK", nil];
