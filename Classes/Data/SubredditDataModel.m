@@ -22,7 +22,7 @@
         self.newsModeIndex = 0;
 		_subreddit = [subreddit retain];
         _stories = [[NSMutableArray alloc] init];
-	}
+    }
 	
 	return self;
 }
@@ -30,6 +30,11 @@
 - (BOOL)canLoadMore
 {
     return canLoadMore;
+}
+
+- (BOOL)isLoaded
+{
+    return [_stories count] > 0;
 }
 
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more
@@ -68,7 +73,7 @@
 }
 
 - (void)requestDidFinishLoad:(TTURLRequest*)request
-{    
+{        
     NSInteger totalCount = [_stories count];
 	canLoadMore = NO;
 		

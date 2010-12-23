@@ -108,7 +108,8 @@ iRedditAppDelegate *sharedAppDelegate;
                                           name:DeviceDidShakeNotification
                                           object:nil]; 
 	
-	[self performSelector:@selector(loadDataWithDelay) withObject:nil afterDelay:1.0];
+    randomDataSource = [[SubredditDataSource alloc] initWithSubreddit:@"/randomrising/"];
+    [self loadRandomData];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -136,7 +137,7 @@ iRedditAppDelegate *sharedAppDelegate;
     if([[LoginController sharedLoginController] isLoggedIn] && !messageDataSource && !messageTimer)
     {
         messageDataSource = [[MessageDataSource alloc] init];
-        [messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];
+        [messageDataSource.model load:TTURLRequestCachePolicyNoCache more:NO];
 
         messageTimer = [[NSTimer scheduledTimerWithTimeInterval:60.0
                                  target:self
@@ -158,13 +159,13 @@ iRedditAppDelegate *sharedAppDelegate;
 
 - (void)reloadMessages
 {
-    [messageDataSource load:TTURLRequestCachePolicyNoCache more:NO];
+    [messageDataSource.model load:TTURLRequestCachePolicyNoCache more:NO];
 }
 
-- (void)loadDataWithDelay
+- (void)loadRandomData
 {
-	randomDataSource = [[SubredditDataSource alloc] initWithSubreddit:@"/randomrising/"];
-	[randomDataSource load:TTURLRequestCachePolicyNoCache more:NO];
+	[randomDataSource.model load:TTURLRequestCachePolicyNoCache more:NO];
+    [self performSelector:@selector(loadRandomData) withObject:nil afterDelay:60.0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application 
@@ -203,7 +204,7 @@ iRedditAppDelegate *sharedAppDelegate;
 
 - (void)showRandomStory
 {
-	if (!randomDataSource || ![randomDataSource isLoaded])
+	if (!randomDataSource || ![randomDataSource.model isLoaded])
 		return;
 
 	if (!randomController)
@@ -229,7 +230,7 @@ iRedditAppDelegate *sharedAppDelegate;
 	
 	if (!story)
 	{
-		[randomDataSource load:TTURLRequestCachePolicyDefault more:YES];
+		[randomDataSource.model load:TTURLRequestCachePolicyDefault more:YES];
 		return;
 	}
 

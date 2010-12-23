@@ -122,51 +122,11 @@
 	[super unloadView];
 }*/
 
-- (void)restoreSavedState
-{
-	/*
-    if (!savedLocation)
-		return;
-
-	if (savedLocation.row < [self.tableView numberOfRowsInSection:savedLocation.section])
-	{
-		[self.tableView scrollToRowAtIndexPath:savedLocation atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
-		[savedLocation release];
-		savedLocation = nil;
-	}
-	else if (![self.dataSource isLoadingMore] && ![self.dataSource isLoading])
-	{
-		if ([(SubredditDataSource *)(self.dataSource) totalStories] < 500)
-			[self.dataSource load:TTURLRequestCachePolicyNoCache more:YES];
-		else
-		{
-			[savedLocation release];
-			savedLocation = nil;
-		}
-	}
-    */
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 	[self.tableView reloadData];
-    
-    //TODO restore state?
-	//if (savedLocation && !(self.viewState & TTViewLoadingStates))
-	//	[self restoreSavedState];
 }
-
-//TODO restore state?
-/*
-- (void)setViewState:(TTViewState)aState
-{
-	[super setViewState:aState];
-	
-	if (aState & TTViewDataStates && savedLocation)
-		[self restoreSavedState];
-}
-*/
 
 - (void)createModel 
 {

@@ -59,7 +59,9 @@ static id lastLoadedSubreddit = nil;
     [lastLoadedTime release];
     lastLoadedTime = [[NSDate date] retain];
     self.items = _subredditModel.stories;
-    lastLoadedSubreddit = self;
+    
+    [lastLoadedSubreddit release];
+    lastLoadedSubreddit = [self retain];
 }
 
 - (Story *)storyWithIndex:(int)anIndex
