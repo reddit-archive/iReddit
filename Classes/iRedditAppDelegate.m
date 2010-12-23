@@ -54,35 +54,21 @@ iRedditAppDelegate *sharedAppDelegate;
 #endif
 
 	[defaults registerDefaults:
-	 [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:
-										  [NSNumber numberWithBool:YES],
-										  [NSNumber numberWithBool:YES],
-										  [NSNumber numberWithBool:YES],	
-										  [NSNumber numberWithBool:NO],
-										  [NSNumber numberWithBool:YES],
-										  [NSArray array],
-										  [NSArray array],
-										  redditSoundLightsaber,
-										  [NSNumber numberWithBool:YES],
-										  @"/",
-										  @"Front Page",
-										  nil
-										  ] 
-								 forKeys:[NSArray arrayWithObjects:
-										  showStoryThumbnailKey,
-										  shakeForStoryKey,
-										  playSoundOnShakeKey,
-										  useCustomRedditListKey,
-										  showLoadingAlienKey,
-										  visitedStoriesKey,
-										  redditSortOrderKey,
-										  shakingSoundKey,
-										  allowLandscapeOrientationKey,
-										  initialRedditURLKey,
-										  initialRedditTitleKey,
-										  nil
-										  ]
-	  ]];		
+         [NSDictionary dictionaryWithObjectsAndKeys:
+              [NSNumber numberWithBool:YES], showStoryThumbnailKey,
+              [NSNumber numberWithBool:YES], shakeForStoryKey,
+              [NSNumber numberWithBool:YES], playSoundOnShakeKey,
+              [NSNumber numberWithBool:YES], useCustomRedditListKey,
+              [NSNumber numberWithBool:YES], showLoadingAlienKey,
+              [NSArray array], visitedStoriesKey,
+              [NSArray array], redditSortOrderKey,
+              redditSoundLightsaber, shakingSoundKey,
+              [NSNumber numberWithBool:YES], allowLandscapeOrientationKey,
+              @"/", initialRedditURLKey,
+              @"Front Page", initialRedditTitleKey,
+              nil
+            ]
+	  ];		
 	
     self.navController = [[[UINavigationController alloc] initWithRootViewController:[[[RootViewController alloc] init] autorelease]] autorelease];
 	self.navController.delegate = (id <UINavigationControllerDelegate>)self;
