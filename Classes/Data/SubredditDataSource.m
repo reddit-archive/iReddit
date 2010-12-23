@@ -64,11 +64,16 @@ static id lastLoadedSubreddit = nil;
     lastLoadedSubreddit = [self retain];
 }
 
+- (NSArray *)items
+{
+    return _subredditModel.stories;
+}
+
 - (Story *)storyWithIndex:(int)anIndex
 {	
-	if (anIndex < 0 || anIndex > [self.items count])
+	if (anIndex < 0 || anIndex > [((SubredditDataModel *)self.model) totalStories])
 		return nil;
-    return [self.items objectAtIndex:anIndex];
+    return [((SubredditDataModel *)self.model).stories objectAtIndex:anIndex];
 }
 
 #pragma mark TTDataSource

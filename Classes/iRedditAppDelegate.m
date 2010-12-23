@@ -199,8 +199,7 @@ iRedditAppDelegate *sharedAppDelegate;
 		//[[Beacon shared] startSubBeaconWithName:@"serendipityTime" timeSession:YES];
 	}
 	
-	SubredditDataSource *activeDataSource = [SubredditDataSource lastLoadedSubreddit];
-    NSInteger count = [((SubredditDataModel *)activeDataSource.model) totalStories];
+    NSInteger count = [(SubredditDataModel *)randomDataSource.model totalStories];
 	NSInteger randomIndex = count > 0 ? arc4random() % count : 0;
 	
 	Story *story = nil;
@@ -208,7 +207,7 @@ iRedditAppDelegate *sharedAppDelegate;
 	int i=0;
 	while (!story && i++ < count)
 	{
-		story = [activeDataSource storyWithIndex:(randomIndex++)%count];
+		story = [randomDataSource storyWithIndex:(randomIndex++)%count];
 
 		if ([story visited] && i < count - 1)
 			story = nil;

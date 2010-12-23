@@ -83,7 +83,7 @@
     // parse the JSON data that we retrieved from the server
     NSDictionary *json = [NSDictionary dictionaryWithJSONString:responseBody error:nil];
     [responseBody release];
-    
+        
     // drill down into the JSON object to get the part 
     // that we're actually interested in.
 	
