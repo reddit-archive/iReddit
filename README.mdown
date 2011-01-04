@@ -1,27 +1,21 @@
 Build Instructions
 ==================
 
-You'll need to use at least version 4.0 of the iPhone SDK
+You'll need to use at least version 4.2 of the iPhone SDK
 
-iReddit requires TouchJSON and a special branch of the Three20 project to build.
+iReddit requires TouchJSON and Three20 to build.
 
 In the parent directory of the project directory, you can check out the requirements with the following commands:
 
-    hg clone https://touchcode.googlecode.com/hg/ touchcode
-
-(go make a cup of tea)
-
-    ln -s touchcode/TouchJSON TouchJSON
-    git clone http://github.com/alastairstuart/three20.git
-
+    git clone https://github.com/schwa/TouchJSON.git
+    git clone https://github.com/facebook/three20.git
 
 So your directory structure should look like this:
 
     . <parent directory>
 	|-- iReddit
 	|-- three20
-	|-- touchcode
-	'-- TouchJSON (symlink -> touchcode/TouchJSON)
+	'-- TouchJSON
 
 You should then be able to build iReddit.
 
