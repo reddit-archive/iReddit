@@ -746,7 +746,7 @@
 		ADFB54A70FEAC8A60067CEC1 /* Three20Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Three20Extensions.m; sourceTree = "<group>"; };
 		ADFB556B0FEACC5C0067CEC1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "Classes/Extensions/NSDictionary+JSON.m"; sourceTree = SOURCE_ROOT; };
-		E566C63212BEF9FB00E3E04E /* iReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E566C63212BEF9FB00E3E04E /* iReddit Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iReddit Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E566C63412BEF9FC00E3E04E /* iReddit-Free-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Free-Info.plist"; sourceTree = "<group>"; };
 		E58C0EF912B48A9B004D2070 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = ../three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		E58C0EFB12B48AA5004D2070 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -826,7 +826,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* iReddit.app */,
-				E566C63212BEF9FB00E3E04E /* iReddit.app */,
+				E566C63212BEF9FB00E3E04E /* iReddit Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1264,7 +1264,7 @@
 			);
 			name = "iReddit Free";
 			productName = iReddit;
-			productReference = E566C63212BEF9FB00E3E04E /* iReddit.app */;
+			productReference = E566C63212BEF9FB00E3E04E /* iReddit Free.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1942,7 +1942,6 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
 		};
@@ -2012,7 +2011,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEPRECATED_FREE;
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PRODUCT_NAME = iReddit;
+				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Debug;
 		};
@@ -2026,7 +2025,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEPRECATED_FREE;
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PRODUCT_NAME = iReddit;
+				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Release;
 		};
@@ -2040,7 +2039,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEPRECATED_FREE;
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
-				PRODUCT_NAME = iReddit;
+				PRODUCT_NAME = "iReddit Free";
 			};
 			name = Distribution;
 		};

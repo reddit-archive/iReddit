@@ -13,7 +13,7 @@
 #import "Constants.h"
 #import "LoginController.h"
 
-#define SEEN_DEPRECATED_NOTICE @"ireddit-free-seen-deprecated"
+#define SEEN_DEPRECATED_NOTICE_TIMESTAMP @"ireddit-free-seen-deprecated"
 
 extern NSMutableArray *visitedArray;
 
@@ -40,19 +40,6 @@ iRedditAppDelegate *sharedAppDelegate;
 	//register defaults
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
-#ifdef DEPRECATED_FREE
-    if(![defaults boolForKey:SEEN_DEPRECATED_NOTICE])
-    {
-        UIAlertView *deprecatedAlert = [[UIAlertView alloc] initWithTitle:@"Goodbye, iReddit Free!" 
-        message:@"iReddit Free will no longer be supported or updated. Please download the new iReddit for FREE from App Store to keep up with future updates!"
-        delegate:self 
-        cancelButtonTitle:nil 
-        otherButtonTitles:@"OK", nil];
-        [deprecatedAlert show];
-        [deprecatedAlert release];
-    }
-#endif
-
 	[defaults registerDefaults:
          [NSDictionary dictionaryWithObjectsAndKeys:
               [NSNumber numberWithBool:YES], showStoryThumbnailKey,
@@ -98,9 +85,36 @@ iRedditAppDelegate *sharedAppDelegate;
     [self loadRandomData];
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+#ifdef DEPRECATED_FREE
+    NSTimeInterval periodOfBlessedSilence = 60 * 60 * 24 * 7; // if the user hasn't seen the alert for 1 week, show it again
+    NSTimeInterval lastSeenDeprecatedAlertTime = [[NSUserDefaults standardUserDefaults] doubleForKey:SEEN_DEPRECATED_NOTICE_TIMESTAMP];
+    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
+    if(currentTime - lastSeenDeprecatedAlertTime > periodOfBlessedSilence)
+    {
+        UIAlertView *deprecatedAlert = [[UIAlertView alloc] initWithTitle:@"Goodbye, iReddit Free!" 
+        message:@"iReddit Free will no longer be supported or updated. Please download the new iReddit for FREE from App Store to keep up with future updates!"
+        delegate:self 
+        cancelButtonTitle:@"Later" 
+        otherButtonTitles:@"Download", nil];
+        [deprecatedAlert show];
+        [deprecatedAlert release];
+    }
+#endif
+}
+
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SEEN_DEPRECATED_NOTICE];
+    // save the last timestamp
+    [[NSUserDefaults standardUserDefaults] setDouble:[NSDate timeIntervalSinceReferenceDate] forKey:SEEN_DEPRECATED_NOTICE_TIMESTAMP];
+    
+    if(buttonIndex != alertView.cancelButtonIndex)
+    {
+        // take them to the store if requested
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.com/apps/iReddit"]];
+    }
+    
 }
 
 - (void)deviceDidShake:(NSNotification *)notif
