@@ -5,17 +5,9 @@ You'll need to use at least version 4.2 of the iPhone SDK
 
 iReddit requires TouchJSON and Three20 to build.
 
-In the parent directory of the project directory, you can check out the requirements with the following commands:
+In the project directory simply run the following command to retrieve the submodules:
 
-    git clone https://github.com/schwa/TouchJSON.git
-    git clone https://github.com/facebook/three20.git
-
-So your directory structure should look like this:
-
-    . <parent directory>
-	|-- iReddit
-	|-- three20
-	'-- TouchJSON
+	git submodule update --init
 
 You should then be able to build iReddit.
 
