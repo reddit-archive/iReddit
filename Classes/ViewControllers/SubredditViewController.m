@@ -55,7 +55,8 @@
 	[super loadView];
 
     // create the tableview
-    self.view = [[[UIView alloc] initWithFrame:TTApplicationFrame()] autorelease];
+	CGRect applicationFrame = TTApplicationFrame();
+    self.view = [[[UIView alloc] initWithFrame:applicationFrame] autorelease];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
 	if (tabBar)
@@ -66,7 +67,7 @@
 			
 	if (showTabBar)
 	{
-		tabBar = [[TTTabStrip alloc] initWithFrame:CGRectMake(0, 0, 320, 36)];
+		tabBar = [[TTTabStrip alloc] initWithFrame:CGRectMake(0, 0, applicationFrame.size.width, 36)];
 
 		tabBar.tabItems = [NSArray arrayWithObjects:
 							 [[[TTTabItem alloc] initWithTitle:@"   Hot   "] autorelease],

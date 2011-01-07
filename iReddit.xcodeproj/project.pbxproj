@@ -38,6 +38,12 @@
 		61C35F1011FF29DB001A2F85 /* voteDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35F0011FF29DB001A2F85 /* voteDown@2x.png */; };
 		61C35F1111FF29DB001A2F85 /* voteUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61C35F0111FF29DB001A2F85 /* voteUp@2x.png */; };
 		61DE6FA211FF399700B1F810 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61DE6FA111FF399700B1F810 /* Default@2x.png */; };
+		94C3A39612D74FE900E2BF79 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A39512D74FE900E2BF79 /* MainWindow-iPad.xib */; };
+		94C3A3CE12D757D000E2BF79 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A39512D74FE900E2BF79 /* MainWindow-iPad.xib */; };
+		94C3A41A12D75B8100E2BF79 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A41812D75B8100E2BF79 /* Default-Landscape.png */; };
+		94C3A41B12D75B8100E2BF79 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A41912D75B8100E2BF79 /* Default-Portrait.png */; };
+		94C3A41C12D75B8100E2BF79 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A41812D75B8100E2BF79 /* Default-Landscape.png */; };
+		94C3A41D12D75B8100E2BF79 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 94C3A41912D75B8100E2BF79 /* Default-Portrait.png */; };
 		ADB29F890FEB046200405C52 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADB29F880FEB046200405C52 /* Entitlements.plist */; };
 		ADB2A0C40FEC207C00405C52 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */; };
 		ADBC92060FFDA1DE0033E60A /* AddRedditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADBC92040FFDA1DE0033E60A /* AddRedditViewController.m */; };
@@ -654,6 +660,9 @@
 		61C35F0111FF29DB001A2F85 /* voteUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "voteUp@2x.png"; sourceTree = "<group>"; };
 		61DE6FA111FF399700B1F810 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iReddit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iReddit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		94C3A39512D74FE900E2BF79 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		94C3A41812D75B8100E2BF79 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "../../iphone/iReddit/Default-Landscape.png"; sourceTree = SOURCE_ROOT; };
+		94C3A41912D75B8100E2BF79 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "../../iphone/iReddit/Default-Portrait.png"; sourceTree = SOURCE_ROOT; };
 		ADB29F880FEB046200405C52 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		ADB2A0C30FEC207C00405C52 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		ADBC92030FFDA1DE0033E60A /* AddRedditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRedditViewController.h; sourceTree = "<group>"; };
@@ -747,7 +756,7 @@
 		ADFB556B0FEACC5C0067CEC1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		ADFB556D0FEACC7A0067CEC1 /* NSDictionary+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSON.m"; path = "Classes/Extensions/NSDictionary+JSON.m"; sourceTree = SOURCE_ROOT; };
 		E566C63212BEF9FB00E3E04E /* iReddit Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iReddit Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E566C63412BEF9FC00E3E04E /* iReddit-Free-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Free-Info.plist"; sourceTree = "<group>"; };
+		E566C63412BEF9FC00E3E04E /* iReddit-Free-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iReddit-Free-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		E58C0EF912B48A9B004D2070 /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
 		E58C0EFB12B48AA5004D2070 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E58C0F3A12B48AB0004D2070 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -839,6 +848,7 @@
 				ADFB53350FEAC3EA0067CEC1 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				94C3A39412D74FE900E2BF79 /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -863,6 +873,8 @@
 				61C35E1011FF0C85001A2F85 /* Icon@2x.png */,
 				ADFB556B0FEACC5C0067CEC1 /* Default.png */,
 				61DE6FA111FF399700B1F810 /* Default@2x.png */,
+				94C3A41812D75B8100E2BF79 /* Default-Landscape.png */,
+				94C3A41912D75B8100E2BF79 /* Default-Portrait.png */,
 				ADB29F880FEB046200405C52 /* Entitlements.plist */,
 				8D1107310486CEB800E47090 /* iReddit-Info.plist */,
 				E566C63412BEF9FC00E3E04E /* iReddit-Free-Info.plist */,
@@ -936,6 +948,14 @@
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 			);
 			name = XIBs;
+			sourceTree = "<group>";
+		};
+		94C3A39412D74FE900E2BF79 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				94C3A39512D74FE900E2BF79 /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		ADFB53350FEAC3EA0067CEC1 /* Classes */ = {
@@ -1676,6 +1696,9 @@
 				61C35F1111FF29DB001A2F85 /* voteUp@2x.png in Resources */,
 				61DE6FA211FF399700B1F810 /* Default@2x.png in Resources */,
 				E58C0EFA12B48A9B004D2070 /* Three20.bundle in Resources */,
+				94C3A39612D74FE900E2BF79 /* MainWindow-iPad.xib in Resources */,
+				94C3A41A12D75B8100E2BF79 /* Default-Landscape.png in Resources */,
+				94C3A41B12D75B8100E2BF79 /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1734,6 +1757,9 @@
 				E566C5F412BEF9FB00E3E04E /* voteUp@2x.png in Resources */,
 				E566C5F512BEF9FB00E3E04E /* Default@2x.png in Resources */,
 				E566C5F612BEF9FB00E3E04E /* Three20.bundle in Resources */,
+				94C3A3CE12D757D000E2BF79 /* MainWindow-iPad.xib in Resources */,
+				94C3A41C12D75B8100E2BF79 /* Default-Landscape.png in Resources */,
+				94C3A41D12D75B8100E2BF79 /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1900,6 +1926,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1908,6 +1935,8 @@
 				INFOPLIST_FILE = "iReddit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = iReddit;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1915,12 +1944,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				INFOPLIST_FILE = "iReddit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = iReddit;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1949,12 +1981,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iReddit_Prefix.pch;
 				INFOPLIST_FILE = "iReddit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = iReddit;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
@@ -2012,6 +2047,7 @@
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "iReddit Free";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -2026,6 +2062,7 @@
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "iReddit Free";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2040,6 +2077,7 @@
 				INFOPLIST_FILE = "iReddit-Free-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "iReddit Free";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};

@@ -76,18 +76,19 @@ NSMutableDictionary *storyDictionary;
 	aStory.isSelfReddit = ([aStory.domain rangeOfString:@"self."].location == 0);
 	
 	UIFont *storyFont = [UIFont boldSystemFontOfSize:14];
+	CGSize screenSize = [UIScreen mainScreen].bounds.size;
 	CGFloat height;
 	
-	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(266.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
+	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(screenSize.width - 54.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
 	[aStory setHeight:height forIndex:PORTRAIT_INDEX];
 	
-	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(266.0-68.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
+	height = (CGFloat)([aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(screenSize.width - (54.0+68.0), 1000.0) lineBreakMode:UILineBreakModeTailTruncation]).height;
 	[aStory setHeight:height forIndex:PORTRAIT_THUMBNAIL_INDEX];
 	
-	height = (CGFloat)[aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(428.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation].height;
+	height = (CGFloat)[aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(screenSize.height - 52.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation].height;
 	[aStory setHeight:height forIndex:LANDSCAPE_INDEX];
 
-	height = (CGFloat)[aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(428.0-68.0, 1000.0) lineBreakMode:UILineBreakModeTailTruncation].height;
+	height = (CGFloat)[aStory.title sizeWithFont:storyFont constrainedToSize:CGSizeMake(screenSize.height - (52.0+68.0), 1000.0) lineBreakMode:UILineBreakModeTailTruncation].height;
 	[aStory setHeight:height forIndex:LANDSCAPE_THUMBNAIL_INDEX];
 
 	[storyDictionary setObject:aStory forKey:aStory.identifier];

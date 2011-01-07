@@ -192,7 +192,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationBarTintColor = [iRedditAppDelegate redditNavigationBarTintColor];
-    self.tableView.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:238.0/255.0 blue:1 alpha:1];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		self.tableView.backgroundColor = [UIColor colorWithRed:229.0/255.0 green:238.0/255.0 blue:1 alpha:1];
+	}
 	self.tableView.allowsSelectionDuringEditing = NO;
 	self.tableView.editing = NO;
 

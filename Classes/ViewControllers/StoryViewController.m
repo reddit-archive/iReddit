@@ -83,7 +83,9 @@
 	self.toggleButtonItem = [items lastObject];
 
 	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease]];
-	[items addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)] autorelease]];
+	if (!moreButtonItem)
+		moreButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+	[items addObject:moreButtonItem];
 
 	[self setToolbarItems:items animated:NO];
 	
@@ -348,25 +350,38 @@
 
 - (IBAction)share:(id)sender
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc]
-								  initWithTitle:@""
-								  delegate:(id <UIActionSheetDelegate>)self
-								  cancelButtonTitle:@"Cancel"
-								  destructiveButtonTitle:nil
-								  otherButtonTitles:@"E-mail Link", @"Open Link in Safari", @"Hide on reddit", @"Save on reddit", @"Save on Instapaper", nil];
-	
-	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
-	
-	[actionSheet showInView:self.navigationController.view];
-	[actionSheet release];
+	if (currentSheet) {
+		[currentSheet dismissWithClickedButtonIndex:currentSheet.cancelButtonIndex animated:YES];
+		[currentSheet release];
+		currentSheet = nil;
+	} else {
+		currentSheet = [[UIActionSheet alloc]
+						initWithTitle:@""
+						delegate:(id <UIActionSheetDelegate>)self
+						cancelButtonTitle:@"Cancel"
+						destructiveButtonTitle:nil
+						otherButtonTitles:@"E-mail Link", @"Open Link in Safari", @"Hide on reddit", @"Save on reddit", @"Save on Instapaper", nil];
+		
+		currentSheet.actionSheetStyle = UIActionSheetStyleDefault;
+		
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+			[currentSheet showInView:self.navigationController.view];
+		} else {
+			[currentSheet showFromBarButtonItem:moreButtonItem animated:YES];
+		}
+	}
 }
 
 - (void)actionSheetCancel:(id)sender
-{	
+{
+	[currentSheet release];
+	currentSheet = nil;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex 
 {
+	[currentSheet release];
+	currentSheet = nil;
 	NSString *url = story.URL;
 	if (isForComments && story.commentsURL)
 		url = story.commentsURL;
@@ -442,7 +457,7 @@
 		//[[Beacon shared] startSubBeaconWithName:@"instapaper" timeSession:NO];
 	}
 	else if(buttonIndex == 4)
-		[self actionSheetCancel:actionSheet];
+		[self actionSheetCancel:currentSheet];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
@@ -644,6 +659,8 @@
 - (void)dealloc 
 {
 	self.story = nil;
+	[currentSheet release];
+	[moreButtonItem release];
 	
     [super dealloc];
 }

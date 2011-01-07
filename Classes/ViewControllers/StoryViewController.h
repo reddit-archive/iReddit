@@ -18,9 +18,11 @@
 	UIWebView	*webview;
 	UIButton	*scoreItem;
 	UIButton	*commentCountItem;
-	UIBarButtonItem	*toggleButtonItem;	
+	UIBarButtonItem	*toggleButtonItem;
+	UIBarButtonItem *moreButtonItem;
 	UISegmentedControl *segmentedControl;
 	AlienProgressView  *loadingView;
+	UIActionSheet *currentSheet;
 	
 	Story	*story;
 }
