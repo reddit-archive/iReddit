@@ -1,6 +1,6 @@
 [submodule "TouchJSON"]
 	path = TouchJSON
-	url = https://github.com/schwa/TouchJSON.git
+	url = https://github.com/TouchCode/TouchJSON.git
 [submodule "three20"]
 	path = three20
 	url = https://github.com/facebook/three20.git
